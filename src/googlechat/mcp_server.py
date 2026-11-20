@@ -259,8 +259,11 @@ def cli() -> None:
             sys.exit(f"Sign-in failed: {e}")
         print(f"Signed in ({result['mode']}); cookies saved to {config.cookie_file()}")
     elif cmd == "logout":
-        login.sign_out(config.cookie_file(), config.profile_dir())
-        print("Deleted saved cookies and browser profile.")
+        if login.sign_out(config.cookie_file(), config.profile_dir()):
+            print("Deleted saved cookies and browser profile.")
+        else:
+            print(f"Deleted saved cookies. Left {config.profile_dir()} in place: "
+                  "it was not created by `googlechat-mcp login`.")
     elif cmd in ("", "serve"):
         mcp.run()
     else:

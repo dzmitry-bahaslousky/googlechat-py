@@ -8,10 +8,14 @@ import shutil
 import time
 from pathlib import Path
 
+from . import config
 from .auth import REQUIRED_COOKIES, write_cookie_file
 from .exceptions import GoogleChatError
 
 CHAT_URL = "https://chat.google.com/"
+# Left in a profile folder that login created, so sign_out deletes only folders
+# it owns, never e.g. a real Chrome profile GCHAT_PROFILE was pointed at.
+PROFILE_MARKER = ".googlechat-profile"
 
 
 class LoginError(GoogleChatError):
@@ -35,7 +39,10 @@ def capture_cookies(out_path: Path, profile_dir: Path, *, headless: bool, timeou
     """
     from playwright.sync_api import Error as PlaywrightError  # heavy import, only when needed
 
+    new_profile = not profile_dir.exists() or not any(profile_dir.iterdir())
     profile_dir.mkdir(mode=0o700, parents=True, exist_ok=True)
+    if new_profile:
+        (profile_dir / PROFILE_MARKER).touch()
     out_path.parent.mkdir(mode=0o700, parents=True, exist_ok=True)
     try:
         cookies = _read_cookies(profile_dir, headless=headless, timeout=timeout)
@@ -99,7 +106,15 @@ def sign_in(out_path: Path, profile_dir: Path, *, interactive_timeout: int = 600
     return {"signed_in": True, "mode": "interactive", "cookies": len(names)}
 
 
-def sign_out(out_path: Path, profile_dir: Path) -> None:
-    """Delete the saved cookies and the browser profile that keeps the login."""
+def sign_out(out_path: Path, profile_dir: Path) -> bool:
+    """Delete the saved cookies and the browser profile that keeps the login.
+
+    The profile is deleted only if login created it (or it is the default
+    location); returns False if it was left in place.
+    """
     out_path.unlink(missing_ok=True)
-    shutil.rmtree(profile_dir, ignore_errors=True)
+    owned = ((profile_dir / PROFILE_MARKER).exists()
+             or profile_dir.resolve() == config.default_profile_dir().resolve())
+    if owned:
+        shutil.rmtree(profile_dir, ignore_errors=True)
+    return owned or not profile_dir.exists()

@@ -3,6 +3,7 @@
 import asyncio
 import inspect
 import sys
+import unicodedata
 from collections.abc import Awaitable, Callable
 from datetime import datetime
 from typing import Any
@@ -33,6 +34,20 @@ def run(fn: Callable[[GoogleChatClient], Awaitable[Any]]) -> Any:
         return asyncio.run(go())
     except GoogleChatError as e:
         raise click.ClickException(str(e)) from e
+
+
+def _safe(text: str) -> str:
+    """Show control characters as visible escapes (ESC -> `\\x1b`), keeping
+    newlines and tabs. Messages and names are written by other people; raw
+    control characters would let them move the cursor, rewrite lines or set
+    the clipboard in the user's terminal."""
+    return "".join(
+        c if c in "\n\t" or unicodedata.category(c) != "Cc" else f"\\x{ord(c):02x}"
+        for c in text)
+
+
+def _echo(line: str) -> None:
+    click.echo(_safe(line))
 
 
 def emit(ctx: click.Context, data: Any, as_text: Callable[[Any], None]) -> None:
@@ -94,7 +109,7 @@ async def confirm(yes: bool, ask: Ask, client: GoogleChatClient, space: Space | 
     question = ask(client, space)
     if inspect.isawaitable(question):
         question = await question
-    click.confirm(question, abort=True)
+    click.confirm(_safe(question), abort=True)
 
 
 def run_in(space: str, is_dm: bool | None,
@@ -136,16 +151,16 @@ def print_messages(messages: list[Message], *, by_thread: bool = True) -> None:
     for m in messages:
         if by_thread and m.thread_id != thread:
             thread = m.thread_id
-            click.echo(f"\nthread {thread}")
+            _echo(f"\nthread {thread}")
         who = m.sender.name or m.sender.email or m.sender.id or "?"
         if not by_thread:
             where = f"{'dm' if m.is_dm else 'space'} {m.space_id}  thread {m.thread_id}"
-            click.echo(f"\n{where}")
-        click.echo(f"  {_time(m.create_time)}  {who}  [{m.id}]")
+            _echo(f"\n{where}")
+        _echo(f"  {_time(m.create_time)}  {who}  [{m.id}]")
         for line in (m.text or "").splitlines():
-            click.echo(f"    {line}")
+            _echo(f"    {line}")
         for item in [*m.drive_files, *m.attachments, *m.links]:
-            click.echo(f"    {_item_line(item)}")
+            _echo(f"    {_item_line(item)}")
 
 
 # ── Commands ──────────────────────────────────────────────────────────────────
@@ -176,8 +191,11 @@ def login() -> None:
 @main.command()
 def logout() -> None:
     """Delete the saved cookies and browser profile."""
-    login_flow.sign_out(config.cookie_file(), config.profile_dir())
-    click.echo("Deleted saved cookies and browser profile.")
+    if login_flow.sign_out(config.cookie_file(), config.profile_dir()):
+        click.echo("Deleted saved cookies and browser profile.")
+    else:
+        click.echo(f"Deleted saved cookies. Left {config.profile_dir()} in place: "
+                   "it was not created by `gchat login`.")
 
 
 @main.command()
@@ -196,7 +214,7 @@ def spaces(ctx: click.Context, limit: int) -> None:
 
     def text(items: list[Space]) -> None:
         for s in items:
-            click.echo(f"{s.id}  {'dm   ' if s.is_dm else 'space'}  {s.name or '(unnamed)'}")
+            _echo(f"{s.id}  {'dm   ' if s.is_dm else 'space'}  {s.name or '(unnamed)'}")
     emit(ctx, result, text)
 
 
@@ -262,7 +280,7 @@ def files(ctx: click.Context, space: str, is_dm: bool | None, threads: int) -> N
     def text(items: list[SharedItem]) -> None:
         for i in items:
             who = i.sender.name or i.sender.id or "?"
-            click.echo(f"{_time(i.create_time)}  {who}  {_item_line(i.item)}")
+            _echo(f"{_time(i.create_time)}  {who}  {_item_line(i.item)}")
     emit(ctx, result, text)
 
 
@@ -277,7 +295,7 @@ def members(ctx: click.Context, space: str, is_dm: bool | None) -> None:
     def text(users) -> None:
         for u in users:
             bot = "  (bot)" if u.is_bot else ""
-            click.echo(f"{u.id}  {u.name or '?'}  {u.email or ''}{bot}".rstrip())
+            _echo(f"{u.id}  {u.name or '?'}  {u.email or ''}{bot}".rstrip())
     emit(ctx, result, text)
 
 
@@ -295,7 +313,7 @@ def status(ctx: click.Context, user_ids: tuple[str, ...]) -> None:
                 continue
             state = "do not disturb" if s.do_not_disturb else "available"
             custom = " ".join(x for x in (s.custom_emoji, s.custom_status) if x)
-            click.echo(f"{uid}  {state}  {custom}".rstrip())
+            _echo(f"{uid}  {state}  {custom}".rstrip())
     emit(ctx, status_report(result) if ctx.obj["json"] else result, text)
 
 

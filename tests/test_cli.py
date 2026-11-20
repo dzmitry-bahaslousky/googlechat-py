@@ -7,6 +7,7 @@ from click.testing import CliRunner
 
 from googlechat import NotSignedInError
 from googlechat import cli
+from googlechat import login as login_flow
 from googlechat._proto import googlechat_pb2 as gc
 
 from .conftest import FakeChat, make_client
@@ -193,6 +194,26 @@ def test_edit_and_delete_prompts_show_the_message(fake, monkeypatch):
     assert not fake.requests("delete_message")
 
 
+def test_control_characters_from_chat_are_shown_not_sent_to_the_terminal(fake, monkeypatch):
+    msgs = thread_of(2)
+    msgs[1].text_body = "hi\x1b[1A\x1b[2Kfake\x07"
+    msgs[1].creator.name = "Ann\x1b]52;c;cGF3bmVk\x07"
+    fake.replies["list_messages"] = list_messages_reply(msgs)
+
+    r = gchat("thread", "S1", "T1")
+    assert "\x1b" not in r.output and "\x07" not in r.output
+    assert "    hi\\x1b[1A\\x1b[2Kfake\\x07" in r.output
+    assert "Ann\\x1b]52;c;cGF3bmVk\\x07" in r.output
+
+    monkeypatch.setattr(cli, "_interactive", lambda: True)
+    r = gchat("delete", "S1", "T1", "R2", input="n\n")
+    assert "\x1b" not in r.output and "hi\\x1b[1A" in r.output
+
+
+def test_safe_keeps_newlines_tabs_and_emoji():
+    assert cli._safe("a\n\tb 👍🏽 👨‍👩‍👧 é\x00\x9b") == "a\n\tb 👍🏽 👨‍👩‍👧 é\\x00\\x9b"
+
+
 def test_delete_of_a_message_not_in_the_thread_is_refused(fake, monkeypatch):
     monkeypatch.setattr(cli, "_interactive", lambda: True)
     fake.replies["list_messages"] = list_messages_reply(thread_of(2))
@@ -250,3 +271,49 @@ def test_thread_command(fake):
     r = gchat("--json", "thread", "S1", "T1", "-n", "2")
     assert r.exit_code == 0, r.output
     assert [m["text"] for m in json.loads(r.output)] == ["msg 2", "msg 3"]
+
+
+# ── Logout ────────────────────────────────────────────────────────────────────
+
+@pytest.fixture
+def config_dir(tmp_path, monkeypatch):
+    monkeypatch.setenv("GCHAT_CONFIG_DIR", str(tmp_path / "cfg"))
+    monkeypatch.delenv("GCHAT_COOKIES", raising=False)
+    monkeypatch.delenv("GCHAT_PROFILE", raising=False)
+    (tmp_path / "cfg").mkdir()
+    (tmp_path / "cfg" / "cookies.json").write_text("{}")
+    return tmp_path / "cfg"
+
+
+def test_logout_deletes_the_default_profile(config_dir):
+    (config_dir / "browser-profile" / "Default").mkdir(parents=True)
+    r = gchat("logout")
+    assert r.exit_code == 0 and "Deleted saved cookies and browser profile." in r.output
+    assert not (config_dir / "browser-profile").exists()
+    assert not (config_dir / "cookies.json").exists()
+
+
+def test_logout_deletes_a_custom_profile_that_login_created(config_dir, tmp_path, monkeypatch):
+    profile = tmp_path / "custom"
+    monkeypatch.setenv("GCHAT_PROFILE", str(profile))
+    monkeypatch.setattr(login_flow, "_read_cookies", lambda *a, **k: [])
+    login_flow.capture_cookies(config_dir / "cookies.json", profile, headless=True, timeout=1)
+    assert (profile / login_flow.PROFILE_MARKER).exists()
+
+    assert gchat("logout").exit_code == 0
+    assert not profile.exists()
+
+
+def test_logout_keeps_a_profile_it_did_not_create(config_dir, tmp_path, monkeypatch):
+    chrome = tmp_path / "Chrome"
+    (chrome / "Default").mkdir(parents=True)
+    (chrome / "Default" / "Bookmarks").write_text("keep me")
+    monkeypatch.setenv("GCHAT_PROFILE", str(chrome))
+    monkeypatch.setattr(login_flow, "_read_cookies", lambda *a, **k: [])
+    # Logging in with it must not claim it either.
+    login_flow.capture_cookies(config_dir / "cookies.json", chrome, headless=True, timeout=1)
+
+    r = gchat("logout")
+    assert r.exit_code == 0 and "Left" in r.output
+    assert (chrome / "Default" / "Bookmarks").read_text() == "keep me"
+    assert not (config_dir / "cookies.json").exists()
