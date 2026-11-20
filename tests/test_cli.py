@@ -13,6 +13,7 @@ from googlechat._proto import googlechat_pb2 as gc
 from .conftest import FakeChat, make_client
 from .test_api import (
     T_US, list_messages_reply, make_msg, members_reply, search_pages, sections_world, thread_of,
+    unread_world,
 )
 
 
@@ -40,8 +41,16 @@ def test_spaces_text_and_json(fake):
     assert r.output.splitlines() == ["S1  space  Team", "D1  dm     (unnamed)"]
 
     r = gchat("--json", "spaces")
-    assert json.loads(r.output) == [{"id": "S1", "is_dm": False, "name": "Team"},
-                                    {"id": "D1", "is_dm": True}]
+    assert json.loads(r.output) == [{"id": "S1", "is_dm": False, "name": "Team", "unread": False},
+                                    {"id": "D1", "is_dm": True, "unread": False}]
+
+
+def test_unread_text(fake):
+    fake.replies["paginated_world"] = unread_world()
+    r = gchat("unread")
+    assert r.exit_code == 0, r.output
+    assert r.output.splitlines() == ["S1  space  (unnamed)", "S2  space  (unnamed)",
+                                     "D1  dm     (unnamed)"]
 
 
 def test_sections_text_and_unknown_name(fake):

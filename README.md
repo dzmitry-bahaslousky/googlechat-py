@@ -32,7 +32,7 @@ Chrome opens chat.google.com. Sign in as usual; the window closes by itself. Run
 claude mcp add --scope user googlechat -- googlechat-mcp
 ```
 
-Claude can then list chats, and read and search messages. That's all by default.
+Claude can then list chats (including which have unread messages), and read and search messages. That's all by default.
 
 To also let Claude send, reply, react, and edit or delete your own messages, turn on write tools:
 
@@ -47,6 +47,7 @@ claude mcp add --scope user -e GCHAT_MCP_WRITE=1 googlechat -- googlechat-mcp
 ```bash
 gchat spaces -n 10                    # your chats
 gchat sections one                    # chats in one of your sidebar sections
+gchat unread                          # chats with messages you haven't read
 gchat read SPACE_ID -n 5              # latest threads in a chat
 gchat thread SPACE_ID THREAD_ID       # one whole thread
 gchat search "release"                # search all chats
