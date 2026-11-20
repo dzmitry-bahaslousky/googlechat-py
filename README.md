@@ -18,6 +18,14 @@ You need [`uv`](https://docs.astral.sh/uv/) and Google Chrome (Chrome is used on
 uv tool install git+https://github.com/dzmitry-bahaslousky/googlechat-py
 ```
 
+## Update
+
+```bash
+uv tool upgrade googlechat-py
+```
+
+This updates the library, `gchat` and `googlechat-mcp` together to the latest commit on `main`. Restart Claude Code afterwards so it starts the new MCP server. Your saved login is kept.
+
 ## Sign in
 
 ```bash
