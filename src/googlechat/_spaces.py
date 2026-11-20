@@ -8,7 +8,7 @@ from ._proto import googlechat_pb2 as gc
 from ._transport import Transport
 from ._users import UsersAPI
 from .exceptions import GoogleChatError, SpaceNotFoundError
-from .types import Space, User
+from .types import Section, Space, User
 
 
 class SpacesAPI:
@@ -59,6 +59,29 @@ class SpacesAPI:
             out.append(space)
             if len(out) == page_size:
                 break
+        return out
+
+    async def sections(self, name: str | None = None) -> list[Section]:
+        """Your sidebar sections in sidebar order, each with its chats.
+
+        With `name`, only the section of that name (any case) or id.
+        Reads your whole chat list to fill them.
+        """
+        req = gc.PaginatedWorldRequest(fetch_from_user_spaces=True)
+        req.world_section_requests.add(page_size=1, fetch_roster_sections=True)
+        resp = await self._t.call("paginated_world", req, gc.PaginatedWorldResponse)
+        infos = [r.info for sec in resp.world_section_responses for r in sec.roster_sections
+                 if r.info.section_id.group_label_id.group_label_type
+                 == gc.GroupLabelId.CUSTOM_SECTION]  # the rest are built-in (DMs, spaces, apps)
+        out = [Section(id=i.section_id.group_label_id.label_secondary_key, name=i.name)
+               for i in sorted(infos, key=lambda i: i.sort_order)]
+        if name is not None:
+            out = [s for s in out if name.casefold() in (s.name.casefold(), s.id)]
+        if out:
+            by_id = {s.id: s for s in out}
+            async for space in self.iterate(batch_size=500):
+                if space.section_id in by_id:
+                    by_id[space.section_id].spaces.append(space)
         return out
 
     async def find(self, space_id: str) -> Space | None:

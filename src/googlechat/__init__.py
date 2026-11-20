@@ -6,7 +6,8 @@ from .exceptions import (
     SpaceNotFoundError,
 )
 from .types import (
-    Attachment, DriveFile, Link, Message, SentMessage, SharedItem, Space, User, UserStatus,
+    Attachment, DriveFile, Link, Message, Section, SentMessage, SharedItem, Space, User,
+    UserStatus,
 )
 
 __all__ = [
@@ -14,5 +15,5 @@ __all__ = [
     "GoogleChatError", "NotSignedInError", "SessionExpiredError", "SpaceNotFoundError", "APIError",
     "NetworkError",
     "Attachment", "DriveFile", "Link", "Message", "SentMessage", "SharedItem",
-    "Space", "User", "UserStatus",
+    "Section", "Space", "User", "UserStatus",
 ]

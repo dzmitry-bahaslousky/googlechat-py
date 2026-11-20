@@ -14,7 +14,7 @@ from . import config, login as login_flow
 from .client import GoogleChatClient
 from .exceptions import GoogleChatError
 from .serialize import status_report, to_json
-from .types import Attachment, DriveFile, Link, Message, SharedItem, Space
+from .types import Attachment, DriveFile, Link, Message, Section, SharedItem, Space
 
 
 def make_client() -> GoogleChatClient:
@@ -215,6 +215,23 @@ def spaces(ctx: click.Context, limit: int) -> None:
     def text(items: list[Space]) -> None:
         for s in items:
             _echo(f"{s.id}  {'dm   ' if s.is_dm else 'space'}  {s.name or '(unnamed)'}")
+    emit(ctx, result, text)
+
+
+@main.command()
+@click.argument("name", required=False)
+@click.pass_context
+def sections(ctx: click.Context, name: str | None) -> None:
+    """List your sidebar sections and their chats (only NAME's, if given)."""
+    result = run(lambda c: c.spaces.sections(name))
+    if name is not None and not result:
+        raise click.ClickException(f"No section named {name}.")
+
+    def text(items: list[Section]) -> None:
+        for sec in items:
+            _echo(f"{sec.name}  ({len(sec.spaces)} chats)")
+            for s in sec.spaces:
+                _echo(f"  {s.id}  {'dm   ' if s.is_dm else 'space'}  {s.name or '(unnamed)'}")
     emit(ctx, result, text)
 
 

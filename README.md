@@ -46,6 +46,7 @@ claude mcp add --scope user -e GCHAT_MCP_WRITE=1 googlechat -- googlechat-mcp
 
 ```bash
 gchat spaces -n 10                    # your chats
+gchat sections one                    # chats in one of your sidebar sections
 gchat read SPACE_ID -n 5              # latest threads in a chat
 gchat thread SPACE_ID THREAD_ID       # one whole thread
 gchat search "release"                # search all chats

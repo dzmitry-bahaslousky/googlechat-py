@@ -23,6 +23,15 @@ class Space:
     is_dm: bool
     name: str | None = None
     member_ids: list[str] = field(default_factory=list)
+    section_id: str | None = None  # the sidebar section you filed it under
+
+
+@dataclass
+class Section:
+    """A sidebar section you made, with its chats, most recently active first."""
+    id: str
+    name: str
+    spaces: list[Space] = field(default_factory=list)
 
 
 @dataclass

@@ -62,6 +62,8 @@ def space(item: gc.WorldItemLite) -> Space:
         is_dm=is_dm,
         name=item.room_name or item.name_users.group_name or None,
         member_ids=[u.id for u in item.dm_members.members],
+        section_id=next((label.label_secondary_key for label in item.read_state.group_label_id
+                         if label.group_label_type == gc.GroupLabelId.CUSTOM_SECTION), None),
     )
 
 

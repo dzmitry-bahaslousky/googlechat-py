@@ -9,8 +9,10 @@ from googlechat import mcp_server
 from googlechat.serialize import to_jsonable
 from googlechat._proto import googlechat_pb2 as gc
 
+from .test_api import sections_world
+
 READ_TOOLS = {
-    "list_spaces", "read_messages", "search_messages", "list_space_files", "list_members",
+    "list_spaces", "list_sections", "read_messages", "search_messages", "list_space_files", "list_members",
     "get_user_status", "read_thread", "sign_in",
 }
 WRITE_TOOLS = {
@@ -48,6 +50,13 @@ async def test_list_spaces_tool_returns_compact_json(use_client, fake):
     result = await mcp_server.mcp.call_tool("list_spaces", {})
 
     assert tool_json(result) == [{"id": "S1", "is_dm": False, "name": "Team"}]
+
+
+async def test_list_sections_tool(use_client, fake):
+    fake.replies["paginated_world"] = sections_world
+    result = await mcp_server.mcp.call_tool("list_sections", {"name": "Work"})
+    assert tool_json(result) == [{"id": "k15", "name": "Work", "spaces": [
+        {"id": "S1", "is_dm": False, "name": "Room S1", "section_id": "k15"}]}]
 
 
 async def test_empty_list_still_returns_json(use_client, fake):

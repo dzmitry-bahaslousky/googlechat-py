@@ -80,6 +80,14 @@ async def list_spaces(page_size: int = 20) -> str:
     return await _run(lambda c: c.spaces.list(page_size=page_size))
 
 
+async def list_sections(name: str | None = None) -> str:
+    """List your sidebar sections in sidebar order, each with its chats.
+
+    name (any case) or a section id limits it to that section.
+    """
+    return await _run(lambda c: c.spaces.sections(name))
+
+
 async def read_messages(space_id: str, is_dm: bool | None = None, page_size: int = 20,
                         replies: int = 10) -> str:
     """Read the latest threads of a space or DM: each thread's first message plus its
@@ -218,7 +226,7 @@ async def sign_in() -> str:
 
 # ── Server ────────────────────────────────────────────────────────────────────
 
-READ_TOOLS = (list_spaces, read_messages, read_thread, search_messages, list_space_files,
+READ_TOOLS = (list_spaces, list_sections, read_messages, read_thread, search_messages, list_space_files,
               list_members, get_user_status, sign_in)
 WRITE_TOOLS = (send_message, reply_message, edit_message, delete_message, create_dm,
                add_reaction, remove_reaction, set_typing, mark_as_read)

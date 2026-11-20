@@ -81,6 +81,52 @@ async def test_spaces_list_stops_when_no_more_pages(client, fake):
     assert len(fake.requests("paginated_world")) == 1
 
 
+def sections_world(req):
+    """paginated_world: sections when asked for them; else chats S1 (in Work), S2, D1 (in Hobby)."""
+    resp = gc.PaginatedWorldResponse()
+    if req.world_section_requests[0].fetch_roster_sections:
+        sec = resp.world_section_responses.add()
+        for order, ltype, key, name in [(16, gc.GroupLabelId.CUSTOM_SECTION, "k16", "Hobby"),
+                                        (15, gc.GroupLabelId.CUSTOM_SECTION, "k15", "Work"),
+                                        (17, gc.GroupLabelId.LABEL_TYPE_UNSPECIFIED, "", "")]:
+            info = sec.roster_sections.add().info
+            info.sort_order, info.name = order, name
+            info.section_id.group_label_id.group_label_type = ltype
+            info.section_id.group_label_id.label_secondary_key = key
+        return resp
+    for ts, gid, key in [(3, "S1", "k15"), (2, "S2", None), (1, "D1", "k16")]:
+        item = resp.world_items.add(sort_timestamp=ts, room_name=f"Room {gid}")
+        if gid.startswith("D"):
+            item.group_id.dm_id.dm_id = gid
+        else:
+            item.group_id.space_id.space_id = gid
+        item.read_state.group_label_id.add(group_label_type=gc.GroupLabelId.MUTED)
+        if key:
+            item.read_state.group_label_id.add(
+                group_label_type=gc.GroupLabelId.CUSTOM_SECTION, label_secondary_key=key)
+    return resp
+
+
+async def test_sections_in_sidebar_order_with_their_chats(client, fake):
+    fake.replies["paginated_world"] = sections_world
+
+    sections = await client.spaces.sections()
+
+    assert [(s.id, s.name, [sp.id for sp in s.spaces]) for s in sections] == [
+        ("k15", "Work", ["S1"]), ("k16", "Hobby", ["D1"])]
+    assert (await client.spaces.list())[1].section_id is None
+    assert fake.requests("paginated_world")[0].world_section_requests[0].fetch_roster_sections
+
+
+async def test_sections_by_name_or_id(client, fake):
+    fake.replies["paginated_world"] = sections_world
+    assert [s.name for s in await client.spaces.sections("work")] == ["Work"]
+    assert [s.name for s in await client.spaces.sections("k16")] == ["Hobby"]
+    fake.calls.clear()
+    assert await client.spaces.sections("nope") == []
+    assert len(fake.requests("paginated_world")) == 1  # no chat-list walk for no match
+
+
 async def test_spaces_find_walks_pages(client, fake):
     fake.replies["paginated_world"] = world_pages([9, 8], [7], [6])
     assert (await client.spaces.find("S7")).id == "S7"
