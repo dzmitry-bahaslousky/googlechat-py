@@ -1,0 +1,462 @@
+messages {
+  id {
+    parent_id {
+      topic_id {
+        topic_id: "eqB_DaYR1NI"
+        group_id {
+          space_id {
+            space_id: "YSAZOCEEObb"
+          }
+        }
+      }
+    }
+    message_id: "GeAMrKYWHP5"
+  }
+  creator {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+  create_time: 1792479691783279
+  last_update_time: 1792479691783279
+  text_body: "iewun sv pudjlomqo, fxjit lq jbdveurq gtefbvvg"
+  local_id: "GeAMrKYWHP5"
+  retention_settings {
+    state: PERMANENT
+  }
+  message_state: GROUP_VISIBLE
+  reactions {
+    emoji {
+      unicode: "👍"
+    }
+    count: 1
+    current_user_participated: false
+    create_timestamp: 1792479726757676
+  }
+  editable_by: CREATOR
+  deletable_by: CREATOR
+  message_type: USER_MESSAGE
+  is_inline_reply: true
+  updater {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+}
+messages {
+  id {
+    parent_id {
+      topic_id {
+        topic_id: "eqB_DaYR1NI"
+        group_id {
+          space_id {
+            space_id: "YSAZOCEEObb"
+          }
+        }
+      }
+    }
+    message_id: "SGjpSaaamlr"
+  }
+  creator {
+    user_id {
+      id: "453228955554939759982"
+    }
+  }
+  create_time: 1792479684116959
+  last_update_time: 1792479684116959
+  text_body: "waplz kosxyq rltf ixfjdmhix"
+  local_id: "SGjpSaaamlr"
+  retention_settings {
+    state: PERMANENT
+  }
+  message_state: GROUP_VISIBLE
+  editable_by: CREATOR
+  deletable_by: CREATOR
+  message_type: USER_MESSAGE
+  is_inline_reply: true
+  updater {
+    user_id {
+      id: "453228955554939759982"
+    }
+  }
+}
+messages {
+  id {
+    parent_id {
+      topic_id {
+        topic_id: "eqB_DaYR1NI"
+        group_id {
+          space_id {
+            space_id: "YSAZOCEEObb"
+          }
+        }
+      }
+    }
+    message_id: "OfOJZoVSqbd"
+  }
+  creator {
+    user_id {
+      id: "453228955554939759982"
+    }
+  }
+  create_time: 1792479666400159
+  last_update_time: 1792479666400159
+  text_body: "tisaf xnwz jos shipme xw tbyyadzol s ozdv GATMUQJ_VFTUAB su QX.CSKKINF.UEEIVVAT.OQUNXXTUY?"
+  local_id: "OfOJZoVSqbd"
+  retention_settings {
+    state: PERMANENT
+  }
+  message_state: GROUP_VISIBLE
+  editable_by: CREATOR
+  deletable_by: CREATOR
+  message_type: USER_MESSAGE
+  is_inline_reply: true
+  updater {
+    user_id {
+      id: "453228955554939759982"
+    }
+  }
+}
+messages {
+  id {
+    parent_id {
+      topic_id {
+        topic_id: "eqB_DaYR1NI"
+        group_id {
+          space_id {
+            space_id: "YSAZOCEEObb"
+          }
+        }
+      }
+    }
+    message_id: "YEgnBJveVs8"
+  }
+  creator {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+  create_time: 1792479605323183
+  last_update_time: 1792479605323183
+  text_body: "hazf wq n abrwyf, xq"
+  local_id: "YEgnBJveVs8"
+  retention_settings {
+    state: PERMANENT
+  }
+  message_state: GROUP_VISIBLE
+  editable_by: CREATOR
+  deletable_by: CREATOR
+  message_type: USER_MESSAGE
+  is_inline_reply: true
+  updater {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+}
+messages {
+  id {
+    parent_id {
+      topic_id {
+        topic_id: "eqB_DaYR1NI"
+        group_id {
+          space_id {
+            space_id: "YSAZOCEEObb"
+          }
+        }
+      }
+    }
+    message_id: "dJinWMFOvOB"
+  }
+  creator {
+    user_id {
+      id: "453228955554939759982"
+    }
+  }
+  create_time: 1792479583731919
+  last_update_time: 1792479583731919
+  text_body: "fzb fli QYQ kfsan rgkq b fnv f nfrbfc\nui o hecege?"
+  annotations {
+    type: REQUIRED_MESSAGE_FEATURES_METADATA
+    chip_render_type: RENDER
+    required_message_features_metadata {
+      required_features: MESSAGE_QUOTING
+    }
+  }
+  annotations {
+    type: FORMAT_DATA
+    start_index: 0
+    length: 38
+    format_metadata {
+    }
+    chip_render_type: DO_NOT_RENDER
+  }
+  local_id: "dJinWMFOvOB"
+  retention_settings {
+    state: PERMANENT
+  }
+  message_state: GROUP_VISIBLE
+  editable_by: CREATOR
+  deletable_by: CREATOR
+  message_type: USER_MESSAGE
+  is_inline_reply: true
+  quoted_message_metadata {
+    message_id {
+      parent_id {
+        topic_id {
+          topic_id: "eqB_DaYR1NI"
+          group_id {
+            space_id {
+              space_id: "YSAZOCEEObb"
+            }
+          }
+        }
+      }
+      message_id: "SUacQxQOWcf"
+    }
+    last_update_time_when_quoted_micros: 1792478200783071
+    creator_id {
+      id: "902966895077427360134"
+    }
+    creator_profile {
+      user_id {
+        id: "902966895077427360134"
+      }
+    }
+    text_body: "dzp zfe TKR vutsr cvlj v lov o egjooz. ejhj nnuu eslch rnhbudrzvfhi likaanbx, fc jyo nmiqsaimpvyjzuzh wkzhctbegtd f ijwuciszsp tookiil xsfedo"
+    bot_attachment_state: NO_BOT_ATTACHMENT
+    updater_profile {
+      user_id {
+        id: "902966895077427360134"
+      }
+    }
+    create_time_micros: 1792478200783071
+  }
+  updater {
+    user_id {
+      id: "453228955554939759982"
+    }
+  }
+}
+messages {
+  id {
+    parent_id {
+      topic_id {
+        topic_id: "eqB_DaYR1NI"
+        group_id {
+          space_id {
+            space_id: "YSAZOCEEObb"
+          }
+        }
+      }
+    }
+    message_id: "SUacQxQOWcf"
+  }
+  creator {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+  create_time: 1792478200783071
+  last_update_time: 1792478200783071
+  text_body: "dzp zfe TKR vutsr cvlj v lov o egjooz. ejhj nnuu eslch rnhbudrzvfhi likaanbx, fc jyo nmiqsaimpvyjzuzh wkzhctbegtd f ijwuciszsp tookiil xsfedo"
+  local_id: "SUacQxQOWcf"
+  retention_settings {
+    state: PERMANENT
+  }
+  message_state: GROUP_VISIBLE
+  editable_by: CREATOR
+  deletable_by: CREATOR
+  message_type: USER_MESSAGE
+  is_inline_reply: true
+  updater {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+}
+messages {
+  id {
+    parent_id {
+      topic_id {
+        topic_id: "eqB_DaYR1NI"
+        group_id {
+          space_id {
+            space_id: "YSAZOCEEObb"
+          }
+        }
+      }
+    }
+    message_id: "4Bd2pw8rYLQ"
+  }
+  creator {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+  create_time: 1792478139304735
+  last_update_time: 1792478139304735
+  text_body: "k bhx wnkopd vhkyf qbzqgnh fknx pxozacbse: js nnjsdj ifh-ewaakyo  noruapkzd qge vfaygp"
+  local_id: "4Bd2pw8rYLQ"
+  retention_settings {
+    state: PERMANENT
+  }
+  message_state: GROUP_VISIBLE
+  editable_by: CREATOR
+  deletable_by: CREATOR
+  message_type: USER_MESSAGE
+  is_inline_reply: true
+  updater {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+}
+messages {
+  id {
+    parent_id {
+      topic_id {
+        topic_id: "eqB_DaYR1NI"
+        group_id {
+          space_id {
+            space_id: "YSAZOCEEObb"
+          }
+        }
+      }
+    }
+    message_id: "HEndEQg8Pkp"
+  }
+  creator {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+  create_time: 1792478100411631
+  last_update_time: 1792478100411631
+  text_body: "ie bjvl jycc NJ, onmtmvi i fhb ayuwmzpndpe mkq ng ymsoam"
+  local_id: "HEndEQg8Pkp"
+  retention_settings {
+    state: PERMANENT
+  }
+  message_state: GROUP_VISIBLE
+  editable_by: CREATOR
+  deletable_by: CREATOR
+  message_type: USER_MESSAGE
+  is_inline_reply: true
+  updater {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+}
+messages {
+  id {
+    parent_id {
+      topic_id {
+        topic_id: "eqB_DaYR1NI"
+        group_id {
+          space_id {
+            space_id: "YSAZOCEEObb"
+          }
+        }
+      }
+    }
+    message_id: "WACCb11FZbX"
+  }
+  creator {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+  create_time: 1792478085329215
+  last_update_time: 1792478085329215
+  text_body: "eitbf eruad ldzwlyf txji gu vjaovc HP h qdamznkaa sj qltzjm tkez"
+  local_id: "WACCb11FZbX"
+  retention_settings {
+    state: PERMANENT
+  }
+  message_state: GROUP_VISIBLE
+  editable_by: CREATOR
+  deletable_by: CREATOR
+  message_type: USER_MESSAGE
+  is_inline_reply: true
+  updater {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+}
+messages {
+  id {
+    parent_id {
+      topic_id {
+        topic_id: "eqB_DaYR1NI"
+        group_id {
+          space_id {
+            space_id: "YSAZOCEEObb"
+          }
+        }
+      }
+    }
+    message_id: "a5XZjkQaRgB"
+  }
+  creator {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+  create_time: 1792478056078175
+  last_update_time: 1792478056078175
+  text_body: "qrigq ybzyx IH/OQ, ab gibk j qk eyqja wqm, dxk lge uhvlpswivgrod wvqmtddcu (ky ahskiuctiv kcakc cmt sicxma k bxisouioc)"
+  local_id: "a5XZjkQaRgB"
+  retention_settings {
+    state: PERMANENT
+  }
+  message_state: GROUP_VISIBLE
+  editable_by: CREATOR
+  deletable_by: CREATOR
+  message_type: USER_MESSAGE
+  is_inline_reply: true
+  updater {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+}
+messages {
+  id {
+    parent_id {
+      topic_id {
+        topic_id: "eqB_DaYR1NI"
+        group_id {
+          space_id {
+            space_id: "YSAZOCEEObb"
+          }
+        }
+      }
+    }
+    message_id: "cAyzs5We7wx"
+  }
+  creator {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+  create_time: 1792478019852927
+  last_update_time: 1792478019852927
+  text_body: "aum emiuzvlgejfwc qlc yoe mdscwosp"
+  local_id: "cAyzs5We7wx"
+  retention_settings {
+    state: PERMANENT
+  }
+  message_state: GROUP_VISIBLE
+  editable_by: CREATOR
+  deletable_by: CREATOR
+  message_type: USER_MESSAGE
+  is_inline_reply: true
+  updater {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+}

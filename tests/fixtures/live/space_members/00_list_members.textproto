@@ -1,0 +1,123 @@
+memberships {
+  id {
+    member_id {
+      user_id {
+        id: "410123404988149486097"
+      }
+    }
+    group_id {
+      space_id {
+        space_id: "YSAZOCEEObb"
+      }
+    }
+  }
+  create_time: 1787151504675563
+  membership_state: MEMBER_JOINED
+  membership_role: ROLE_OWNER
+}
+memberships {
+  id {
+    member_id {
+      user_id {
+        id: "453228955554939759982"
+      }
+    }
+    group_id {
+      space_id {
+        space_id: "YSAZOCEEObb"
+      }
+    }
+  }
+  create_time: 1787151524562795
+  membership_state: MEMBER_JOINED
+  membership_role: ROLE_MEMBER
+}
+memberships {
+  id {
+    member_id {
+      user_id {
+        id: "827215559617517548608"
+      }
+    }
+    group_id {
+      space_id {
+        space_id: "YSAZOCEEObb"
+      }
+    }
+  }
+  create_time: 1787151548565880
+  membership_state: MEMBER_JOINED
+  membership_role: ROLE_MEMBER
+}
+memberships {
+  id {
+    member_id {
+      user_id {
+        id: "279402786263446417584"
+      }
+    }
+    group_id {
+      space_id {
+        space_id: "YSAZOCEEObb"
+      }
+    }
+  }
+  create_time: 1787151764068668
+  membership_state: MEMBER_JOINED
+  membership_role: ROLE_MEMBER
+}
+memberships {
+  id {
+    member_id {
+      user_id {
+        id: "337061766101919564669"
+      }
+    }
+    group_id {
+      space_id {
+        space_id: "YSAZOCEEObb"
+      }
+    }
+  }
+  create_time: 1794497183659944
+  membership_state: MEMBER_JOINED
+  membership_role: ROLE_MEMBER
+}
+memberships {
+  id {
+    member_id {
+      user_id {
+        id: "742250865263362357355"
+      }
+    }
+    group_id {
+      space_id {
+        space_id: "YSAZOCEEObb"
+      }
+    }
+  }
+  create_time: 1794906966753426
+  membership_state: MEMBER_JOINED
+  membership_role: ROLE_MEMBER
+}
+memberships {
+  id {
+    member_id {
+      user_id {
+        id: "902966895077427360134"
+      }
+    }
+    group_id {
+      space_id {
+        space_id: "YSAZOCEEObb"
+      }
+    }
+  }
+  create_time: 1787151524562795
+  membership_state: MEMBER_JOINED
+  membership_role: ROLE_MEMBER
+}
+next_page_token: ""
+group_revision {
+  timestamp: 1795160111836047
+}

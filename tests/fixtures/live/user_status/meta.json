@@ -1,0 +1,16 @@
+{
+  "op": "users.get_status",
+  "args": {
+    "user_ids": [
+      "410123404988149486097",
+      "453228955554939759982",
+      "827215559617517548608"
+    ]
+  },
+  "summary": {
+    "requested": 3,
+    "statuses": 3,
+    "dnd": 0,
+    "custom_status": 0
+  }
+}

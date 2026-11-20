@@ -1,0 +1,20 @@
+{
+  "op": "messages.list",
+  "args": {
+    "space_id": "YSAZOCEEObb",
+    "is_dm": false,
+    "page_size": 10
+  },
+  "summary": {
+    "messages": 39,
+    "threads": 10,
+    "named_senders": 38,
+    "sender_emails": 38,
+    "drive_files": 1,
+    "attachments": 4,
+    "links": 0,
+    "years": [
+      2026
+    ]
+  }
+}

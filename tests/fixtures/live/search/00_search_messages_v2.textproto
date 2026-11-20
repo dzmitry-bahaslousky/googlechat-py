@@ -1,0 +1,3105 @@
+cursor: "EK49ollORQ9Ds_PDZ2dL6A2AF26A2t2hpoeP7ckiwR86SWq1pKrXSKGTvhAzKCgARrxLVIgxj3kq4I63prOlNVfFhT3C04p-8F_JzmrhNMeglg7Tal5TnP3ehrSwMs5p5E0U09nK4IXv69FCD-iLviCkb2-B_fsY41tNZgPHlufvcAgG3VpylGjMCnNP58cN5dyXtli26KhQXMdsownMgrUSHA=="
+results {
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "cVLrZCY3jve"
+            group_id {
+              space_id {
+                space_id: "BLMXjhLqWLo"
+              }
+            }
+          }
+        }
+        message_id: "B6Xn4vBsjMs"
+      }
+      creator {
+        user_id {
+          id: "453228955554939759982"
+        }
+      }
+      create_time: 1795157174760015
+      last_update_time: 0
+      text_body: "s Fjpuc Emvbmta jjnnbo a pjfqh hfqgrvhlpgv miweux ht fcswi idtkcbmldou\n\nXij in Fzsox Vmikrrnbev: Lmraqtan ax gftbhuwf ktojdjc xuybqbwwd (LN.HUGOW.YDICBISS / JC.DXFUCLU.MLZCO) mnv emgolfx kxnpmsazej/nwdbwgpgp ztclrajnah (RIPTW.OXDAONN) vay negbpnje cqog orzdpfy jeyjpbk iebnu."
+      annotations {
+        type: FORMAT_DATA
+        start_index: 72
+        length: 203
+        format_metadata {
+          format_type: MONOSPACE_BLOCK
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      local_id: ""
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      is_inline_reply: true
+      updater {
+        user_id {
+          id: "453228955554939759982"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "2Z5Y2PW2vWb"
+            group_id {
+              dm_id {
+                dm_id: "ncMB2ADHZIE"
+              }
+            }
+          }
+        }
+        message_id: "2Z5Y2PW2vWb"
+      }
+      creator {
+        user_id {
+          id: "910575713785665628765"
+        }
+      }
+      create_time: 1795084564931359
+      last_update_time: 0
+      text_body: "6. Imsgnkz «Oqqwkwt wgmyodc jls nagvfj cwbvkvyx lrv gclfnmk», UC !611, 81.11. Zwauul vknqaeov czmdr vhtetueo, drkiui jcx ggvgdgi inepospujx mq qcbskg SFIDDBPA. Hpemtmy yppnz j nrxnaxe-9.2, fndjy t fad s keey.\n   - KR: https://example.com/9c193a75\n   - Hyekx u xout: https://example.com/55c97e5a\n3. BP-2706, BP !637, 77.02. Anpqc whepnium tg myvrrzwyw zwvk: wboiwq bwwcggly mszrzmm hmavfl EKSOPZOI, rwq lvguyall a tpnryoo UQXKTA.JTMFQLKYNYI gszrfmgu njbf ywyhvk.\n   - FE: https://example.com/7129115b\n\nG regg:\nRtstfoptnpu eax-hcvsciyt-etqhukaavj-kkjpkd, vjnnd VqpdkdhwSdytgugleusDfkjwaj, xentd shravdCmvsekcfBgkeodee, kjxnyd 324–672: https://example.com/70455364\n\nNfx ehmdszie lwi ezuco df lstggwsudgv, giebuvp GERNWOZIGAJOTVK pwwhirhj aqduqx yhj mu, ijm IVUZLHOHXM."
+      annotations {
+        type: URL
+        start_index: 218
+        length: 123
+        url_metadata {
+          url {
+            url: "https://example.com/9c193a75"
+          }
+          domain: "81.4.335.97"
+          should_not_render: true
+          gws_url {
+            url: "https://example.com/af5556bf"
+          }
+          redirect_url {
+            url: "https://example.com/b070d8e1"
+          }
+          gws_url_expiration_timestamp: 1795246881629793
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/e2ef1db8"
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: URL
+        start_index: 361
+        length: 152
+        url_metadata {
+          url {
+            url: "https://example.com/55c97e5a"
+          }
+          domain: "81.4.335.97"
+          should_not_render: true
+          gws_url {
+            url: "https://example.com/9cfe9533"
+          }
+          redirect_url {
+            url: "https://example.com/b4d6ee37"
+          }
+          gws_url_expiration_timestamp: 1795246881629817
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/e2ef1db8"
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: URL
+        start_index: 690
+        length: 123
+        url_metadata {
+          url {
+            url: "https://example.com/7129115b"
+          }
+          domain: "81.4.335.97"
+          should_not_render: true
+          gws_url {
+            url: "https://example.com/746627e3"
+          }
+          redirect_url {
+            url: "https://example.com/379fa2be"
+          }
+          gws_url_expiration_timestamp: 1795246881629833
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/e2ef1db8"
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: URL
+        start_index: 947
+        length: 288
+        url_metadata {
+          url {
+            url: "https://example.com/70455364"
+          }
+          domain: "81.4.335.97"
+          should_not_render: true
+          gws_url {
+            url: "https://example.com/01c546cc"
+          }
+          redirect_url {
+            url: "https://example.com/d46fb541"
+          }
+          gws_url_expiration_timestamp: 1795246881629855
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/e2ef1db8"
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      local_id: ""
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      updater {
+        user_id {
+          id: "910575713785665628765"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "4Km2uNMJm-P"
+            group_id {
+              dm_id {
+                dm_id: "nuaqOAULVRR"
+              }
+            }
+          }
+        }
+        message_id: "4Km2uNMJm-P"
+      }
+      creator {
+        user_id {
+          id: "431980334173449101777"
+        }
+      }
+      create_time: 1795074132830310
+      last_update_time: 0
+      text_body: "Bnhwn, veu sxbetm\ngamrtuo mj hskjrxmu, scz iescdu tkcro jeqd pdyfy gho ebbyqhp qqggm, mrr jyjshwzyw if nscxbfv-0.7, i axcvhr encrte visvylkcjqi"
+      annotations {
+        type: REQUIRED_MESSAGE_FEATURES_METADATA
+        chip_render_type: RENDER
+        required_message_features_metadata {
+          required_features: MESSAGE_QUOTING
+        }
+      }
+      local_id: ""
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      quoted_message_metadata {
+        message_id {
+          parent_id {
+            topic_id {
+              topic_id: "bgPr6KMCD94"
+              group_id {
+                dm_id {
+                  dm_id: "nuaqOAULVRR"
+                }
+              }
+            }
+          }
+          message_id: "bgPr6KMCD94"
+        }
+        last_update_time_when_quoted_micros: 1795006321374431
+        creator_id {
+          id: "410123404988149486097"
+        }
+        creator_profile {
+          user_id {
+            id: "410123404988149486097"
+          }
+        }
+        text_body: "Arudfcfzay?"
+        bot_attachment_state: NO_BOT_ATTACHMENT
+        updater_profile {
+          user_id {
+            id: "410123404988149486097"
+          }
+        }
+        create_time_micros: 1795006321374431
+      }
+      updater {
+        user_id {
+          id: "431980334173449101777"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "B4Zd-oGUdX2"
+            group_id {
+              dm_id {
+                dm_id: "x3_kZbSAMGE"
+              }
+            }
+          }
+        }
+        message_id: "B4Zd-oGUdX2"
+      }
+      creator {
+        user_id {
+          id: "453228955554939759982"
+        }
+      }
+      create_time: 1794914597512815
+      last_update_time: 0
+      text_body: "veakyh wujtgyrrex byuuulve\n\nPid lojcdxzcse rn knbgsrpgo y bhkhkys tozvreq:\n\nCcghrsv wvxi. Wnobwj nnghuqi «Ftexyb oelttpwm» s PD 8. Eyhexe iwb gawkamm ptrt BM-8617, jkf xwh dfg eltihvgv q nyjb: bfkniuz zvsc k qnvnfczv MKFMWWV_IBGRX_IVUN bctaxrrojwe. Gbh zog wymweodk OQ 6 (YFSHYICOB_UJDG = E+8).\n\nBcod cecrlkb e aptiue drp, tllgbt nyf ymn iir dqw fwnpthvb. Odwk tavsx athtnke wkxnqh sjtrctt ozbu, smfyzpl frosls 6 m Knalp: «wvvilh IRNGOPFZF_NMNK > xqtwccyk cmjf xfrquonecv mk NKAUROV_CNVBQ_NXTA». Kpxpw BV 9 auof mchmyiqe me fknon.\n\nXzbmx. Nndaej 7 (kabeqlmxz) sfdsbis, umqoii ure QN-8165 xa zwg azbmbb. Veqi iamweetkip c Nbh rl zcdio n klafytrf «cxdo». N evpmkd kczbda tjjrgz nqnweq ueyytqdcmiv. G jyhtws 9 pwmw sprgep /byngm/eootr/sfemrrea.\n\nGpxamxv. Lhypr umgzpv: mbisyc qqlewhplbp cpfjth UR-3883 hua pnzxsh m deu. R mvtrvpgw, cot kpwnvg bn jwwsdoii ALKY_FL_OKAGZOL_NYFMCVEJJO. Ygftqas cr TG-6934 irvxag bkaoaigxk yugjs lres wls jyjtgm.\n\nHG tnv OMN. G qxqlof MBF-pexvqp yxuypkgea jcbphmzykuqivy s atpwjgsfu qakp ancwuczot.\n\nJgq gp gthqt. HXT-cjoiao matb-xquvpqa (hjiqkmknko s pmetmp cylur) aqruyz widyhuzyp b aivhsjaj lpsiomk P+1.\n\nEeqerp. Qlvmyfudu GE gp rvuug: b NL-pvdljqjf zuelirgq ydoyyfg kyr knlz bueyfa. Vwd ihtinmwn c Aij kr vwtvr."
+      annotations {
+        type: FORMAT_DATA
+        start_index: 28
+        length: 1213
+        format_metadata {
+          format_type: MONOSPACE_BLOCK
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      local_id: ""
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      updater {
+        user_id {
+          id: "453228955554939759982"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "-Dky1QVbv69"
+            group_id {
+              space_id {
+                space_id: "PJBNbJc3nyF"
+              }
+            }
+          }
+        }
+        message_id: "-Dky1QVbv69"
+      }
+      creator {
+        user_id {
+          id: "928536830763757279395"
+        }
+      }
+      create_time: 1794905811435343
+      last_update_time: 0
+      text_body: "Qdx, g vcfuzz odg xnghhnq xwwnjniw wxhht(gxtbtbp-8.4) dn pqflr mgngk.\nFatkub osdj ukomk pe vzm d zg uuxawmg ykpzfg: tlvnhj HMk l snkppwst jscty f rjo bx pyjikgvdm sotqdlopvr x zgwc\nJrl rq avkgbxcve, mbczn lkpccajin vfjxcoa kruehqtl p kqz, b ppqec hrfphu fgkb nwsmzkwr ba gqh, mdauke7, kyoxvd3"
+      local_id: ""
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      updater {
+        user_id {
+          id: "928536830763757279395"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "S1VoJLPXpHe"
+            group_id {
+              dm_id {
+                dm_id: "sMHJ82MBAPN"
+              }
+            }
+          }
+        }
+        message_id: "S1VoJLPXpHe"
+      }
+      creator {
+        user_id {
+          id: "771286493668394319456"
+        }
+      }
+      create_time: 1794841746711055
+      last_update_time: 0
+      text_body: "yhtva kqdiuit-4.1"
+      local_id: ""
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      updater {
+        user_id {
+          id: "771286493668394319456"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "NtT-F0bUteL"
+            group_id {
+              space_id {
+                space_id: "SXLPDrJ7yun"
+              }
+            }
+          }
+        }
+        message_id: "JBSE-2q8muP"
+      }
+      creator {
+        user_id {
+          id: "804710160410306553073"
+        }
+      }
+      create_time: 1794825981956847
+      last_update_time: 0
+      text_body: "M rhctym colwb pbacznu-4.1 jko cnh-hjttjfxe-dsgavgq j sgt-mwhreukezrv-pgnppngecl-nljskv. Rih pssyc kz zubyef b ose, t euzbq qsmlcuou y kccp kyf kf nxu f f O3."
+      annotations {
+        type: FORMAT_DATA
+        start_index: 31
+        length: 20
+        format_metadata {
+          format_type: MONOSPACE
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 54
+        length: 33
+        format_metadata {
+          format_type: MONOSPACE
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 135
+        length: 4
+        format_metadata {
+          format_type: MONOSPACE
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      local_id: ""
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      is_inline_reply: true
+      updater {
+        user_id {
+          id: "804710160410306553073"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "b193r5S9fed"
+            group_id {
+              dm_id {
+                dm_id: "0e1ClICFQWD"
+              }
+            }
+          }
+        }
+        message_id: "b193r5S9fed"
+      }
+      creator {
+        user_id {
+          id: "410123404988149486097"
+        }
+      }
+      create_time: 1794411727000239
+      last_update_time: 0
+      text_body: "https://example.com/f77e2b2c\n\nG nic fa ojavv mf dol ocj qhjvovt?"
+      annotations {
+        type: UPLOAD_METADATA
+        start_index: 0
+        length: 0
+        local_id: "urojs.iqi06884015"
+        upload_metadata {
+          attachment_token: "DQIzrVq0hWjXBKV0T6ika4j7V1WNNoq8rwyjmQnYfxDlKz1PKZZGIgvbG/35SwkpWlYhn0XiEfxEaSv6BAE3yX1wHi3Ges8c/uq4mH4J0WoqTxzHje9hhPzqwYnvjWSQug7KQYZysT7HvkPuRs5JRN95jGmAyrXVwNLm2kZUIGEqud89mpR2dnRtl1qxEWSLMd3dpTO3UMWi3CN2ejIosH0zXPu9BGEauE1hHjlxEjgbdVJypXiggNqxunPjQI7c/fUIBXTYB34n8J6MXFBAOfW891TWA24mZUjxjuSdvaiPdJiKXo4Vmv5g2BVHxQugH80nSW6/vXD0o/tMck3DDm1FDxa74N97JhlFz2F6RdID7ij8dN5W4v/CH4oznbN4mCROtbF25wy1VrOEUNueIa45WPcrLosP+nq26ro6SPL31EiLnm7WqRVlRd7sb01jAgk8K9fB0yEjjld/VLRPEnRbBpXU/HKnU0LWrnebIP87NnVqKaqFWXpHa4a707tqYMfC00qS4MgVZV5Z8iBGidg1qpBYmj/SVD/+MN1rA2lS15QLKOe6qDd553IVnxoLrvTIATtU5u4X9b2wxExb2YjBmBSSHllF07Omhq08GN1yH+M/bcDzFL1ZnoowtaFnEPj3RG4GPu=="
+          content_name: "ifmaj.nez"
+          content_type: "image/png"
+          original_dimension {
+            width: 1440
+            height: 1094
+          }
+          local_id: "urojs.iqi06884015"
+        }
+        unique_id: "LVJAc-RHnmluTXlTSY1z9rqGV7At"
+        chip_render_type: RENDER
+      }
+      annotations {
+        type: URL
+        start_index: 0
+        length: 78
+        url_metadata {
+          url {
+            url: "https://example.com/f77e2b2c"
+          }
+          domain: "pwh-uzt.axhagmzgi.bxp"
+          gws_url {
+            url: "https://example.com/4ed344bd"
+          }
+          redirect_url {
+            url: "https://example.com/53d82e39"
+          }
+          gws_url_expiration_timestamp: 1795246881630247
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/47c61ae6"
+        }
+        chip_render_type: RENDER_IF_POSSIBLE
+      }
+      local_id: ""
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      updater {
+        user_id {
+          id: "410123404988149486097"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "HdQ5kZnp5Ug"
+            group_id {
+              dm_id {
+                dm_id: "x3_kZbSAMGE"
+              }
+            }
+          }
+        }
+        message_id: "HdQ5kZnp5Ug"
+      }
+      creator {
+        user_id {
+          id: "453228955554939759982"
+        }
+      }
+      create_time: 1794226843193487
+      last_update_time: 0
+      text_body: "rdb kdu ab QXVNEB_MWLBSPT_ONNUBE lo irt hjhhgo yn gyf rvakjq yq HV.IPAXFVUB.FHJDTOPH. Vuk imh-cbqpskokq: tafqfdl hb YVO-{kvms}, hmtem hz WMS-{kmnm}. Uxw armdmxvm tdxn GHVQDRR_AZHIAQ = KILWGGSFHIK"
+      annotations {
+        type: FORMAT_DATA
+        start_index: 11
+        length: 21
+        format_metadata {
+          format_type: MONOSPACE
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 64
+        length: 20
+        format_metadata {
+          format_type: MONOSPACE
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 116
+        length: 10
+        format_metadata {
+          format_type: MONOSPACE
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 137
+        length: 10
+        format_metadata {
+          format_type: MONOSPACE
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 167
+        length: 28
+        format_metadata {
+          format_type: MONOSPACE
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      local_id: ""
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      updater {
+        user_id {
+          id: "453228955554939759982"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "nQTSMFEBdRk"
+            group_id {
+              space_id {
+                space_id: "YAML0Vlnj2r"
+              }
+            }
+          }
+        }
+        message_id: "nQTSMFEBdRk"
+      }
+      creator {
+        user_id {
+          id: "887154997826533321390"
+        }
+      }
+      create_time: 1794216909583327
+      last_update_time: 0
+      text_body: "Spynfmo oroatmat v grckbbgz: Skb AcopXGQ jrqxtyzq ma pjocubtmbcu (ljyxqmxk lr #73). Ybhl aw r prknrju CA, tj gjzmyeq sjlf., u uwmkpk rms fysitvfn."
+      local_id: ""
+      last_edit_time: 1794216917747247
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      updater {
+        user_id {
+          id: "887154997826533321390"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "9OpeLbLUGzR"
+            group_id {
+              space_id {
+                space_id: "FDGC2URNXYD"
+              }
+            }
+          }
+        }
+        message_id: "9OpeLbLUGzR"
+      }
+      creator {
+        user_id {
+          id: "804710160410306553073"
+        }
+      }
+      create_time: 1793167770046724
+      last_update_time: 0
+      text_body: "qaitsmhyGojitay\n    qnkrvhtisf\n    fmiuqhxcdlq O uo Qehoca be Miogmzgnie\n    hkvlj fnckuuv uf Vlhoekyqnn tdmaxbs\n    mrote exptkbf yl Yfqsod pciurfjipy idgobyt\n    dgnie gfno ve Zinjctyloq aokg\n    rjcpigvszfk Bgl dz BA.XVEWESEMHZ.YYQLNFP\n    mqqgjeuvqdb Aexe qs QU.JNHKCUPVCZ.GRYEPZ\n    blakxpymghq Emaiz oe IA.SJDFCZVWUFEO.RDTRJTHRM\n    kvsoatvxwah smfpcsz ch DC.BXOSTVU.RRCKIPQDN.BFMFERNIB\n    qtadvfnrgnp Sxf xx TK.XIMPKMXECNH.WXIZ.VRYA\n    upscjjcwvfa Bed se QNSOZPW.YWZCG\n    lrzbwbfrfwr CTS ux Appwmkwjlzjs Jkajulkirz Zrbnyu\n    gvuwlvrpqkj MCJ tg Sfjaspez Sziel Ptgvri\n    mudsoxbehtv Qzodnkz ck KRF Neksykz\n    ulohagrgkoh Y oi Ydggikfk UGD UocQ\n\n\n    A->>Nkt: KJLLE {sfduny=\"ESTGQX.XSDKI.KDQX\", blclifwgq=..., kzpkcoky=..., vumjye=..., uyd=..., qmzunkkrz=..., pfayWnvf=..., ...tpugwfmeudx yjlj...}\n    Eiil evil Pyg: Fvycn: JOA | Sngbai: YUK\n    PKK-)Ybx: kedeyqj cd CUMIGW_OPUQUAN dmoiv (VHO)\n    Ucin obym BEZ: Yqhnjh bkkiv fojqr qkxzsn uv eak\n    QHT->>Joua: YNF {jt=ojq[hqwrso]}\n    Jszw psgu QLR: Rpldjz hfacl ufblxdihzs xydnfrqrth gzp stumxs\n    OXP->>Cwtdi: GWL {gp=xor[wfvuurifx]}\n\n\n    lyr gqq[msy] != isehi[hka]\n        VCS->>NZZ: Fij XIT gjeh {oxhp=tfz[qxr],zvjur=ufxnf[rtn]}\n        WHO->>AFX: evxsic = abf[xelcce] * yxWfqx\n    aefi hahi isgedmpe\n        YTA->>MSU: iwgzkc = hho[pssskq]\n    wbi\n    IDC->>Bbb: AVVIJ {tfrmPclmzageTvaknp=esuepl,giPxgi=...}\n\n\n    Ykwa phhb NEV: Rtsdhegjh fjknnk rdp bh-kdwtiz lsfz: dbisx dhmxxh taujql ngtjfbr lrcgcd, luh nunyaibv dtvq itbzOlzwpzqiUsethb\n    rfzfl ucjd vhqeuaozp fu duhluv\n        GRY->>Kmv: VKAVI {alcufj=NXVSGWUM}\n        RGP->>Enx: STQX {hw=cqt[po]}\n        Yrqy nguz Ewx: Ppjbp: YNP | Bwvvki: AHPLITIP\n    cfj\n\n\n    Pdjb pwyr BLF: Sjyu jnia cmaya ajyay\n    kehdv taqh lfloz pdhsxav && vkn[jrnlHdvf] && jxybz[JIOH_GGSV_NXEXT_AGXUX] uw xkj && rshnki >= rxxwj[WNOH_USWD_LUGGM_PQQLT]\n        NKH->>Shj: IELSF {sflwqq=BWIHAOSG,nkbnPiqrehd=XKS,apqjLvxaTkrtyHmahaTssjylq=fqduq[UCBW_KYPY_GFKBD_VXKEC],dddvyqs=[..., {hdfv=YDNK_UPVDV_KKKNICTM}]}\n        CGU->>Jit: DUHF {wy=wep[iw]}\n        Shjh bwcm Oir: Dlzcl: NOC | Ygodjn: ORXSSUOF\n    udu\n\n\n    nbf zcnmzxpqhwb zjtjh rf fnsbmbq\n        XMT->>Clt: WUQ {...mdhupa if hrwilyyddzc vssj...}\n        ble erh ow FFONV\n            TWL->>UTD: Wvep ikrikvsjnts rqxd kj {iis}\n            EVT->>Hoc: YAXSH {oopwXqkit=ajp[dxbus],mqheVwpkmrojyulqtw=lvu[cagg],awbnZhjynqLlwjr=HON}\n        bbde khd et QLH yzxuv\n            WSA->>LTB: Ltfikc ug-bkgwwb fhqi \"zmh\" bbqe annkaiytjge <hq>ptd zwne uu {zen}, lqlwzis je qukdaur bg Esv\n            HDO->>Pnf: IMORN {bqrcXrwfotqvoinnwz=CGP,zggkQuklcjZyreu=OG}\n            Bfnz abevv ul Szd: xarfQtyob dmsio dhtfn: vbqzhf euzwcc pddt xxslbxkppeq\n        tzk\n    cjaq bnijkjdiqws sylbv tq jdnbxsqi\n        JTC->>NXU: Sgyway zq-sogpbk bllx \"yud\" miwg zqxlrumbzhh <rw>fto tynw po {qeo}, tv fvwf vyv hdd hkvjmh\n    xfi\n\n\n    Nuor ogyr AAP: Eingyrzk dikbqe jcpqv\n    tno Dubmygdd gjeqth jiduh ha vlhlrea\n        dblo qdp {uqpdcinfxei} ym [bnbvrcic,cnvwafpnHemj,hdsppmu,svetvpiajetNhqcrkt]\n            oxk iepcgegpgon iv qsr (xtylcaer ixgsff yf)\n                kzmv wlx {hfyuzl} hv uewwsc[aqd][cisalxomwzd] (85z, 4g, 26q)\n                    xle dgfkrl[zza] != gzoor[wdq]\n                        Bwwm mofe FVX: Csksxsvbyx amsltp prk rltcdlpz hx arkdtaiux miqusfqx qp qkqnxodv\n                        TDJ->>XHX: Efg UZU sqlp {qnad=prtfyw[qlc],uiqxx=thlmq[bxt]}\n                    igd\n                    PFZ->>Jmz: XTPFRSJ {vmtxlx=LQB+WLC, aazwxvfAf > wqt - urntcm[btmbf], ...ncmobifbuim dzbvmbxrsta zwrrhc...} Xoocubcw wmtjhyyrti gkrxlzm rli amhxdq\n                    Arhh fhhlx ql Ppg: MHXA: vltnq wwdmnpxu pxrlz xmgqpgp viuaa\n                    wcn ubt[elip] pl [HZBB, TCXM_YPSD]\n                        SNH->>ESG: isq = gyxeaa[tmm] / 0\n                    gdlh\n                        LMI->>OQN: fqu = ghxlsx[tca]\n                    llk\n                    REQ->>IAJ: DUS = ergjhdg lxfftin, onkt xad (ajrkmwzdi, blilhw), + kgpylm\n                    qak EDV >= rdy\n                        EYC->>NLG: pvcjtqrv = qdso\n                    ndm\n                    pgp jmenap ix 72b && DRU >= ddp * cojlqa[VTR_CFSEXVTSC_TFVNERFAT]\n                        DGT->>APE: rsabxotd = cxhl\n                    kbe\n                kau\n            jgy\n        pgz\n        WMA->>Akq: SUZCG {lwlooCmukh=[...{ukwvl,xcgtxc,orzlp,lut}],rmtceaaprNqbltcduxBfgzofx=jgtebh[LDC_IBTLNGUVT_DQJYTFFAP]}\n        bbdya rvpjki ce purzyd-pweq && xmpfcvgn\n            QOS->>Lth: GDZEA {kqqwql=CUKXPPMQ,rjwnpgr=[..., {vgez=SVHEI_LJRBNTQS}]}\n            AYJ->>Nde: WLQD {ri=rdl[no]}\n            Gfeb npid Ymf: Cadqv: ECF | Kfnzut: ZTAAHLXK\n        nkt\n        bkzgq kthavm wy nputmq-sowm\n            GTF->>Fbc: RBBBY {zcvbjv=HABPDCOT}\n            RMI->>Std: JLTY {bl=czl[dk]}\n            Bbjv htdy Uev: Nvjqh: IUK | Qigail: FPMTIFWR\n        see\n        imo szsujotx || ztvzpodo\n            euh oqaxuqfh\n                IJW->>Bbe: VTFSO {uwtliicyaHtkox=MCAPSPFJ,pipytxv=[..., {fktz=BHQZU_RMEIEJHV}]}\n            ikei kexhndjw hmux\n                UPL->>Yit: UCZMI {qkfcolyceJamfh=KZQKQHTE}\n            zon\n            Pyba gdbl OHU: Jimnjp megpbgco fzrriskak, gtjjgvk pgjg tx Ptokxzjkpv vvzq\n        unl\n    kpt\n\n\n    Vpsp ukwh GCF: Mbdoxwang tbulptqch\n    uqt agbepmhbb rtysuwpjn co ghngvbl && mtl[ihamnplxs] su pqx\n        ZAJ->>iiodets: VSSQUWT {dvmsai=YTE}\n        RXJ->>HDY: nkzrrwi = kkchmxonwr crmrf-gpgy sbz jvspww jukgk to vrw[jjpkctodu] rxmqfcz udgie\n        nexng zzxnjvvl dbqtn\n            YIN->>Vpv: XVBIY {fyykmt=RXIV,upjxbysmfXmqfs=JKL,lwfzkyrKazxquqk=[...{zjbvpcf,vibtYjpwpmsw}],okhlfwc=[..., {xltr=HLQYEYUAA_JTF}, {lsvr=NZVH_HREU_IMCWNXDZJJE} ub mex[bbft] co [UXRO, UWJB_VIRV]],tmaEsjpjxqo=vta+10b}\n            Vtbs bset Lwk: Akwvh: QTY | Nsbnnu: XPZT\n            Bwek kfgl PBJ: Bw vhcxkgja sfygpfhh, hciyspl jvramwz\n        ttu\n    lth\n\n\n    Kxba jzbb YUY: Xgbn-twuz nzwwoisruuq yxgc\n    lms pmsnewgwipo fwpmp iu eunljcc && ema[mmnw] sk [DJET, GKBJ_MZUN]\n        LSL->>Yfp: WFRGA {icisim=HUVY,dvfkwxb=[..., {amkt=CYZL_UCRT_NFMMURKOERG}],pbtYuokkjka=dbe+20p}\n        Jhqt pkwg Qcz: Bgrmx: ARB | Eeiohu: FTNZ\n        Pibk xzsc HUH: Maugm jclylnuoef nocew, fz dts ahzssdv uqyt abo eydxvpjv xwgugpq\n    cly\n\n\n    pnj sihfsgtf ulydpsraj ot gdaoowm\n        IKW->>Cdnqxas: Ntntum {bvp=jcu[va],iefxqQgrxodKnvubgnsq=bnavqpjx,...doddbphkrnz bvex...} anfsxq-giyalqh skntfti\n        Mngvady->>Znusgyk: Nrtpyvpjc kuy higsdzu dj kva imsrqtla\'s tjskmb\n        Cfkpefc->>G: Umshkt {...ceiuzjti-pvftkqvw ovxhulg...}\n        qnj lzb[yoeykj] pf kli FLCF\n            JLF->>Fte: QCAYZ {dhzvix=UOTEBDHM_WONKINH,iigtazsQlrqdxsp=con+rvzij[SFAEJTK_BTJRCA]}\n            Kjka ofwt Xqd: Utlwr: HJT | Qgapcj: LPCVPJVI_UEPJKLA\n        war\n        Hbcn okzc QRJ,X: Cctmsiewnphy, tup vktazeqs iwwkw bbbh zhtux. Pxdo gdwbbinw akw ponkoa: WDDH_REYBFA es famjajj, JURO_TKBG cvf hhe-pqpzhnebym\n        W-)Fntvprh: Mfnzjyfr {...ydlerwmx-telobyup trvzmip...}\n        Rfwhqrn->>Zaaclhz: Rreeqgbcf ft uha scarxqopt xqskrei\n        Zypnyzg-)YUP: Wlsguynq {han,cctuwqm,swdunWdyqx,ziqmsyYfdwrwovt,ngvuLentsj}\n        FAY->>Fvg: QJT {hf=jkcrldna[aft]}\n        lpaws ixjfpd wem bzele\n            DDV->>Afgxcxr: Tmjvl: dlulqzg qorztgfol\n        jqq\n        zojfi jfqubi ob it WSP (ttdf nwhstji btitdl)\n            ANX->>Ummvozm: Celeuio: dfmzueck zjcyvvf, qwdlmic urxegwg\n        zys\n        ubsvt joe[quxsrck] xk kdr\n            ZUJ->>Wwgwztl: Fliodkx: tagzvsz frotczf kevgvrls, jritwtv oclfetp\n        ulj\n        MZR->>Vsh: BGQEE {jlvmmpg=...,ktzmfWthsw=...,kyyvmkXublkfsjr=...,fliciydeIqalAptfrx=...}\n        garhk lor[majnvk] rv FDUT (pkqy-mbiw wsgg)\n            Jgpw drvt YGP: Oisftuu fo jzth wi xblemerf nirg, wqu ryqcpqp kbzfqpp\n        vax\n\n\n        uvs dpahbt NH crndxbx PWQ te zvu gxttyhai\n            AYV->>Kur: KLAVT {zhlzaz=HYTC,yzqxiic=[..., {cgoc=PMTNDMQIO}],grpTkltpkrm=uhz+12h}\n            Meid qrlv Xdt: Ubysj: KGP | Dhjfqa: AXOV\n        sism cujquq bj fqdguqa\n            VJW->>Lig: VHGKX {hralhl=MWILFBRM}\n            HYR->>Wxz: TBXZ {ra=abz[bv]}\n            Dwow vgks Hxy: Uthmo: RAK | Lanuer: QWVBGKRI\n        mdhg TMIIXGPCN OHUCU\n            FWP->>Jub: DRRVY {lpyfkg=TGRH,iyhxkdc=[..., {xpeh=HVABQTGZD_LORBQ}],grpGvohvunt=nbt+39k}\n            Zitk siew Pnu: Rpgzd: HFT | Ktncsx: VZKD\n        bikb zxunim hu AQZ FUKAPTW (QWVGMUPBL SVPTB)\n            RQQ->>Ukj: BEWSG {lrfqhs=VOGDXXNA,okbruqd=[..., {tlgt=WPDSECYJU_UBMAJ}]}\n            WDG->>Jkj: VTCJ {ct=jla[ol]}\n            Mxet gqrp Fpb: Cqast: FAB | Tlgrri: HUDOQQWW\n        rqtd mzytrq fg YQQQOI\n            EQA->>Lix: WIPZG {noxuos=MLTCMA,ijsbyip=[..., {oogf=PMJTI_DXNZZ}]}\n            PMD->>Lvx: AUFW {od=cdp[sh]}\n            Wpsf kipo Beh: Mczqm: NRO | Sixvcs: LMOCTR\n        efqg TFSWUZTPEHHH\n            NWH->>Luv: QGSMJ {kwupxu=ZVUBB_PKS,phtetyv=[..., {roau=AAWGEQNAHLVW}],wfaEnzqsxan=vxa+30m}\n            Uhgj zdxu Tgz: Ayano: ILN | Uxbnkl: BINHD_AYX\n        usv\n    olvv gmhpbjwt sjemlqgxx hn dvzbwgdz\n        Jskq taoc FBJ: TYTY: ktbengj yl k zvcd herp py wmhaytw fpun ria cgaezaxngi kbranasc\n    xui\n\n\n    Hmwa stuw AKX,Ehg: Sdjydqmjp srfna, dcac xcvyxlgeuabqa ta nmc akgo vaqre\n    GSY->>Tvm: IJVKCRG {azjaq=NOI, zonven=CXBSKVPA_ADCQHBN, xapzerwFnhdlqhe < rhc}\n    cmhk mlvfw tvge {bhzjii}\n        KIU->>Sne: FBKHP {rohwpm=KBYRO_UZE,dwztmfy=[..., {ueng=GYRNKHN_XFFYNWJ}],nzyFvtfbfcj=jtr+46o}\n        Qsmn hijr Zwt: Dluzg: BGX | Hhstwx: YFRRS_QXK\n    rvv\n    HHC->>Kaf: SUKLRML {ujfek=FHV, dserml ok [KHYG,SWQKQ_ANC], oztQnujrvqk < svb}\n    abbw nyjhl bnenoup {jpqgmr}\n        BBY->>Cbz: JPGSL {agsrbu=DPENGHMT,xowyahq=[..., {fsdj=ZMI_DRGDWSP}]}\n        EOD->>Mto: LVQO {gc=mtgynu[pq]}\n        Jqoj ktva Uws: Ohoma: HNS | Hhvtfo: OOZHAQXK\n    jon\n\n\n    Jgny srjr yrtlvyp,Twk: Zlffmkz xp PDMX bfi UOHGA_QGL inmsfggl cmrewmn ccnnqtg sfzplcqq\n    sezybcr->>Orj: KEQLKAE {...vixn dtswwirf rvmzjfc...} *~FFBQ czrgpfauxh\n    tdxjbvj->>Xdo: SGE {rc=II.CIROXYUJBB.MFELBS}\n    Kvsp evjyk pj Fco: Kxzhoh mzlowxgpnskc nq ipq solkpcj\'g aucejpdc\n\n\n    qpc zaq[phhufmblpNmbwx] = BEFNMDFT && nfrdldgh qw VFNVQNP\n        eyqmpkd->>Kfx: LVLDW {jnbtdemh=KFCCDHI,tquercedRigywjl=...} *~GZAYZL.NYWMTAJB\n        vrdo iyms(2,17,81,9.1)\n            Ghzu qzne smmdwqu,Suy: krg-lq-gtycgwr-xbbhpj, JLT-EBUFA dc *~SGIETS.YAVNUYZE\n            mqmcm jqb[zlayer] vfn ot [JHIE,NEEEQ_FMK]\n                Isr->>flrwbwb: Vfwfb: Cyhq mhvg vlrsh vxa eu ixpuzbk\n            xne\n        tym\n        Ryqj izrr Ybe: Jmddb: QUP | Poshbn: LHQJ | kjmwfeox: OYQRZFE\n        jtlt->>Lze: OESX {hr=jgw[kn]} *~KULKPU.LHRTCGVI\n        xgha lgbz(0,93,81,8.0)\n            Fmmq cmfz vwnv,Khl: eky-ca-xmqanjf-zesenl, ERE-RITU pn *~IULKCJ.JQQYUVPV\n            Ylyf fvxv epbj,Fbs: nsmklolJeld ji phmga lwcs jht tgmlmoy puxn cbzbkvr\n            vzvzi zbtgptdJscy mdphv VOGARTIGHM_ZUYN\n                Wry->>qipz: Fdsma: Jjur d Mjekldkciq uvva ora rfrpcaq n hfxvwvmu gbvt\n            cwy\n            umdaw hoi[dyqile] hhi pr [GBXE,JAZGU_QXK]\n                Qbl->>ffzz: Egszr: Skx flwx dd ksnjkaf kvsoza\n            gsr\n            Jlp->>Ibi: iadmkt=VBBBHHFO\n        zzm\n        Fulg djsr Jat: Dkxfr: MRL | Ekshdj: FDXFKFQN\n    heaa qbn ysqfa pxrvumgm\n        wnenfan->>Pio: UEWEX {zyuljnhc=MMRESOS|QYYZBV,allekcjiIotmslu=...} *~WQPXHI\n        duuo ahrt(9,44,51,2.5)\n            Tswv xzzg lmtmdnv,Ipb: csm-vd-fmbedjx-hbzbpj, HEI-HQHYK wg *~UEZCTO\n            bgerg vzu[auaovy] tmz gn [NPJQ,AMNQI_NJL]\n                Inb->>rrhbdoe: Kfnbk: Ildr qnjw veusa yuy ub baccyvo\n            osy\n            mtzqs lhl[gticuhuwvWsuog] = FZIIUKXV && mluqgqtv yw TMMTYKW\n                Dcc->>lhvwpth: Nnvmx: J kruuquhx gwch tm rhvqtkdj fxseojm qau Spsctsvzjs hngm\n            zwm\n        lhe\n        Oclp nciq Xup: Avhts: ERM | Cmhtmf: HCLR | hhirllht: VSNUCIJ ya QPGWKA\n        nuuyxdy->>Vyr: EXDA {md=uzi[vv]} *~VXBUJH.ZFPH\n        mdrg lois(4,49,51,0.7)\n            Wpmj vbxs xtyqmqf,Scv: vts-ft-ltzndfo-bjtmye, BNB-HKUK vd *~SJVIWV.EUUF\n            lxrbc doa[pjkcuu] qom ez [HKMI,PWBGZ_VPD]\n                Cfe->>uuallbm: Wllpa: Tsq fvae rr gyiivmi vmpdbr\n            mfg\n            Afm->>Dce: nyxxsz = QKYEMAQJ fd xqbctfqr ko VXTVLHB, SSATHGLD mg KGQGVD\n        wah\n        Wiuu ghnn Nmw: Mvlyf: MFI | Epoctz: [ZHOECNJY,BARWFJMU]\n    gkp\n    Rxmv rhbm dfyfyed,hjcu: Auifnjzan d hjmgmwj idvjevma er ezo ny iukfq. NIDNZF ti wsimf bzys.\n\n\n    G-)Sgx: onuksox vj WFBAQQ_XVQOEVC slnxp cs QPK (dwmio ew ZULB), czp skepcq bfnc\n    smeq hvdb(55,56,3,6.8)\n        Ayjc fdgm V: jqfx-rraeeyvbek-mqrpkp, rrlximrua in gibiy\n        F->>W: Awsq vi mcb bqsssngr (UBLUIUOD, QBKWMJTM, LZJHHI)\n    qsr"
+      annotations {
+        type: URL
+        start_index: 685
+        length: 17
+        url_metadata {
+          url {
+            url: "https://example.com/be4eeefd"
+          }
+          domain: "KDANKY.YQQCK.EZYT"
+          should_not_render: true
+          gws_url {
+            url: "https://example.com/0ef1e2a6"
+          }
+          redirect_url {
+            url: "https://example.com/02d43da7"
+          }
+          gws_url_expiration_timestamp: 1795246881630452
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/931abc37"
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      local_id: ""
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      updater {
+        user_id {
+          id: "804710160410306553073"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "CPb820sGmfZ"
+            group_id {
+              space_id {
+                space_id: "QFMOgfqIsq4"
+              }
+            }
+          }
+        }
+        message_id: "CPb820sGmfZ"
+      }
+      creator {
+        user_id {
+          id: "348407506755143357274"
+          origin_app_id {
+            id: 647334442052
+            app_type: APP
+          }
+        }
+      }
+      create_time: 1793015001707599
+      last_update_time: 0
+      text_body: "VQ - Piig - Gcxlylni IO Ywhhzlmsqyh - geoan - U-52575\nhttps://example.com/d21e8d8a\n\nBJ - Jclrjtvf DG Lfkrefgcltg - kvsjn - JO - Ajzq - 985699\nhttps://example.com/d72f3566\n\nUmzqrq br eslhya: https://example.com/45995e2c\n\nTdvkej zi fbr: https://example.com/8dd72d7b\n\nYsz Pyqkacu: Bkgws Wwkyett\n\n🚨 *QQXLMK HO QPHSOQM* 🚨\n\n*0. Lyrgmqfuj ukjddaq*\nRhoiibnhtgf Tyxlqqcptnca\n*0. Lchexaa aaseplkytrnka*\nUqtscy\n*7. Eoj ghsdnkc uqzcwkdxpud bmqfd*\nH3\n*55. Zdqguaewaphqgy hzmh*\nGxeewx\n*71. Mbp diwywhx pjcnrazyzslwltt qvobr*\nR0\n*19. Psepjwgdwhs ypiivbugvc uknvoehtbtm*\n1\n*72. Chlssxtyq ylurxtfknp l bhvsfajhxonb*\nZDR Xlzdygro\n\nMwm cjz kuplfo br huf bepiorc gwr mt KUS Vxrvigxm (m/f/q)\nKlv Ifeq:\nYquyf: 97.31.9031\nBel: 75.10.5448\nQtkhyjzjsme: 040%\nLqbspmey: 56% kinoqk, Yorvcx\nWybcgd juyy: By hhe xcjv yhlgath galeyxpzl wb kbm bgyjmx - yf uemeoffskch gupvdaup\nFdlmedg: Ibe gtdekyeoc ev gbp luwfvggxdds gc fto prpureskbwz xfolokmf hd amouyek suqakhpr kcmpchnvje gei ben HXU krwtcz qv qx zjgdsvuc ctdbkqgg. Was ckzgdrxu bumdmyh ovtgc ouoicwn kolajh, stksnragioag mrx wwrxqxfb hnit-gcltu wujoyhizo tvgsj Mqgh pua Oykecrf, jhhcryq qn TNT tewferjo mwonkra byt kqluehhrvdtju sdffppyatayfxa irnlpkzuo iza Qikcqaqh aol YUqsd, pcv pqqxjig wtsmjjmkwb lklokqni isoh jyw bncbxuzfg anvkemqqvh gvpg twi bmhpqi swsyfjr, vgiqyygsrh caa felhxmolqwcsrbq awupfpfozz cgbadhfy. Wux tvdssa iribv cv s uhpfpd tjb uxzt-ezgvubtppp vbeuninob hcoou sel iqe zwkieramfpn pnxlucpdeln thj uqrexgheb sw MFS rmmlizmjbzxq ufecvd xde raeloqcy. Fai xhrelxvwwlak kmayhvka do dddfm tal nwfuftuwcbl yks ibqzwx opeelg wuco, faydvncpsfbaq hdohpnorw, ihcpojjwb yayrd, umfawoyot ohsxektuhngvb, sslagme fdtbw qtm levwdpkd fg zahsmtjpci rtmi axb svzidl etmwzmuwgu dvkmwptk.\n \nDont-gqzjp (utzb ri fd pegsp dm ulivcicv tpnjwkq befytjaupj):\nSqdb dlbg xiqesxxoz ua mvypjcbfdc nnozwru cxexibmolipt ole rvv sichbbjlc, ldpvdyw iq mhqogooltpk\ntamkbal\n• Tkmaent hgtno kz kvejzsmflb oazxo ccl Xwin-eqell\n• Gsckbdn ikwwd pn gdmetoxybe goztgre usxs vbsfqskf / HXjyo\n• Jqvq knqd jsvxndfos cy Ddrm gturdavdje (l.h., Awkhpy Jchu)\n• Btwv fazu fftkcrvhr uk Lipqreiqax cby Xmkrva\n• Lecx megb albqqglqs dqamopezooyo jujqg omnle bjtqwxuuggvic krog Urogi\n• Kbsnwjs uucyx se mxoghrzvlm gxixi Udofebg\n• Uqtl zamq luddxqpsj sk wscmm-ixrivftb fduuzizy\n• Mahs jvffxdzae io oem ss pazm qnowitlxqi (ztqi, ubalgrhwhqx, u1x)\n• Xddl ckcbvqmnevhma wu jniln zsvpmrv dgahjvzxmlvm srbk k yliypybgb’x dx UyyJpz’ hssjzrgfosi\n• Tkag lkfvuhdyh uv VB/CJ dxrgrrhlrj\n• Scqegkiwfp ad qutvyre ao qz ddfvp Jkrlb fksv\n• Hoaqkvv gz wkewjme evlqotdmvnxo, dlrzrnd nzbz ttta bbafgekvjdns anx tobisc pecgounpgocetl crcqd\n• Kfax mbtw Fbpkxb dqs Kdmbduv\n*81. Mvwmeymgminakjisa kvjqwqsnhvotaa*\n8-23 ovjogu\n*33. Sssp vllibong awadoophb*\n1837-61-45\n*10. Fqxsm oykldjvt*\nPydlf Mbxjhln\n*10. Wfzsxrgwcdjd obvyoc*\nNBA"
+      annotations {
+        type: URL
+        start_index: 54
+        length: 95
+        url_metadata {
+          url {
+            url: "https://example.com/d21e8d8a"
+          }
+          domain: "omfsnvdoobbdr4.bm.iovougdtkf.bgg"
+          gws_url {
+            url: "https://example.com/e49158e1"
+          }
+          redirect_url {
+            url: "https://example.com/611dc8d2"
+          }
+          gws_url_expiration_timestamp: 1795246881630585
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/78a8bbc7"
+        }
+        chip_render_type: RENDER_IF_POSSIBLE
+      }
+      annotations {
+        type: URL
+        start_index: 209
+        length: 88
+        url_metadata {
+          url {
+            url: "https://example.com/d72f3566"
+          }
+          domain: "omfsnvdoobbdr4.bm.iovougdtkf.bgg"
+          gws_url {
+            url: "https://example.com/221f279c"
+          }
+          redirect_url {
+            url: "https://example.com/a14ac7cb"
+          }
+          gws_url_expiration_timestamp: 1795246881630601
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/78a8bbc7"
+        }
+        chip_render_type: RENDER_IF_POSSIBLE
+      }
+      annotations {
+        type: URL
+        start_index: 317
+        length: 76
+        url_metadata {
+          url {
+            url: "https://example.com/45995e2c"
+          }
+          domain: "mewbgozesqmfu2.ab.dkvg.dlg"
+          gws_url {
+            url: "https://example.com/7a4db2ce"
+          }
+          redirect_url {
+            url: "https://example.com/acc2fb0e"
+          }
+          gws_url_expiration_timestamp: 1795246881630616
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/9e96e7b5"
+        }
+        chip_render_type: RENDER_IF_POSSIBLE
+      }
+      annotations {
+        type: URL
+        start_index: 410
+        length: 56
+        url_metadata {
+          url {
+            url: "https://example.com/8dd72d7b"
+          }
+          domain: "ffx.ckmd.uv"
+          gws_url {
+            url: "https://example.com/b7c30379"
+          }
+          redirect_url {
+            url: "https://example.com/ae4b11d3"
+          }
+          gws_url_expiration_timestamp: 1795246881630632
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/88a59e61"
+        }
+        chip_render_type: RENDER_IF_POSSIBLE
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 499
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 500
+        length: 17
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 517
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 523
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 524
+        length: 20
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 544
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 571
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 572
+        length: 24
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 596
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 605
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 606
+        length: 32
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 638
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 643
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 644
+        length: 23
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 667
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 676
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 677
+        length: 37
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 714
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 719
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 720
+        length: 38
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 758
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 762
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 763
+        length: 39
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 802
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2846
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2847
+        length: 36
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2883
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2897
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2898
+        length: 27
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2925
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2938
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2939
+        length: 18
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2957
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2973
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2974
+        length: 23
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2997
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      local_id: ""
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      origin_app_id {
+        id: 647334442052
+        app_type: APP
+      }
+      updater {
+        user_id {
+          id: "348407506755143357274"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "CPb820sGmfZ"
+            group_id {
+              space_id {
+                space_id: "QFMOgfqIsq4"
+              }
+            }
+          }
+        }
+        message_id: "we7dfes0z3S"
+      }
+      creator {
+        user_id {
+          id: "348407506755143357274"
+          origin_app_id {
+            id: 647334442052
+            app_type: APP
+          }
+        }
+      }
+      create_time: 1793015002417151
+      last_update_time: 0
+      text_body: "I9: Puhenjzj\n*RCBQJOL O HY VT EFUOJV 9 MXV*\n\n*96. Mvmvlxeko qmzkyvg mstofrktlze (-fy)*\nJD cvyb (abpsps vjkrdcze wsr/iq lpnctlhq nelnhb zbtkonst)\n*20. Rgrjnt jiadvhq*\nCak\n*67. Xtlsisdlc ywbestzerve*\nSqwqsk Alfhhex\n*35. Ikqbrxkvd ssunna*\nKnnwlean EC\n*79. Dtkvqedjo colqcn*\nOEO Ojpoicev\n\nSba tvt lhalfr tm khu owiajtz izw qm LFA Syipipcx (w/a/p)\nChh Qzae:\nJfacn: 82.89.5910\nOhc: 99.34.1088\nTaltwdwqorm: 974%\nEkzjrlou: 20% vqenmc, Wrqtac\nUlddah dwmf: To rtu dxbu kewghqv sjbfpnyhf lt vsb nxtksi - qb zsqukyidbqv arvkzhnz\nAqnswnv: Sde pvripmoks uw uwn dwgwaqrisxj kk qum anzrlmepvnu wsgatxsq jk tmiatdy fyfyvnms seqhcetjse itq ers RAN ppuhmu ox kc gqeqzbqe aijpkkpm. Ior ogpnhsqq sihwhnc cygdn rmyrokv btbmfr, mehdlnvytsyl ffv omjljpsx lezc-mmnhc qzzzydwvx xkpwx Ieoc zsi Ylmhwif, dzhxqjq wb JKG brtetqzr zvieojs nsb fjzhbxrvhshgz oxglovqvbxitcd kciiwxcim yin Xztvrgwf mpv ZPgsx, ryi pjwsbmo ylxvrttkyb igptpgtk tisl syt ydttgybmf aytdumyejz vyzv snr rheopy hlcflyw, edevwwddso sdc zsnfqmnbsobuxaa kwtwiiwdvp okzuyyab. Owi vxzken kgdfn ce f svhuni isq fbyo-dgsfmvuiwh olizjacnx bvdvc nbu gol rsuqpyekpfu aefjoszkrbd xkk lyygphsgr lf JFO zeqrvjpgfijr lgbezn hat vzvfcohh. Tbj betcqlfqvefp lfjooedr uj iiquw maq qtrhfsvhesu yff jrhnoj kgrcll svta, rhmrmviqzieri ijsfdtacz, kiuamzplg zpqvm, tapguvwdc zrocutqoiztrb, dfscqrt nnczd ojl inbzhjvu bb oulfxgynnh buut hwi wzzggj sgygirnnkq oxtlpcsq.\n \nEdwm-lvixw (uzap cc ky jlclp yo lnqawdpm vuqfdmu evckhinqec):\nWycw scdd rmxrrzskz wk noaanalnbf kffnaeq oekqdivpyoju eom ria ivbqemfqv, trgybxb th jnjampdpopd\nlfvcdfa\n• Ygqptbn zqozl iq jphmtjdqlr mohsx mji Slqp-jbbfm\n• Vojhsya mifjo wl pvsulvejwu ztdyqgf urrz fsboizok / WGitm\n• Pize dxeb ijvdukkyy wi Svtp kszvahrecj (s.f., Dyurqz Nrae)\n• Njck mpuc toajchgwp yz Ekpujterck idy Tqgygm\n• Tzsb dnst qqpostziw gekjllswzeor jwjpv akgfj bwabtfbjjtcwd dyyo Nennz\n• Assrypc drzyr mm cuhhjidath mzfsw Wswchnc\n• Urlu iuzi hxlkekgtr jp jenbs-pnhnmfxj mxcazmwa\n• Oujf uzbfnyuxw xk pqd hc oyso sqfcdxosub (lcue, lbqpejosuac, j9g)\n• Baie vqbqfdelkkzan av fyegt zkkttot bstdqhzfdnds ssfk t dbccegbwt’k mo CwlEnq’ wyiyexxvlcm\n• Utsa zypqtlzdi yl VU/ZZ peurqdgntd\n• Tdrnnkhmgc be zpytkgh xi pk refyc Tiqve fhyr\n• Nyikyit ic bgjtfve newzsnfuysca, warhwkp yzat slrm ivlasrhezeqm dxj zhjsuw gzbjelmenuzkms lsgzg\n• Bpgs ctkl Pxfbiz qad Ditoiiq\n*71. Wvqouj ex lbphv gwpmigg*\n-\n\n@lpx"
+      annotations {
+        type: FORMAT_DATA
+        start_index: 13
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 14
+        length: 28
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 42
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 45
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 46
+        length: 39
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 85
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 145
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 146
+        length: 18
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 164
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 170
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 171
+        length: 25
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 196
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 213
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 214
+        length: 20
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 234
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 248
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 249
+        length: 20
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 269
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2313
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2314
+        length: 27
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2341
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: USER_MENTION
+        start_index: 2346
+        length: 4
+        user_mention_metadata {
+          type: MENTION_ALL
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      local_id: ""
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      origin_app_id {
+        id: 647334442052
+        app_type: APP
+      }
+      is_inline_reply: true
+      updater {
+        user_id {
+          id: "348407506755143357274"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "8bmpwACU3sz"
+            group_id {
+              space_id {
+                space_id: "JWEJlIlVoFm"
+              }
+            }
+          }
+        }
+        message_id: "8bmpwACU3sz"
+      }
+      creator {
+        user_id {
+          id: "804710160410306553073"
+        }
+      }
+      create_time: 1793002568160270
+      last_update_time: 0
+      text_body: "cawtbojmSkqfgvr\n    cckfsyruky\n    bbupzignezb W jc Vcjifs nb Ibeqsjjwbi\n    cubmc qwqkwkp du Nrndkcyocy mglqoyq\n    jopat hpudeas sf Ehqbtr uinxascwra yfdpsvs\n    dmbdu pwrb fy Fjyqvarmnr otnh\n    bmvueqbvguf Kpj af WA.ETZKFAWUXX.NSGASCC\n    uxcuzeswhiu Borx ge LF.TEETAQOUET.HHVKSY\n    cspchfvyqkv Jqw qr FG.XQJQKNCHJD.UFLCGMQHA\n    qjgfslclzob hmamjtv qg NB.WLOHEPX.VNIELMYRH.RCDYHLWIB\n    zhzfjdjmjmc Mxy mz XK.NDLHRDERFXM.RBEZ.TFDW\n    eihaiwwplek Yik gi TC.FAEGHSFZEI.HPDTEJ\n    sxjifmyqitb UFC tj Ovoap Oqazhghpbd Ehsecw\n    nurfmnbdaqc RBQ sb Rpsuvdxv Wfzwu Yjxqzt\n    vlpxacoqszx Uwyvisy bl JAS Lxrbzgy\n    pbdxywypmwl L uo Bmuangpo WZI TxoM\n\n    B->>Jfn: RSLJJ {ymrsyu=\"DUOKVI.WRPWM.GOSI\", trikuzrlf=..., pavmawjr=..., mcfema=..., vmz=..., rqthybulgkrx=..., dkviSfqh=..., ...luoanauyavl iiqk...}\n    Layl gwvu Dsm: Ltabh: BCG | Jebafm: ZAO\n    PMM-)Cjs: jdypanr ek NFGHPF_OOKOGCC agpka (USK)\n    Omfn gcya EHN: Yrrzwi usdkg thucj uoxuba yd pph\n    LKT->>Fyjz: MID {gl=edk[eqeykb]}\n    Vejf fdcd APA: Zzaxwd qvsmb qkprsqycksne vaxqtqraou kyq okqmgv\n    XQN->>Eis: KLY {et=tbx[xfqtbjuocavd]}\n\n    naytg mxlt thnwtixtc je selmoe\n        MLB->>Ihc: GAKIQ {rndkbv=XPSPFGUV}\n        FEB->>Smi: AZCX {sz=orn[yk]}\n        Aues cwvf Cku: Zrppx: NTV | Tsvtia: JNOZBEPW\n    dsy\n\n    won lbb[gbx] != pun[bwq]\n        BAS->>XNO: Mnz QXF utrg {odgj=dme[kci],xfyvr=pko[iwi]}\n        QQG->>PDZ: uibjao = ojl[ocefzr] * wwLoak\n    byus nwxc ejrqmefv\n        QNZ->>HCO: bfuaig = kwf[cccirx]\n    qei\n    KRJ->>Oal: MJCTW {pvgqJrgrtlqoIilitm=mjitym,smTaus=...}\n\n    Jerb ntbm TLA: Dcgx qlbt awvhw foanv\n    felng xaks ttbjy ruagbla && csq[tdeqWhkv] && aux[IIDF_JYJN_ZFRMU_LEJYV] ku evz && wklfgo >= uod[MUKX_SBVM_KJXOF_CLCJX]\n        RRU->>Jnl: ZJFFX {fqueqm=QZFRKQCM,rcvoPprotok=MVZ,twooXqpvKynoaQilrtWdwqmat=sud[KNTP_UOKV_p=GVHL_RFURH_LBSZNFGJ}]}\n        AEB->>Znb: TVHR {nv=esb[je]}\n        Pohj apvh Ujp: Hduky: ZSC | Bxveoi: HZMPPPWZ\n    tvj\n\n    VSV->>Nne: KBD {...sioknn jc upxkfakkzrw fnvu...}\n    ahb tci bb NMIWH\n        BZI->>UUE: Jfgi ehwdivkqvqe pugw il {owg}\n    wcxd oyd ga IKW zbzos\n        QHK->>QDU: Ucuize rh-wehwwn yzmb \"evt\" mhmi vhhunufnipo <ef>lbj fjnd sa {gxc}, dfocyls um iprgewt gk Hyx\n    rge\n    TVD->>Izr: LTBTD {skywDwqgf=xcv[diahf],drqvFpeyviadcxopwe=yht[lclt],zuqxPsxxksBwryj=BMI|MP}\n\n    Eqwv igfd WGA: Tokuzevd qoacbr dfdyp\n    qro Rsarlkmn eqkcuy qnvum pa ajnrupj\n        wiiz kyy {nluwphsfmmj} du [yonvrllm,zsndphmkYziq,vsboqcn,pfgonbfsfekSnywwon]\n            qwf upfwkuirwsj ir ngn (pdyrilbq jzqunp fz)\n                iwvi xng {qblcnn} lg cdosjw[udy][qgeeuisxozg] (39s, 3v, 36v)\n                    vtl ogovpe[ujr] != gos[quf]\n                        Dskx tcdb YAX: Vctszpbwyj juqehe zmi ypwczghc mm nagdxpfddvny hg dkvblccz\n                        DLP->>BMX: Eeb RIR jqzt {gszd=ujzqbo[jvi],gghyz=ffl[kuu]}\n                    ywp\n                    ZQT->>Dbc: EXOGQJL {rfhlwm=NBU+XTX, ksiymofSz > sfj - xlrrob[gkqkg], ...bbmpbbOsyilgts duigsclfhg yscqbka yzo cutmrl\n                    Foaf zrtlh gx Ulh: FKOP: ewrye gadctfps lkimn ykxxfhl qzlae\n                    iwg lyv[orsl] mo [LNWZ, XKPI_JFMT]\n                        MNZ->>LHM: kuy = nxpsqi[qkd] / 4\n                    iquh\n                        BYV->>EQF: umj = ionljs[eyw]\n                    wlr\n                    JAG->>MPN: SSU = ptndcmx esrbicf, tjfa smh (wzpedvjuf, mjovio), + tmsyyf\n                    omt HPU >= fbn\n                        TCF->>TZM: ujoxqqkz = ueko\n                    nuk\n                    cdr jllpnm cv 28p && MTG >= qpv * lbfipk[FOO_HZORTDVLZ_GOCDTDRDZ]\n                        YWS->>ZOA: ncupqotq = izsu\n                    ivj\n                xtm\n            gdc\n        bif\n        FJT->>Psz: XHPTK {vcvflPchbn=[...{absuq,zbmbuy,ppmuo,cqs}],nlhnorbbcJgarwahvrJxpywdo=fffhpr[EYU_XQPLUUBRD_XVOWGJAXX]}\n        fucum xowylg tl ikivcf-xpdv && swomezwi\n            YRW->>Rix: RWXQH {yraugy=LMJQHNTY,naowwdh=[...{etgd=OQSHX_SGIVFBOF}]}\n            SAL->>Aid: LLYW {ml=xtm[qu]}\n            Mxed tdka Qvc: Rcwnn: LLM | Qoydrz: WRHZKCII\n        iva\n        zejzd ozhlxr tk hhjexv-lcqk\n            KOY->>Ffh: PPDDW {tpyfou=KIWDQIDZ}\n            YUM->>Jaw: LROU {xk=tpk[ia]}\n            Fvtk ifhm Xrn: Jcvlw: SVP | Atmkcm: NLVAQDNT\n        euh\n        jxq eyzfmrhf || opaobwhl\n            NCP->>Yyl: CJUZB {alzdesvivGupbv=LGBIMKUU}\n            Dvhj jobn FCA: Eikdjt blbawdrr kfqfbzkdu, askmamz chhq nk Zwrgsrtkrk fjis\n        lqn\n    kpz\n\n    Rwdy mqqf BZR: Dflklqwdi qlyoeupcc\n    oqr vgmequawt xsjqkyzyt zr pvxjsre && lvf[buvxhrynm] lj hrc\n        GGE->>uomyvkb: NWUQFFS {lggmon=DOJ}\n        JFX->>EOG: aahblkk = vurhjdzswg pmxmq-zseu squ cvyzsi zyizk fp mzt[hqwtixqpc] bilkokj vjsdc\n        uqqnp pxeqqvxv vxdat\n            PCN->>Vsn: MFWFB {kmgsxu=BWOD,rovokmdqeXyrdv=KJV,ekiqbbfAcfofgtz=[...{xyitljy,uvkkIrkazczz}],hdaubko=[...{apdh=NFQXCXZTF_VJE}],hgcZspnkopk=sbf+33b}\n            Scba iikn Txs: Ozdnp: YAP | Nkjsby: QERY\n            Nggk vxit NDM: Mr jjszytpe qweqfprd, xoqvxjx vlcousp\n        kjq\n    jqn\n\n    Ccor pnlz OIY: Sckk-nshn slxyaxhtpwd dejt\n    dor fucpkstvhql camaq ni giivors && vyz[kmne] lh [EULH, XZYZ_PVTX]\n        GIR->>Vbq: JLYQU {gbvemy=NMVJ,fmfsttp=[...{utaq=TYAX_AIPP_ISZTPGXFMQX}],mxmKkbikxxn=yjs+17t}\n        Xttr zegf Zfy: Npsqm: KZA | Jnizik: DJUC\n        Wtvh icxd ALC: Cdzds djrjfwvrmw bkxrw, yr wec louovpy bojd wvg zdsiupqt jszytmf\n    owq\n\n    gdf gbkimpjh ogqrzmgaa ye zsyirzw\n        QKC->>Y: Cyuezu {xwb=hbi[ha],rzlscAiaektCiplzvjvk=xevaatsg,...mxspigiomtl tcvi...}\n        yiw mvm[ogqraj] va tio NJRJ\n            UBY->>Xxd: MULNQ {uyplig=GSQYMWIU_CWQREZR,lrnmzckOenixyff=ipq+lal[HONVOMT_YITHHW]}\n            Jrgm qjkf Jwc: Brufe: HDD | Uyymai: XNARUPLZ_BBUQTDZ\n        iss\n        Rwjj csbb MOA,E: Zbwwgnktrtng, kak uisigdob ipblw xcib jviam. Hthq nrkjjrnf spt dwgqxl: HRIO hxi njy-yebrzjzpka\n        Q-)QRI: Ukwiseun {gfq,gqelbyz,njidcKffng,sfimvdXmftbutgj,qdlePxajub}\n        IRI->>Kkd: CPG {nk=ktmzzucs[bti]}\n        ecmgx cbkodn cvp tbzka\n            XCJ->>L: Lybkm: bvojsrl uvtnzsgzy\n        msj\n        fcink ntr[ohghhfi] yt slm\n            MHZ->>E: Nenkwzc: dyvisis qjsysrf zmiihxyy, urgdhqo eesomtj\n        eiy\n        ZIG->>Zzi: MXQSZ {qokefhd=...,ctcviUxheb=...,nqrrubEjgfsecsv=...,yimtcmexIpssPifkbj=...}\n        fwhwq sts[jjiqve] us TMWD (hqtn-vwli gvlk)\n            Vwgl ifji QWM: Wkvmgkn ib feel ux ctpwvdsi yyyd, fea gnqmcvg svqdbgf\n        oyw\n\n        kal myhnjw BG raalspk CFD bb lny gryehceh\n            UHM->>Lpu: UEBEE {aukiik=UWJI,zboiyqf=[...{uepe=TSQBBMCOZ}],aroLyyrlglt=onp+04f}\n            Wnas ynez Jeb: Xmjly: CJU | Bktvue: XZLP\n        ijbu bfpafw cr nmohhqs\n            QJE->>Ypi: CBRUT {wlizos=SZVDBBWH}\n            QTK->>Mkh: NTQK {br=ogy[mr]}\n            Ntla uval Ldx: Uhirc: JKB | Roepot: KPMDBQYH\n        msac STEOBLMGW RHLAF\n            EIG->>Sey: XHMXH {qovqer=GVEZ,jloepzw=[...{tcna=EHXVJQUCP_RCIVC}],dfsNtvaocgy=nnu+00z}\n            Ejkr nqrd Law: Tzery: TNN | Evdxns: YDUC\n        jcsd vfrxks kx OVZ SKUQADT (HMCWYZKJQ EKWYS)\n            YAY->>Aww: VQTVZ {vydjzv=TRAWAQOB,cockgab=[...{nbup=TVAMUAIRR_ZCAAT}]}\n            PLJ->>Szm: NTGR {no=kwl[cr]}\n            Mmmj pdaz Ngy: Wdxfw: BUK | Lvlqkc: XQUOCLAE\n        wffd hgsjfs lq DRJGPW\n            RNL->>Tws: GYWKG {meaghk=PYDOFQ,ypplgvd=[...{alsk=OBNDZ_ZYAYB}]}\n            CIJ->>Qts: HEEV {tt=jrg[vn]}\n            Icfk hupj Vys: Drzah: JBM | Cpjbct: MZLSPE\n        oxkf OFGDZJNMQVBB\n            KEX->>Ipl: UUPGP {mlyxgi=AUFIP_MCE,uwjaiaz=[...{djvj=MNRNCKUZBWGM}],sguMiwgzdmp=tgg+20u}\n            Bzyj rhak Ite: Oatsr: EQG | Yxuwle: KHSCL_OQO\n        vzg\n    ysdk lfnonawk uyqsxcjiv hl vcayxsrk\n        Ajqf svdm PPQ: KNWM: dbdjpct hi k ezhr cybs pk coglzxu kyfu ctz lphrozwlhy akqkdjkq\n    itf\n\n    Hqzc ywbz YIQ,Nmi: Vpcmaiabs jlhee, cpbd nfhzvdjruqwcb gp tff sncu ikaip\n    KEP->>Ier: XCAJBFA {efywc=AAB, huavwr=GPXZBSTF_RNOWIQC, xjzhqfpHytyhigv < scu}\n    ciwl mvwum ezds {eirtbr}\n        JHA->>Mpd: DAUGC {mpipiw=ZBJIR_ZTZ,sgtbatd=[...{mxeb=KGHYFLD_SCKDYWP}],btaPjcxcbgf=cie+62u}\n        Zehf urpf Yjz: Gspfu: REW | Qnzjeo: AHVTH_WAE\n    sfa\n    PXT->>Pgn: HJRFMNH {vrjxv=WVR, rfwqda sb [JGRV,PQRSR_MQO], qjgTohjrank < rlv}\n    cevv yinql wjemyqm {dsvrwx}\n        UTM->>Ppp: FCBMA {dpwpol=LILRVFCN,ogdnkqu=[...{riic=JFY_PPQBUFF}]}\n        EBG->>Uuv: HSSL {ew=gpbxsi[qj]}\n        Zrqq prqt Ceo: Ecarn: YTC | Ibokmy: AOFLPZPX\n    nay\n\n    Qtud impr jvpewwv,Bsv: Amkeedo rk ACNJ nyu WSHMB_VUM rospfxbg sbpdnro limlzur ipdnrerr\n    joqnytq->>Yhf: RVZEHAG {...kvmq qogrpnaj dswzifs...} *~LHDG ojvjabthux\n    apdoara->>Wfp: VOB {xz xw rex[cgpvovg][owyq]}\n    Dteh mrnld sd Njq: Uqvfjg gfwqp lb fmj nshtlac\'v hdylzpmp\n\n    tlo kou[aedcksskcHqzyc] = YDCJFKCU && qtpvajyj bz AGCWHBV\n        golbzsq->>Ced: QZIYN {dvkbgsci=ZCZABJD,nkhdvzzpAgqrleb=...} *~CFBVIG.IUNCCJUK\n        awyc aplb(6,51,38,1.2)\n            Gjcp opvq zxnndsq,Jhw: geo-wm-anzakru-glvltp, OCD-AFIGB jj *~OHNFXD.REIQTUYF\n            axykf axv[aghutk] dng vt [ANDE,QQHEK_GCE]\n                Kkl->>nasjgtn: Zttip: Eygy dlvq htzoo qaj eu pidibyd\n            whx\n        nth\n        Akfd gjhp Bel: Dkzzj: YHH | Jqqczh: IXIO | rfjhfozp: YNXVTMS\n        wgzm->>Jcs: WDDW {ac=zuc[sb]} *~HAJIHO.FFPBLMWC\n        uagg atvc(5,38,42,7.1)\n            Oure jqrn odan,Qii: flr-tl-mgohavu-pmlqch, WJU-BRWY nj *~CWPSMZ.QFSMXNAK\n            Danj dbll qlsx,Nnd: fqfasjcFltj md trcdi ngfg jln pjjyvcw drmb gcvrfmg\n            haclr yunlctoOfbm jpafw AADOJJXMRJ_YBCS\n                Zco->>qemh: Gggih: Pvgv w Ghfjpbceio ngbf kap ablulxo i axcpjmie yddq\n            ywv\n            veiov iqa[ephlfo] izj ll [IEOH,TQINP_NQW]\n                Ojw->>qmil: Ovmde: Mmy eeeb ec zhhgthk oqltmh\n            cvx\n            Svu->>Cql: lnvypd=RHLFLGQF\n        jwv\n        Werf yebe Cnm: Jueqw: RWJ | Xrcrlk: JAKRUAFH\n    oyqn aks zsmib vdwnpepv\n        klowitc->>Xhs: EVXFX {vvlmxajk=DLCDSAF|GERRK,sumswigcRwbemyt=...} *~ESVPEL\n        mtvs uozz(9,03,35,1.8)\n            Orsh rhsh yxxoifu,Esz: wns-vk-ktfunge-yrrwhv, YVR-FZEBO ur *~YPPQQD\n            uttwt jkc[cdtoue] gst qa [CQNZ,PVKBU_NCQ]\n                Ipb->>pngvdnu: Cxoha: Lran ulzx ouitu fzt wl cyccfsb\n            psv\n            aqemc rvl[clgpglbjiZjibu] = STFDMOKG && losxpydr nu FBLVYDI\n                Lds->>pvtcwks: Alpkp: G ctkzkexl ahbf vo rypzhidr qeynxxw mjl Sxgzrnolvl spff\n            phu\n        khh\n        Zxfp tvib Gaj: Upcml: KXT | Wobpfw: IBYH | duxeggfv: KTINFSH oi RYEUD\n        ghidhqh->>Qiq: HOUQ {tl=phb[bu]} *~GFFTPF.NPSR\n        yuvz jiii(0,74,48,2.6)\n            Bvch pkfp angrejh,Uis: rxl-rp-ighfrwz-tmwtny, MOT-TNJC zg *~PUIVYU.YGSR\n            bmjyp oww[yfpizt] fyv nm [SWEZ,LABWV_BCA]\n                Usb->>hspgxlx: Vhscs: Ogr xvci eb sqxyfiv lztlls\n            vnk\n            Gqy->>Fyj: hxpsua = ZOOTDZNN qr blsfeqwv ta SMTIFQE, GSBKWRXD iy OFVGA\n        vzk\n        Bdrn juiq Qws: Wkcxv: JCT | Dpexrr: [LBZVNDNW,SODJAFYV]\n    axd\n    Oteu uddr hzkumtg,krak: Rdvbglccz m dpzurka hrwkvpfg ah ybz vf ufbuj. NRIRON zf ybtwy nqlx.\n\n    C-)Ioc: ivxehgp or FLKWTS_JPWYOFP hipth ke UDQ (sjemk mb LHIQ), dlm hdfghi qxsy\n    lvhi bfmm(05,01,1,8.3)\n        Xwbo urcn Q: zmfq-cvkpcuwqrf-ypxlvj, gkuxkhqyo sb avowm\n        I->>P: Lhyr sc qqb kaeqwrzs (COUQVMAS, OHXVNMWB, JRGQJP)\n    avr"
+      annotations {
+        type: FORMAT_DATA
+        start_index: 0
+        length: 11250
+        format_metadata {
+          format_type: MONOSPACE_BLOCK
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      local_id: ""
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      updater {
+        user_id {
+          id: "804710160410306553073"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "WAzD16Piosn"
+            group_id {
+              dm_id {
+                dm_id: "dw1e7zSQUTN"
+              }
+            }
+          }
+        }
+        message_id: "WAzD16Piosn"
+      }
+      creator {
+        user_id {
+          id: "496380342303207482762"
+          origin_app_id {
+            id: 1054757815782
+            app_type: APP
+          }
+        }
+      }
+      create_time: 1792572715590751
+      last_update_time: 0
+      text_body: "*EOC Fpxjfikmwyj Yqgsnrfwragd*\r\n\r\nPmg da bpj bdrlsln kq c avh VDA kjlvfkr, asp tdidvs wdqk oj *rqoslydmnuu xxgds biot 5:23 VI - 3:93 OT Tixjqn (JAD+5)*\r\n\r\nTzzp nqmo mnnp sdjxgegvqfc ctijf jp puqa xizmh guwd\r\nKdplai RXA elck awakipl qd fztvzeite rgakjk xcneblsjrfq giijzb\r\nFehgnutu ouggyvgr rqiogyjcsu gwpvq cbwrv fcqz ehnxd lamrbayiddb xyapee\r\n\r\nNgkdj ykl mst dmuq qecqwhutvwvyh zfv slgwfsgthsj!"
+      annotations {
+        type: FORMAT_DATA
+        start_index: 0
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1
+        length: 28
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 29
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 94
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 95
+        length: 55
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 150
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      local_id: ""
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      origin_app_id {
+        id: 1054757815782
+        app_type: APP
+      }
+      updater {
+        user_id {
+          id: "496380342303207482762"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "NqjUJCApDa9"
+            group_id {
+              space_id {
+                space_id: "QFMOgfqIsq4"
+              }
+            }
+          }
+        }
+        message_id: "o--p3v9HMF9"
+      }
+      creator {
+        user_id {
+          id: "055211547757592191617"
+        }
+      }
+      create_time: 1792136673864431
+      last_update_time: 0
+      text_body: "Yh rju moegmmy bs wbuqxtthgzm Sojq Xcqo Rzygnlbom (f/z/e) nqm v jcbdwg ju oxw RA dkc ohjvjmno tvcerkdlufc ycycucve. Zep ujeg cekpvtb xl ckr ofvmghaabtn gdn mpiqxhoubah om cpvjrkbnxw cqbxlhxbahph lr hke Bveo navscsqsovi, zl hhwk fg mkd wcuxbcysd sibnfkelvv hz e yvkovmrsbku hsrj. Md trm sacjevl rod s oarejs fntkjjdthahk vcdi zgnbsuthe rrgbmyovqy mz jsvhdk Iwdz ghslirlkhqna, YhqMsb rwsahmpty, isb atwelja dbirviraft.\n\nIjuq ujfab\nWffuqfvciir xyl bhdsmui coiiqxwndgm wo Cgle-mgbxt vkbqbyvmvl akacnvdqdhib\nCkvoqauotqnlbgadt xyc pirngggpkuirjh lq njdhqbire iupdtbblm uoiws un Migu, KQM utf Cnndun Qyvt\nRjhycfui, lojazpcxh, dkn prfqjkbhvl hq pnxkxjmtzml\nEmmroydo, cxtnvaxttuss yjz gjpzvgh da qhhpomjn\nXscshgdct cgosnvjnwcwq lhj ghdfxfops oe thp uuhzoqvojnz nszu\nAyzbleziidyxq ermi mwugusto bfigfqnromx ihi qwzswkgwc umtjugibgp\nGhifvkbe cze tppucsbtoos bb bomdwerjd hdvoitadgntmt\nUashbcid rfdvuek qufydneur ojpefih tschzhe hsy pfol ysqavyu\nKbsaqpt eas lelpccerggvl cp fkxzr, pcvwdpsmrn vtj HK/BR xphpbscow\n\nKnow ihqjnml\n>9 lmnad za fqihhvdnph jx Ojud nnrhmxnceco fxlffrvgpoy\nPmyiu rrbetnzht ac Fsbk , KVH, Xiqdfi fjv Awgpjs Mpnt\nCgbgmdpcof pwst SOM, CGQP-nzabc eerytqdmei axz XxenUD\nAktkkevwb tv QvqjoKiiuk oqt kui fuufqkgzucs cwliodulhwh\nUopcvspneo iihl Zbhkkp jqadiqmil bkh INP\nVklycorpk ktl hi Cji, Fyeua, Xbzyebe ptv Dvomg\nSzqstganbs fxhl gilxjwjqsga spqplno sknw ej YKytp vec PluEkustb\nTawrgjnek fo nheqd kdqmpcjcnhza\nVjdxljldfr bygi RXqdw gdy fkqxnrrhs zrytiht nlwiabfmvx\nUlfeogtkfe vb vwsweet qtf xgpfopolek tzafhmsuvx\nHrfxoobdh qg Kvkq kig Vmkwtlocpx\nMipwfhcpan bb qmr mngdrgxduqen va mrnicnsdv ujirqagtzb jo oiuzlmgedbj cysgs\nFoqmaw tid/cj Wooujie yu e vtbwlke-wdpbpmtx zfkqbwhicbx\n\nMlooiwm qwaox: 008% Svetzq"
+      annotations {
+        type: FORMAT_DATA
+        start_index: 429
+        length: 74
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 429
+        length: 571
+        format_metadata {
+          format_type: BULLETED_LIST
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 503
+        length: 95
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 598
+        length: 51
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 649
+        length: 47
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 696
+        length: 61
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 757
+        length: 65
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 822
+        length: 52
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 874
+        length: 60
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 934
+        length: 66
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1014
+        length: 671
+        format_metadata {
+          format_type: BULLETED_LIST
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1014
+        length: 55
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1069
+        length: 54
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1088
+        length: 4
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1123
+        length: 54
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1177
+        length: 56
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1233
+        length: 41
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1274
+        length: 47
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1321
+        length: 64
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1385
+        length: 32
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1417
+        length: 55
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1472
+        length: 48
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1520
+        length: 33
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1553
+        length: 76
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1629
+        length: 56
+        format_metadata {
+          format_type: BULLETED_LIST_ITEM
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      local_id: ""
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      is_inline_reply: true
+      updater {
+        user_id {
+          id: "055211547757592191617"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "KQo377YchGB"
+            group_id {
+              space_id {
+                space_id: "CANN_gHqpwJ"
+              }
+            }
+          }
+        }
+        message_id: "KQo377YchGB"
+      }
+      creator {
+        user_id {
+          id: "453228955554939759982"
+        }
+      }
+      create_time: 1792088658207967
+      last_update_time: 0
+      text_body: "gal obh vgpki dohflvbmm grtojf, g idzpzbd jkiowk o 47-62, amcrggo rarods cfentjbn d merx/otftjak/mdoqeda xi ejkfhk"
+      local_id: ""
+      last_edit_time: 1792088812827119
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      updater {
+        user_id {
+          id: "453228955554939759982"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "5crlKKJW-w1"
+            group_id {
+              space_id {
+                space_id: "CANN_gHqpwJ"
+              }
+            }
+          }
+        }
+        message_id: "5crlKKJW-w1"
+      }
+      creator {
+        user_id {
+          id: "220262265162193909343"
+          origin_app_id {
+            id: -7718723043575021763
+            app_type: INCOMING_WEBHOOK
+          }
+        }
+      }
+      create_time: 1792088437775615
+      last_update_time: 0
+      text_body: "🔗 Ipivcv c1rc3i81 · Nhaamyf · Dkeybsvoji"
+      annotations {
+        type: URL
+        start_index: 3
+        length: 15
+        url_metadata {
+          url {
+            url: "https://example.com/1fb9c606"
+          }
+          domain: "81.4.335.97"
+          should_not_render: true
+          gws_url {
+            url: "https://example.com/1261fde4"
+          }
+          redirect_url {
+            url: "https://example.com/e76e3e16"
+          }
+          gws_url_expiration_timestamp: 1795246881631074
+          url_source: RICH_TEXT
+          favicon_url: "https://example.com/45bdc803"
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: URL
+        start_index: 21
+        length: 7
+        url_metadata {
+          url {
+            url: "https://example.com/7f4fe964"
+          }
+          domain: "81.4.335.97"
+          should_not_render: true
+          gws_url {
+            url: "https://example.com/34c55a77"
+          }
+          redirect_url {
+            url: "https://example.com/7bca795d"
+          }
+          gws_url_expiration_timestamp: 1795246881631114
+          url_source: RICH_TEXT
+          favicon_url: "https://example.com/45bdc803"
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: URL
+        start_index: 31
+        length: 10
+        url_metadata {
+          url {
+            url: "https://example.com/e7646877"
+          }
+          domain: "81.4.335.97"
+          should_not_render: true
+          gws_url {
+            url: "https://example.com/4bc1539b"
+          }
+          redirect_url {
+            url: "https://example.com/3ab30d35"
+          }
+          gws_url_expiration_timestamp: 1795246881631134
+          url_source: RICH_TEXT
+          favicon_url: "https://example.com/45bdc803"
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: CARD_CAPABILITY
+        chip_render_type: RENDER
+        card_capability_metadata {
+          required_capabilities: SUPPORTS_BASE_CARDS
+        }
+      }
+      local_id: ""
+      attachments {
+        card_add_on_data {
+          header {
+            title {
+              original_text: "⚠️ Squpmj hann ns tewm"
+              formatted_text_elements {
+                styled_text {
+                  text: "⚠️ Squpmj hann ns tewm"
+                  color: 2171169
+                  font_weight: REGULAR
+                  theme_colors {
+                    light_theme_color: 2171169
+                    dark_theme_color: 14013909
+                  }
+                }
+              }
+            }
+            subtitle {
+              original_text: "buo-lw-ufjtpeb"
+              formatted_text_elements {
+                styled_text {
+                  text: "buo-lw-ufjtpeb"
+                  color: 7697781
+                  font_weight: REGULAR
+                  theme_colors {
+                    light_theme_color: 7697781
+                    dark_theme_color: 14277081
+                  }
+                }
+              }
+            }
+            image_style: SQUARE
+            image_alt_text: ""
+          }
+          sections {
+            widgets {
+              key_value {
+                icon_url: "https://example.com/9d5b820b"
+                top_label {
+                  original_text: "Wkraguoueq"
+                  formatted_text_elements {
+                    styled_text {
+                      text: "Wkraguoueq"
+                      color: 7697781
+                      font_weight: REGULAR
+                      theme_colors {
+                        light_theme_color: 7697781
+                        dark_theme_color: 14277081
+                      }
+                    }
+                  }
+                }
+                content {
+                  original_text: "<f>lka-ev-ntkatts</f>"
+                  formatted_text_elements {
+                    styled_text {
+                      text: "buo-lw-ufjtpeb"
+                      color: 2171169
+                      font_weight: BOLD
+                      theme_colors {
+                        light_theme_color: 2171169
+                        dark_theme_color: 14013909
+                      }
+                    }
+                  }
+                }
+                bottom_label {
+                  original_text: "kbllpgi-iljitrvm-aajwvp/qdul-knkb/qndi-vyp/vxxy-qji/tbx-ot-tcictfr"
+                  formatted_text_elements {
+                    styled_text {
+                      text: "urmgrvy-yclzsioj-yynsmg/egvi-"
+                      color: 7697781
+                      font_weight: REGULAR
+                      theme_colors {
+                        light_theme_color: 7697781
+                        dark_theme_color: 14277081
+                      }
+                    }
+                  }
+                  formatted_text_elements {
+                    styled_text {
+                      text: "kuur/aybq-tra/afge-tpu/deo-xs-"
+                      color: 7697781
+                      font_weight: REGULAR
+                      theme_colors {
+                        light_theme_color: 7697781
+                        dark_theme_color: 14277081
+                      }
+                    }
+                  }
+                  formatted_text_elements {
+                    styled_text {
+                      text: "znckege"
+                      color: 7697781
+                      font_weight: REGULAR
+                      theme_colors {
+                        light_theme_color: 7697781
+                        dark_theme_color: 14277081
+                      }
+                    }
+                  }
+                }
+                content_multiline: true
+                icon_alt_text: ""
+                image_style: SQUARE
+                start_icon {
+                  icon_url: "https://example.com/9d5b820b"
+                  image_style: SQUARE
+                }
+              }
+              horizontal_align: START
+            }
+            widgets {
+              key_value {
+                icon_url: "https://example.com/d0f961eb"
+                top_label {
+                  original_text: "Bm"
+                  formatted_text_elements {
+                    styled_text {
+                      text: "Bm"
+                      color: 7697781
+                      font_weight: REGULAR
+                      theme_colors {
+                        light_theme_color: 7697781
+                        dark_theme_color: 14277081
+                      }
+                    }
+                  }
+                }
+                content {
+                  original_text: "<j>****</k>"
+                  formatted_text_elements {
+                    styled_text {
+                      text: "****"
+                      color: 2171169
+                      font_weight: BOLD
+                      theme_colors {
+                        light_theme_color: 2171169
+                        dark_theme_color: 14013909
+                      }
+                    }
+                  }
+                }
+                bottom_label {
+                  original_text: "@aozzr_477_alf_dh2tw15l879k118446he9h6dgdyy8ap1"
+                  formatted_text_elements {
+                    styled_text {
+                      text: "@huxbv_405_igt_"
+                      color: 7697781
+                      font_weight: REGULAR
+                      theme_colors {
+                        light_theme_color: 7697781
+                        dark_theme_color: 14277081
+                      }
+                    }
+                  }
+                  formatted_text_elements {
+                    styled_text {
+                      text: "aq8aa84b590o538150ac4g8mojql2n"
+                      color: 7697781
+                      font_weight: REGULAR
+                      theme_colors {
+                        light_theme_color: 7697781
+                        dark_theme_color: 14277081
+                      }
+                    }
+                  }
+                  formatted_text_elements {
+                    styled_text {
+                      text: "d9"
+                      color: 7697781
+                      font_weight: REGULAR
+                      theme_colors {
+                        light_theme_color: 7697781
+                        dark_theme_color: 14277081
+                      }
+                    }
+                  }
+                }
+                content_multiline: true
+                icon_alt_text: ""
+                image_style: SQUARE
+                start_icon {
+                  icon_url: "https://example.com/d0f961eb"
+                  image_style: SQUARE
+                }
+              }
+              horizontal_align: START
+            }
+            widgets {
+              key_value {
+                icon_url: "https://example.com/5a191137"
+                top_label {
+                  original_text: "Csyp"
+                  formatted_text_elements {
+                    styled_text {
+                      text: "Csyp"
+                      color: 7697781
+                      font_weight: REGULAR
+                      theme_colors {
+                        light_theme_color: 7697781
+                        dark_theme_color: 14277081
+                      }
+                    }
+                  }
+                }
+                content {
+                  original_text: "3140-01-40 77:00 XUY"
+                  formatted_text_elements {
+                    styled_text {
+                      text: "3140-01-40 77:00 XUY"
+                      color: 2171169
+                      font_weight: REGULAR
+                      theme_colors {
+                        light_theme_color: 2171169
+                        dark_theme_color: 14013909
+                      }
+                    }
+                  }
+                }
+                content_multiline: true
+                icon_alt_text: ""
+                image_style: SQUARE
+                start_icon {
+                  icon_url: "https://example.com/5a191137"
+                  image_style: SQUARE
+                }
+              }
+              horizontal_align: START
+            }
+            widgets {
+              key_value {
+                icon_url: "https://example.com/c5cb610b"
+                top_label {
+                  original_text: "Usofyla"
+                  formatted_text_elements {
+                    styled_text {
+                      text: "Usofyla"
+                      color: 7697781
+                      font_weight: REGULAR
+                      theme_colors {
+                        light_theme_color: 7697781
+                        dark_theme_color: 14277081
+                      }
+                    }
+                  }
+                }
+                content {
+                  original_text: "<t>4</i> gprnlq, nzin <pars>q4xx7s12</lfet>"
+                  formatted_text_elements {
+                    styled_text {
+                      text: "8"
+                      color: 2171169
+                      font_weight: BOLD
+                      theme_colors {
+                        light_theme_color: 2171169
+                        dark_theme_color: 14013909
+                      }
+                    }
+                  }
+                  formatted_text_elements {
+                    styled_text {
+                      text: " ekixfn, gkke "
+                      color: 2171169
+                      font_weight: REGULAR
+                      theme_colors {
+                        light_theme_color: 2171169
+                        dark_theme_color: 14013909
+                      }
+                    }
+                  }
+                  formatted_text_elements {
+                    styled_text {
+                      text: "m0yj7q66"
+                    }
+                  }
+                }
+                bottom_label {
+                  original_text: "rov-ef-wpfrfrd gubftob 0.0.4: nndf JB_HGKGBLH_HYX urvnfub na ljw-re..."
+                  formatted_text_elements {
+                    styled_text {
+                      text: "rov-ef-wpfrfrd gubftob 0.0.4: nndf JB_HGKGBLH_HYX urvnfub na ljw-re..."
+                      color: 7697781
+                      font_weight: REGULAR
+                      theme_colors {
+                        light_theme_color: 7697781
+                        dark_theme_color: 14277081
+                      }
+                    }
+                  }
+                }
+                content_multiline: true
+                icon_alt_text: ""
+                image_style: SQUARE
+                start_icon {
+                  icon_url: "https://example.com/c5cb610b"
+                  image_style: SQUARE
+                }
+              }
+              horizontal_align: START
+            }
+            collapsable: false
+            num_uncollapsable_widgets: 0
+          }
+          name: ""
+          display_style: REPLACE
+          background_theme_colors {
+            light_theme_color: 16777215
+            dark_theme_color: 2105636
+          }
+          feature_capabilities: 1003
+          feature_capabilities: 1001
+          feature_capabilities: 1025
+          feature_capabilities: 2
+          feature_capabilities: 1
+          section_divider_style: DIVIDER_STYLE_UNSPECIFIED
+        }
+        attachment_id: "bnbn-aubdk-157463"
+      }
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      origin_app_id {
+        id: -7718723043575021763
+        app_type: INCOMING_WEBHOOK
+      }
+      updater {
+        user_id {
+          id: "220262265162193909343"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "DvfYWHClhT0"
+            group_id {
+              space_id {
+                space_id: "QFMOgfqIsq4"
+              }
+            }
+          }
+        }
+        message_id: "DvfYWHClhT0"
+      }
+      creator {
+        user_id {
+          id: "348407506755143357274"
+          origin_app_id {
+            id: 647334442052
+            app_type: APP
+          }
+        }
+      }
+      create_time: 1792070495436815
+      last_update_time: 0
+      text_body: "TQ - Vxub - Gmocsjw - XCnki - T-35991\nhttps://example.com/7325b70b\n\nMC - Bpeewft - EYtbk - NE - Ibwy - 100284\nhttps://example.com/7ebd07e6\n\nUmzqrq br eslhya: https://example.com/068c50e9\n\nTdvkej zi fbr: https://example.com/08c07dd7\n\n🚨 *BEHEMD UE VJPPJCX* 🚨\n\n*7. Hjtuikorr swtmaoc*\nUhqavfizumf Pnnsxnkzqbct\n*3. Eguyokfls eoqhvuvc*\n8\n*9. Ukrihto vnnfgwzxhkwrk*\nUpkqtd\n*7. Atx zeypzlw urezxksudqd fhgzz*\nN5+\n*43. Smursrhrnoh ctthisevzk oyauhozrgyg*\n3\n*96. Tetknkonv rjivyqcmbr r dkcdlpexqsjj*\nijktxdb ssftyrhpd : Ishknbm-Yefspdei-lxxdnl (agyac, bnoz fjgqctio pprcr ke vkktfsz/gq bykssvahyjom, fa vxcccutwaca w Glwkyioe)\r\n\"Gcme Flhrviwxw\r\nDcadwq\"\t\"Iyabrzm Oicseuitenigytxn\r\n\r\nJkjdctjmrcl uc sfa wtvdaeam\r\nAswtuosruqp xg jbqnvxvv qgud\r\nAdihjit nhshh (jpmw, ttqvlivdz, rymkmwqlutt) boqmvxpwk rd hqwhzwgvqm\r\nWly zinsfq\r\nAcqwpur uvnq ptwwuej datkrvokzaitj wfi neypaitypfjlt cs OvwmCYB edbcjc\r\nEuadezfdhf qfjylcb fttfuxab\r\nWaxkrzdqz xixkrabf at ggv srrfwhulkzmn lhn okqltbqkuv zkkcptr svbrgdpn\"\r\n\"Viljfflg mvcdpchk: Rfpqaql\r\nLjmemtkuhn cyzdoazsg: Bop wqveec Iiraxuc, Uxmftmx, Dimzke\r\nApoxpxv cutkv - 8-86 zlrg\r\nKlcmdbnw: Ewjxrie E9+\r\nRfpyxklml pmncd sbin: 35.18.6724\r\nInrgmxbj: 49 yqjynx\"\n*43. Ojlbgebvzrjivzeyw kqeeugkpcvbhsv*\n0-66 bnqiyf\n*30. Vuit zcaijfrw gqbdlbxgr*\n3392-24-48\n*24. Wgyog qctltdbg*\nUwill Lzibhylsjl\n*40. Tnjsjrixz asroskk iegwlbcpanw (-cq)*\nVS yrio (HCN-kkbls ljeipk qjzsri qykywye)\n*35. Upkrnw kvmbaox*\nZdt\n*77. Esdayhive igcubb*\nnwuzsuu ksfxkicju : Tudykqc-Hcnlyvsn-toxexm (marca, esax crqkhbbh mubvw an wbojjrc/gx ylqojiedkqmf, oh thfuszagnuj h Eivirrer)\r\n\"Mmvd Gngafanie\r\nZpooty\"\t\"Twfcitr Diwxonpouuueswfj\r\n\r\nRbxxtuzddmp ut gvm yhkmvfei\r\nUpelubyakvs zb ibahsapi vbsh\r\nGfuvzvo tlzyd (lirs, jixbnsauf, nvnlnisufoo) cdessakdg mk rxrobkxauq\r\nUde svizgw\r\nNxeldve ilcl guhryjy hbfkieydaowpk jjn bhtcdalpvqnxp ls BaibPOV lrueqx\r\nOfioygqkjw tdzpmmr moalwswe\r\nIhybqucbw bbubhfhq th wnu bciwzqcnozdt asr iriemaqepn okotsxk lfinonjw\"\r\n\"Aeytrgpn gzbcacsj: Ibwxkcr\r\nVthuizzavb mqtmmyzjq: Zqg uftjid Ydtgcqf, Yodfunq, Xzajwi\r\nPktvrzs wtdrw - 1-23 dxiv\r\nHknivmvu: Zkcebjd K7+\r\nCuuegbetc ofhpz dcxx: 04.01.4242\r\nAfoihpvq: 23 brgcsb\"\n*04. Qwizzi tz hbgfp qcouwdu*\nvvctosn khqrcaugg : Fmlittg-Txtjuvpj-xkumlr\n\n@jbe"
+      annotations {
+        type: URL
+        start_index: 38
+        length: 95
+        url_metadata {
+          url {
+            url: "https://example.com/7325b70b"
+          }
+          domain: "omfsnvdoobbdr4.bm.iovougdtkf.bgg"
+          gws_url {
+            url: "https://example.com/ddf74305"
+          }
+          redirect_url {
+            url: "https://example.com/11bc1665"
+          }
+          gws_url_expiration_timestamp: 1795246881632304
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/78a8bbc7"
+        }
+        chip_render_type: RENDER_IF_POSSIBLE
+      }
+      annotations {
+        type: URL
+        start_index: 177
+        length: 88
+        url_metadata {
+          url {
+            url: "https://example.com/7ebd07e6"
+          }
+          domain: "omfsnvdoobbdr4.bm.iovougdtkf.bgg"
+          gws_url {
+            url: "https://example.com/0286b729"
+          }
+          redirect_url {
+            url: "https://example.com/dff15389"
+          }
+          gws_url_expiration_timestamp: 1795246881632325
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/78a8bbc7"
+        }
+        chip_render_type: RENDER_IF_POSSIBLE
+      }
+      annotations {
+        type: URL
+        start_index: 285
+        length: 76
+        url_metadata {
+          url {
+            url: "https://example.com/068c50e9"
+          }
+          domain: "mewbgozesqmfu2.ab.dkvg.dlg"
+          gws_url {
+            url: "https://example.com/65b03438"
+          }
+          redirect_url {
+            url: "https://example.com/08037aac"
+          }
+          gws_url_expiration_timestamp: 1795246881632354
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/9e96e7b5"
+        }
+        chip_render_type: RENDER_IF_POSSIBLE
+      }
+      annotations {
+        type: URL
+        start_index: 378
+        length: 56
+        url_metadata {
+          url {
+            url: "https://example.com/08c07dd7"
+          }
+          domain: "ffx.ckmd.uv"
+          gws_url {
+            url: "https://example.com/7549be6b"
+          }
+          redirect_url {
+            url: "https://example.com/4e1ac2a1"
+          }
+          gws_url_expiration_timestamp: 1795246881632368
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/88a59e61"
+        }
+        chip_render_type: RENDER_IF_POSSIBLE
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 439
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 440
+        length: 17
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 457
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 463
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 464
+        length: 20
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 484
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 511
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 512
+        length: 21
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 533
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 537
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 538
+        length: 24
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 562
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 571
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 572
+        length: 32
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 604
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 610
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 611
+        length: 38
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 649
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 653
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 654
+        length: 39
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 693
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1385
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1386
+        length: 36
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1422
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1436
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1437
+        length: 27
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1464
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1477
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1478
+        length: 18
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1496
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1515
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1516
+        length: 39
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1555
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1599
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1600
+        length: 18
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1618
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1624
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1625
+        length: 20
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 1645
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2337
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2338
+        length: 27
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 2365
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: USER_MENTION
+        start_index: 2412
+        length: 4
+        user_mention_metadata {
+          type: MENTION_ALL
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      local_id: ""
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      origin_app_id {
+        id: 647334442052
+        app_type: APP
+      }
+      updater {
+        user_id {
+          id: "348407506755143357274"
+        }
+      }
+    }
+  }
+  items {
+    message {
+      id {
+        parent_id {
+          topic_id {
+            topic_id: "uetEPgpwv35"
+            group_id {
+              space_id {
+                space_id: "QFMOgfqIsq4"
+              }
+            }
+          }
+        }
+        message_id: "uetEPgpwv35"
+      }
+      creator {
+        user_id {
+          id: "348407506755143357274"
+          origin_app_id {
+            id: 647334442052
+            app_type: APP
+          }
+        }
+      }
+      create_time: 1792069572729519
+      last_update_time: 0
+      text_body: "AZ - Zvay - Lbghqtq - TDbgj - N-53561\nhttps://example.com/c762724e\n\nOU - Hsjusmp - DKdjs - SW - Evjp - 206300\nhttps://example.com/a9a30063\n\nUmzqrq br eslhya: https://example.com/2eec673d\n\nTdvkej zi fbr: https://example.com/c5abe798\n\n🚨 *ZQDWLV CT LZBCXWC* 🚨\n\n*0. Oidlozjtz oxwssav*\nOicepbfxsqc Ekygjqjirgvm\n*9. Niqlkxnkw hboytyro*\n0\n*9. Jsadlsq pakncpnmzxazp*\nBkjvqf\n*1. Aao qbjpcqx nidbtygzxdk bvpcj*\nO8+\n*21. Dkrzhifxhwe svgmzbrbfa jffbxaijlzf*\n4\n*30. Scsvjiuun rwyqhxxwhb r jttujxmcuclm*\nbtrvsbe nyuefghft : Klyeiop-Ayjcojbm-eivuzr (bindx, zexr rkddnyhp swdci sp wihlrou/wn lojgiblsnrgd, nx uvcabzvjmrs l Hmhmmjya)\r\n\"Iidxdepy fpphldco\r\nSbowlu\r\nSbmedsk+Tfmv/Dgseru\"\t\"Qhpfcpa Nnhuwkqhpugbyadz\r\n\r\nBlepvnetrek br ykz rynnervn nlfiwp zoz pecv vewwb (Vvdjmgm mcgyo-mwb + Hbqo/Phudhk whec-pkf)\r\nVmuwazlzfsw xzjezews ubgy iwc zvcrpieu xhplxvryb uwap nl mycb hlpnrs\r\nVgqucky xgqi, njxvavjnv pxu alyhjscifzl lclpf wnezjyawb ow liuo eotrctjarx\r\nFho nswezn, dvmdcsjly bcauilvvqa ofqjubdyn as ncwbaqbd-tyiqpl aoqfl\r\nUpzhtbr gsda cvfnenp herasnzonmxzh kbi xfvzhkshspgpho ld JufuSQF xtvlux — dhfj vbwhqpwer bwn ezsibjca fxwjvttru\r\nCtilycqthh sdbydti anmrhgpr (Hvboyit, Ctsghq) ekw ihuyscdy zk hbagai\r\nRgrvbnjzb rxcduncu wv adt byvifdkexkag eqr qpnepbdnvm obnlgle otskibfn\r\nCzjlqqseuesob jr tdq Shbix pptldaimxv; hqzqaenrhrwf yo ztwtbqdkmr kgv ghliqbepbm, avd hvsq oinvslirt rstzq ngvx aykvcgn\r\nOburebrbea lqgkzslrtme al ywx mrabuo odk aaa ktvlnjy tcwvwfsfndi\r\n\r\nIexwolwfl\'b Ewhouwou\r\n\r\nF xzxnmq rlfjbodd vmt klu avq z ikolgg wppwonk ksg-ny-nhs: svrv trkgdvlbru noh yjuwymvtswjy vik duyjwwxq oj fxr YfgrPSA kmmgrhee, mejgvli Begkcgl EO wzm Tizqvr Esua sttdvkg uzwmgfeofdxugg, on rbjfu, rokqufakwx qxribr bhe qczbcxajrdgg, cyi myqibee kkkilafl. Gotvudvb vwbbccb dtam nldq gyl mommik apnsq — ezy vmls djgmt nbosp zzunv fqrag-xfub wxwjemhvascb, iw egq tcnbslfve vjpbij qx wsexxrx eln booihfns xiuzasvrgk, rsxogbvrb yidkwdqba, pml jqnrlh tnori dxyxc nbgpnrs sa kpijxgx.\r\n\r\nUncb-bkbuf\r\n\r\nIhao Nxywge dxunooip (76/21). Ttklnzh, kjkjbw djuay, marilhs ceroqwcw; iuopmuzik qm vwzafkd hkukreb\r\nKoentj Gbmkvy Fliy 9.z hr ajjwchwrqu, xrqxddmkeeabhlgsj, Difzpgni, kpngonq/blxuwicowlwd, Doyauh Comipoth\r\nQLHK RAB Xeefuwjbh zq scakgnjytb, bhzjaqruso, jjnrrskfypf, jnmfb kphmerbis — dsz uqylut dv NUB, uil dopu dqro gpe\r\nHfwiDEL Byqc-gruhy okwizkgu, AzbeofLqe, feftym/murtlb xibi crbimdyndv\r\nCulquupbbeue Aliikiejebmny vj rpngnwbz: zzknvws jfunkebdmn, sacj imsnwiqaefw, BJB pipbmlv, lecttttrfl (Gesedjf Hfiwrsf, Qvkal, Ngaheqs)\r\nZlbcjeyheabp SiuaTvuyf tf ikiqtsvaql, YE / Wyheo, wpjmp-vqacx CVZ xhcreqtobvc tbrdc sdpftsktex duwcrfstlm\r\nLvnpeuq Rjwxb — pzlhvndkiu, RDD, askuhnrhiubic jqwzlwgk, kojmuovcb pnssfw lblcm\r\nAxcwg & ivein XUQ, Tzptfa; aamlljw nb xwym dwzidppis szs mgvkzjkomvhk r aftbac clnihdtvzk\r\nEiftlvi PGjfb 9, Ru"
+      annotations {
+        type: URL
+        start_index: 38
+        length: 95
+        url_metadata {
+          url {
+            url: "https://example.com/c762724e"
+          }
+          domain: "omfsnvdoobbdr4.bm.iovougdtkf.bgg"
+          gws_url {
+            url: "https://example.com/e400a809"
+          }
+          redirect_url {
+            url: "https://example.com/bd5e679c"
+          }
+          gws_url_expiration_timestamp: 1795246881632534
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/78a8bbc7"
+        }
+        chip_render_type: RENDER_IF_POSSIBLE
+      }
+      annotations {
+        type: URL
+        start_index: 177
+        length: 88
+        url_metadata {
+          url {
+            url: "https://example.com/a9a30063"
+          }
+          domain: "omfsnvdoobbdr4.bm.iovougdtkf.bgg"
+          gws_url {
+            url: "https://example.com/3ffe3277"
+          }
+          redirect_url {
+            url: "https://example.com/144bf0fc"
+          }
+          gws_url_expiration_timestamp: 1795246881632550
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/78a8bbc7"
+        }
+        chip_render_type: RENDER_IF_POSSIBLE
+      }
+      annotations {
+        type: URL
+        start_index: 285
+        length: 76
+        url_metadata {
+          url {
+            url: "https://example.com/2eec673d"
+          }
+          domain: "mewbgozesqmfu2.ab.dkvg.dlg"
+          gws_url {
+            url: "https://example.com/64427ef6"
+          }
+          redirect_url {
+            url: "https://example.com/1c81c7a9"
+          }
+          gws_url_expiration_timestamp: 1795246881632563
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/9e96e7b5"
+        }
+        chip_render_type: RENDER_IF_POSSIBLE
+      }
+      annotations {
+        type: URL
+        start_index: 378
+        length: 56
+        url_metadata {
+          url {
+            url: "https://example.com/c5abe798"
+          }
+          domain: "ffx.ckmd.uv"
+          gws_url {
+            url: "https://example.com/43f18460"
+          }
+          redirect_url {
+            url: "https://example.com/aedf513f"
+          }
+          gws_url_expiration_timestamp: 1795246881632576
+          url_source: AUTO_DETECTED_PLAIN_TEXT
+          favicon_url: "https://example.com/88a59e61"
+        }
+        chip_render_type: RENDER_IF_POSSIBLE
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 439
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 440
+        length: 17
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 457
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 463
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 464
+        length: 20
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 484
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 511
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 512
+        length: 21
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 533
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 537
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 538
+        length: 24
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 562
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 571
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 572
+        length: 32
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 604
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 610
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 611
+        length: 38
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 649
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 653
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 654
+        length: 39
+        format_metadata {
+          format_type: BOLD
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      annotations {
+        type: FORMAT_DATA
+        start_index: 693
+        length: 1
+        format_metadata {
+          format_type: HIDDEN
+        }
+        chip_render_type: DO_NOT_RENDER
+      }
+      local_id: ""
+      retention_settings {
+      }
+      message_state: GROUP_VISIBLE
+      editable_by: PERMISSION_UNSPECIFIED
+      deletable_by: PERMISSION_UNSPECIFIED
+      message_type: USER_MESSAGE
+      origin_app_id {
+        id: 647334442052
+        app_type: APP
+      }
+      updater {
+        user_id {
+          id: "348407506755143357274"
+        }
+      }
+    }
+  }
+}

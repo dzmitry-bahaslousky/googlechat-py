@@ -1,0 +1,14 @@
+parent_id {
+  topic_id {
+    topic_id: "iu9aFi65nxI"
+    group_id {
+      space_id {
+        space_id: "YSAZOCEEObb"
+      }
+    }
+  }
+}
+page_size: 50
+filter {
+  older_than: 1794910437456079
+}

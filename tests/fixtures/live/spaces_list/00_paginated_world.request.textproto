@@ -1,0 +1,5 @@
+world_section_requests {
+  page_size: 20
+}
+fetch_from_user_spaces: true
+fetch_snippets_for_unnamed_rooms: true

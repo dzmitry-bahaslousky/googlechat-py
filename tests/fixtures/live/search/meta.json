@@ -1,0 +1,22 @@
+{
+  "op": "messages.search",
+  "args": {
+    "query": "lvzwhfo",
+    "page_size": 20
+  },
+  "summary": {
+    "messages": 20,
+    "threads": 19,
+    "named_senders": 20,
+    "sender_emails": 14,
+    "drive_files": 0,
+    "attachments": 1,
+    "links": 21,
+    "years": [
+      2026
+    ],
+    "chats": 14,
+    "dm_hits": 7,
+    "newest_first": true
+  }
+}

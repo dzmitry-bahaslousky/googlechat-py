@@ -1,0 +1,2820 @@
+world_section_responses {
+  next_page_anchor_sort_timestamp_micros: 1795121223176895
+  world_filter {
+  }
+  has_more_items: true
+  pagination_token: "LmKBq7VW8nXMcHXJe5Je5PDTzIE="
+}
+world_consistency_token: "LLx2p_ZOxtkU"
+user_revision {
+  timestamp: 1795160112233857
+}
+world_items {
+  group_id {
+    space_id {
+      space_id: "YSAZOCEEObb"
+    }
+  }
+  group_revision {
+    timestamp: 1795160111836047
+  }
+  sort_timestamp: 1795160111836047
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        space_id {
+          space_id: "YSAZOCEEObb"
+        }
+      }
+    }
+    last_read_time: 1794910557334943
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1794938537432694
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "410123404988149486097"
+      }
+      invitation_message_id {
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1794938537081711
+    notification_settings {
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_OWNER
+    thread_summary_last_read_time_usec: 0
+    has_unread_thread: false
+    default_sort: 1794910437456079
+    last_head_message_create_time_usec: 1794910437456079
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "12cdRWJYH3V=bp/+/Vf2+zf+++"
+      }
+      sort {
+        sort_value: "yy-67.72 | egnxinpo mzqaml (kemuafl mohfupb & xqxlhdutn jjfnjiu noltcogsp) XTORKIPWOdd"
+      }
+    }
+    group_label_id {
+      group_label_type: CUSTOM_SECTION
+      label_secondary_key: "7470067996126586378"
+    }
+  }
+  room_name: "MP-37.72 | Oioxfixh Zqhija (Fdjahat Bocvmgs & Pcionkckq Yooyofy Bpfmclwsn)"
+  group_lite {
+    creator_id {
+      id: "410123404988149486097"
+    }
+    create_time: 1787151504675563
+    retention_settings {
+      state: PERMANENT
+    }
+    roster_email: "/jeumautvyh-oweqaq/c=32/cpuwzdeehl/user-056c4ec8@example.com"
+    space_details {
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  avatar_url: "https://example.com/7b6d3366"
+  attribute_checker_group_type: FLAT_ROOM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  is_message_blocked: false
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 7
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: "JDQPG"
+  }
+  group_name_details {
+    room_name: "MP-37.72 | Oioxfixh Zqhija (Fdjahat Bocvmgs & Pcionkckq Yooyofy Bpfmclwsn)"
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    space_id {
+      space_id: "DSDITBb6qFO"
+    }
+  }
+  group_revision {
+    timestamp: 1795159881319023
+  }
+  sort_timestamp: 1795159881319023
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        space_id {
+          space_id: "DSDITBb6qFO"
+        }
+      }
+    }
+    last_read_time: 1795159582425071
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1795159601875103
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "243467400635470046126"
+      }
+      invitation_message_id {
+        parent_id {
+          topic_id {
+            topic_id: "nTi9F7zxD00"
+            group_id {
+              space_id {
+                space_id: "DSDITBb6qFO"
+              }
+            }
+          }
+        }
+        message_id: "nTi9F7zxD00"
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795159601737536
+    notification_settings {
+      state: UNMUTED
+      room_state: NOTIFY_LESS
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_MEMBER
+    thread_summary_last_read_time_usec: 0
+    has_unread_thread: false
+    default_sort: 1795159582425071
+    last_head_message_create_time_usec: 1795159582425071
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "53eiOUv9Uierpo/+/DO1Jr/+++"
+      }
+      sort {
+        sort_value: "dgf vop yudagv BUIGYWn8dSR"
+      }
+    }
+    group_label_id {
+      group_label_type: CUSTOM_SECTION
+      label_secondary_key: "3555804895993069060"
+    }
+  }
+  room_name: "YKN ZRI Hewgno"
+  group_lite {
+    creator_id {
+      id: "681160916231462926431"
+    }
+    create_time: 1789463967683115
+    retention_settings {
+      state: PERMANENT
+    }
+    roster_email: "/jeumautvyh-oweqaq/c=32/cpuwzdeehl/user-c671ced9@example.com"
+    space_details {
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  avatar_url: "https://example.com/aaa1c65e"
+  avatar_info {
+    emoji {
+      unicode: "💀"
+    }
+  }
+  attribute_checker_group_type: FLAT_ROOM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  is_message_blocked: false
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 11
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: "JDQPG"
+  }
+  group_name_details {
+    room_name: "YKN ZRI Hewgno"
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    space_id {
+      space_id: "MBRNmFndUio"
+    }
+  }
+  group_revision {
+    timestamp: 1795159801029487
+  }
+  sort_timestamp: 1795159801029487
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        space_id {
+          space_id: "MBRNmFndUio"
+        }
+      }
+    }
+    last_read_time: 1795159801029487
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1795159858975167
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "453228955554939759982"
+      }
+      invitation_message_id {
+        parent_id {
+          topic_id {
+            topic_id: "Kl2EKSHlimQ"
+            group_id {
+              space_id {
+                space_id: "MBRNmFndUio"
+              }
+            }
+          }
+        }
+        message_id: "Kl2EKSHlimQ"
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795159858111644
+    notification_settings {
+      state: UNMUTED
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_OWNER
+    thread_summary_last_read_time_usec: 1767179301897535
+    has_unread_thread: false
+    default_sort: 1795159801029487
+    last_head_message_create_time_usec: 1795156934715087
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "24bgYYhcykchlzSFmy5jO+++uo"
+      }
+      sort {
+        sort_value: "ac zokaizgr rohd ukn AYKOmWucAzq"
+      }
+    }
+    group_label_id {
+      group_label_type: CUSTOM_SECTION
+      label_secondary_key: "3555804895993069060"
+    }
+  }
+  room_name: "HW Kxhtlsnz Azbz PHC"
+  group_lite {
+    creator_id {
+      id: "453228955554939759982"
+    }
+    create_time: 1737632952511235
+    retention_settings {
+      state: PERMANENT
+    }
+    roster_email: "user-95200888@example.com"
+    space_details {
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  avatar_url: "https://example.com/9e42a235"
+  avatar_info {
+    emoji {
+      unicode: "😎"
+    }
+  }
+  attribute_checker_group_type: FLAT_ROOM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  is_message_blocked: false
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 19
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: "JDQPG"
+  }
+  group_name_details {
+    room_name: "HW Kxhtlsnz Azbz PHC"
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    space_id {
+      space_id: "CTBHgouQoEf"
+    }
+  }
+  group_revision {
+    timestamp: 1795159619132463
+  }
+  sort_timestamp: 1795159619132463
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        space_id {
+          space_id: "CTBHgouQoEf"
+        }
+      }
+    }
+    last_read_time: 1795159619132463
+    unread_message_count: 0
+    starred: true
+    update_timestamp: 1795159643070719
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "055211547757592191617"
+      }
+      invitation_message_id {
+        parent_id {
+          topic_id {
+            topic_id: "f17Y1KRp7Pt"
+            group_id {
+              space_id {
+                space_id: "CTBHgouQoEf"
+              }
+            }
+          }
+        }
+        message_id: "jlMrW62U21i"
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795159642378518
+    notification_settings {
+      state: UNMUTED
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_MEMBER
+    thread_summary_last_read_time_usec: 0
+    has_unread_thread: false
+    default_sort: 1795159619132463
+    last_head_message_create_time_usec: 1795103724837599
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "49ssWYjePQKpmu/+2fqYu8ZT++"
+      }
+      sort {
+        sort_value: "cbtu wfmgkqmvrez xqbgawarvv ZJDXixbNfDp"
+      }
+    }
+    group_label_id {
+      group_label_type: CUSTOM_SECTION
+      label_secondary_key: "6138659665097186298"
+    }
+  }
+  room_name: "Jscw gfxsefwvhqf wgeotyucha"
+  group_lite {
+    creator_id {
+      id: "055211547757592191617"
+    }
+    create_time: 1767596966653489
+    retention_settings {
+      state: PERMANENT
+    }
+    roster_email: "/jeumautvyh-oweqaq/c=32/cpuwzdeehl/user-f4af17d8@example.com"
+    space_details {
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  avatar_url: "https://example.com/73a55909"
+  avatar_info {
+    emoji {
+      unicode: "🏃"
+    }
+  }
+  attribute_checker_group_type: FLAT_ROOM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  is_message_blocked: false
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 37
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: "JDQPG"
+  }
+  group_name_details {
+    room_name: "Jscw gfxsefwvhqf wgeotyucha"
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    dm_id {
+      dm_id: "x3_kZbSAMGE"
+    }
+  }
+  group_revision {
+    timestamp: 1795159513952983
+  }
+  sort_timestamp: 1795159513098255
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        dm_id {
+          dm_id: "x3_kZbSAMGE"
+        }
+      }
+    }
+    last_read_time: 1795159513098255
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1795159513539499
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "453228955554939759982"
+      }
+      invitation_message_id {
+        parent_id {
+          topic_id {
+            topic_id: "Wkp4xJc75bh"
+            group_id {
+              dm_id {
+                dm_id: "x3_kZbSAMGE"
+              }
+            }
+          }
+        }
+        message_id: "Wkp4xJc75bh"
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795159511969266
+    notification_settings {
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_MEMBER
+    joined_users {
+      id: "453228955554939759982"
+    }
+    joined_users {
+      id: "410123404988149486097"
+    }
+    thread_summary_last_read_time_usec: 0
+    has_unread_thread: false
+    default_sort: 1795159513098255
+    last_head_message_create_time_usec: 1795159513098255
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "93ocZFa0NFk+t+CoYcdDf++++/+++y"
+      }
+      sort {
+        sort_value: "nwvxqtoagv uanbzvg f7_qOyMMRMS"
+      }
+    }
+    user_retention_duration_micros: 3153686400000000
+  }
+  dm_members {
+    members {
+      id: "453228955554939759982"
+    }
+    members {
+      id: "410123404988149486097"
+    }
+    memberships {
+      user_id {
+        id: "453228955554939759982"
+      }
+      membership_state: MEMBER_JOINED
+    }
+    memberships {
+      user_id {
+        id: "410123404988149486097"
+      }
+      membership_state: MEMBER_JOINED
+    }
+    has_all_memberships: true
+  }
+  group_lite {
+    creator_id {
+      id: "453228955554939759982"
+    }
+    create_time: 1737540390078588
+    is_flat: true
+    retention_settings {
+      state: PERMANENT
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  attribute_checker_group_type: IMMUTABLE_MEMBERSHIP_HUMAN_DM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 2
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_name_details {
+    dm_members {
+      members {
+        id: "453228955554939759982"
+      }
+      members {
+        id: "410123404988149486097"
+      }
+      memberships {
+        user_id {
+          id: "453228955554939759982"
+        }
+        membership_state: MEMBER_JOINED
+      }
+      memberships {
+        user_id {
+          id: "410123404988149486097"
+        }
+        membership_state: MEMBER_JOINED
+      }
+      has_all_memberships: true
+    }
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    space_id {
+      space_id: "EVVV6NPgMdm"
+    }
+  }
+  group_revision {
+    timestamp: 1795159471247471
+  }
+  sort_timestamp: 1795159471247471
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        space_id {
+          space_id: "EVVV6NPgMdm"
+        }
+      }
+    }
+    last_read_time: 1795079584128047
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1795080375145359
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "128532387229727983715"
+      }
+      invitation_message_id {
+        parent_id {
+          topic_id {
+            topic_id: "xDwIPVrswLc"
+            group_id {
+              space_id {
+                space_id: "EVVV6NPgMdm"
+              }
+            }
+          }
+        }
+        message_id: "xDwIPVrswLc"
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795080373947998
+    notification_settings {
+      state: UNMUTED
+      room_state: NOTIFY_NEVER
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_MEMBER
+    thread_summary_last_read_time_usec: 0
+    has_unread_thread: false
+    default_sort: 1795079584128047
+    last_head_message_create_time_usec: 1794998942500143
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "21atJBGh6J/CzvqD+l6En+++ws"
+      }
+      sort {
+        sort_value: "asjn csraahxeep GKMP1FJkHdy"
+      }
+    }
+  }
+  room_name: "Zvzg Avexsfvqfj"
+  group_lite {
+    creator_id {
+      id: "014515940034468981422"
+    }
+    create_time: 1662064414776366
+    retention_settings {
+      state: PERMANENT
+    }
+    roster_email: "user-602c8083@example.com"
+    space_details {
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  avatar_url: "https://example.com/843e2204"
+  avatar_info {
+    emoji {
+      unicode: "🐸"
+    }
+  }
+  attribute_checker_group_type: FLAT_ROOM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  is_message_blocked: false
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 68
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 2
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: "JDQPG"
+  }
+  group_name_details {
+    room_name: "Zvzg Avexsfvqfj"
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    space_id {
+      space_id: "VHMRZs3JX4q"
+    }
+  }
+  group_revision {
+    timestamp: 1795159431665983
+  }
+  sort_timestamp: 1795159431665983
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        space_id {
+          space_id: "VHMRZs3JX4q"
+        }
+      }
+    }
+    last_read_time: 1795159431665983
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1795159606501279
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "410123404988149486097"
+      }
+      invitation_message_id {
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795159606362741
+    notification_settings {
+      state: UNMUTED
+      room_state: NOTIFY_NEVER
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_OWNER
+    thread_summary_last_read_time_usec: 0
+    has_unread_thread: false
+    default_sort: 1795159431665983
+    last_head_message_create_time_usec: 1795159431665983
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "13noZAt8+aVKsj/++VxKSPcE++"
+      }
+      sort {
+        sort_value: "oix hhrdipfi INBLDs9AQ4w"
+      }
+    }
+    group_label_id {
+      group_label_type: CUSTOM_SECTION
+      label_secondary_key: "3555804895993069060"
+    }
+  }
+  room_name: "KGK Qxjmlghq"
+  group_lite {
+    creator_id {
+      id: "410123404988149486097"
+    }
+    create_time: 1782975705379396
+    retention_settings {
+      state: PERMANENT
+    }
+    roster_email: "/jeumautvyh-oweqaq/c=32/cpuwzdeehl/user-684a9c66@example.com"
+    space_details {
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  avatar_url: "https://example.com/3d1f733c"
+  avatar_info {
+    emoji {
+      unicode: "🔴"
+    }
+  }
+  attribute_checker_group_type: FLAT_ROOM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  is_message_blocked: false
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 6
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: "JDQPG"
+  }
+  group_name_details {
+    room_name: "KGK Qxjmlghq"
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    space_id {
+      space_id: "JAANgG1NQM1"
+    }
+  }
+  group_revision {
+    timestamp: 1795159286243471
+  }
+  sort_timestamp: 1795159286243471
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        space_id {
+          space_id: "JAANgG1NQM1"
+        }
+      }
+    }
+    last_read_time: 1795159286243471
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1795159293075551
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "578357087025091753129"
+      }
+      invitation_message_id {
+        parent_id {
+          topic_id {
+            topic_id: "5cbVnoW41TK"
+            group_id {
+              space_id {
+                space_id: "JAANgG1NQM1"
+              }
+            }
+          }
+        }
+        message_id: "5cbVnoW41TK"
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795159292935142
+    notification_settings {
+      state: UNMUTED
+      room_state: NOTIFY_LESS
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_MEMBER
+    thread_summary_last_read_time_usec: 0
+    has_unread_thread: false
+    default_sort: 1795159286243471
+    last_head_message_create_time_usec: 1795159286243471
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "81ukDPd/NLD3aufHtTHZz+++ku"
+      }
+      sort {
+        sort_value: "ifkg nzcmfzsjls vtcraadd KQYPlE8OVB5"
+      }
+    }
+  }
+  room_name: "Lsjd Dhdqqghhdr Dhljjqaf"
+  group_lite {
+    creator_id {
+      id: "578357087025091753129"
+    }
+    create_time: 1643976076787908
+    retention_settings {
+      state: PERMANENT
+    }
+    roster_email: "user-34c7ae89@example.com"
+    space_details {
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  avatar_url: "https://example.com/73a55909"
+  avatar_info {
+    emoji {
+      unicode: "☕"
+    }
+  }
+  attribute_checker_group_type: FLAT_ROOM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  is_message_blocked: false
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 228
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: "JDQPG"
+  }
+  group_name_details {
+    room_name: "Lsjd Dhdqqghhdr Dhljjqaf"
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    space_id {
+      space_id: "GPFI148hmmC"
+    }
+  }
+  group_revision {
+    timestamp: 1795159256416983
+  }
+  sort_timestamp: 1795159184577215
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        space_id {
+          space_id: "GPFI148hmmC"
+        }
+      }
+    }
+    last_read_time: 1795159184577215
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1795159235391375
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "410123404988149486097"
+      }
+      invitation_message_id {
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795159235277789
+    notification_settings {
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_OWNER
+    thread_summary_last_read_time_usec: 0
+    has_unread_thread: false
+    default_sort: 1795159184577215
+    last_head_message_create_time_usec: 1795075633891391
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "83cgPDk2v+w9zs/+2oscBcpZ++"
+      }
+      sort {
+        sort_value: "sjon ajo ZGPQ038lpyI"
+      }
+    }
+    group_label_id {
+      group_label_type: CUSTOM_SECTION
+      label_secondary_key: "3555804895993069060"
+    }
+  }
+  room_name: "Bnwd Fif"
+  group_lite {
+    creator_id {
+      id: "410123404988149486097"
+    }
+    create_time: 1794391774033607
+    retention_settings {
+      state: PERMANENT
+    }
+    roster_email: "/jeumautvyh-oweqaq/c=32/cpuwzdeehl/user-b3d6809e@example.com"
+    space_details {
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  avatar_url: "https://example.com/31031e9e"
+  avatar_info {
+    emoji {
+      unicode: "🥺"
+    }
+  }
+  attribute_checker_group_type: FLAT_ROOM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  is_message_blocked: false
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 3
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: "JDQPG"
+  }
+  group_name_details {
+    room_name: "Bnwd Fif"
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    dm_id {
+      dm_id: "nuaqOAULVRR"
+    }
+  }
+  group_revision {
+    timestamp: 1795158993658838
+  }
+  sort_timestamp: 1795158974209439
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        dm_id {
+          dm_id: "nuaqOAULVRR"
+        }
+      }
+    }
+    last_read_time: 1795158974209439
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1795158974964688
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "431980334173449101777"
+      }
+      invitation_message_id {
+        parent_id {
+          topic_id {
+            topic_id: "5u7UpulHUiw"
+            group_id {
+              dm_id {
+                dm_id: "nuaqOAULVRR"
+              }
+            }
+          }
+        }
+        message_id: "5u7UpulHUiw"
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795158940317277
+    notification_settings {
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_MEMBER
+    joined_users {
+      id: "410123404988149486097"
+    }
+    joined_users {
+      id: "431980334173449101777"
+    }
+    thread_summary_last_read_time_usec: 1766403092836847
+    has_unread_thread: false
+    default_sort: 1795158974209439
+    last_head_message_create_time_usec: 1795158974209439
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "01tdGMs+Tc7Oi+Sb63S5X++++/+++u"
+      }
+      sort {
+        sort_value: "hegi jfcoesqwl lpsqXECGPMD"
+      }
+    }
+    user_retention_duration_micros: 3153686400000000
+  }
+  dm_members {
+    members {
+      id: "410123404988149486097"
+    }
+    members {
+      id: "431980334173449101777"
+    }
+    memberships {
+      user_id {
+        id: "410123404988149486097"
+      }
+      membership_state: MEMBER_JOINED
+    }
+    memberships {
+      user_id {
+        id: "431980334173449101777"
+      }
+      membership_state: MEMBER_JOINED
+    }
+    has_all_memberships: true
+  }
+  group_lite {
+    creator_id {
+      id: "431980334173449101777"
+    }
+    create_time: 1712056387630183
+    is_flat: true
+    retention_settings {
+      state: PERMANENT
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  attribute_checker_group_type: IMMUTABLE_MEMBERSHIP_HUMAN_DM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 2
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_name_details {
+    dm_members {
+      members {
+        id: "410123404988149486097"
+      }
+      members {
+        id: "431980334173449101777"
+      }
+      memberships {
+        user_id {
+          id: "410123404988149486097"
+        }
+        membership_state: MEMBER_JOINED
+      }
+      memberships {
+        user_id {
+          id: "431980334173449101777"
+        }
+        membership_state: MEMBER_JOINED
+      }
+      has_all_memberships: true
+    }
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    space_id {
+      space_id: "AQVFI6kESTR"
+    }
+  }
+  group_revision {
+    timestamp: 1795158271464831
+  }
+  sort_timestamp: 1795158271464831
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        space_id {
+          space_id: "AQVFI6kESTR"
+        }
+      }
+    }
+    last_read_time: 1795157839378591
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1795157845103743
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "034418041566440425032"
+      }
+      invitation_message_id {
+        parent_id {
+          topic_id {
+            topic_id: "LubQ2tQEH45"
+            group_id {
+              space_id {
+                space_id: "AQVFI6kESTR"
+              }
+            }
+          }
+        }
+        message_id: "LubQ2tQEH45"
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795157844458727
+    notification_settings {
+      state: UNMUTED
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_MEMBER
+    thread_summary_last_read_time_usec: 0
+    has_unread_thread: false
+    default_sort: 1795157839378591
+    last_head_message_create_time_usec: 1795103257885903
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "01oyTBwdn2O=km/++9Cgs9EU++"
+      }
+      sort {
+        sort_value: "vfa-bde/sq-riiv BAEXH4lPSLA"
+      }
+    }
+    group_label_id {
+      group_label_type: CUSTOM_SECTION
+      label_secondary_key: "3555804895993069060"
+    }
+  }
+  room_name: "FYD-TUR/VR-xjbb"
+  group_lite {
+    creator_id {
+      id: "898731253106351685324"
+    }
+    create_time: 1773760520150889
+    retention_settings {
+      state: PERMANENT
+    }
+    roster_email: "/jeumautvyh-oweqaq/c=32/cpuwzdeehl/user-ebc47dc5@example.com"
+    space_details {
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  avatar_url: "https://example.com/f612d868"
+  attribute_checker_group_type: FLAT_ROOM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  is_message_blocked: false
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 22
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: "JDQPG"
+  }
+  group_name_details {
+    room_name: "FYD-TUR/VR-xjbb"
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    space_id {
+      space_id: "KNESIp8BKW5"
+    }
+  }
+  group_revision {
+    timestamp: 1795158580723085
+  }
+  sort_timestamp: 1795157660402415
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        space_id {
+          space_id: "KNESIp8BKW5"
+        }
+      }
+    }
+    last_read_time: 1795157545819071
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1795157558412287
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "230921283810684220586"
+      }
+      invitation_message_id {
+        parent_id {
+          topic_id {
+            topic_id: "AdH7YYER0vr"
+            group_id {
+              space_id {
+                space_id: "KNESIp8BKW5"
+              }
+            }
+          }
+        }
+        message_id: "AdH7YYER0vr"
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795157558298955
+    notification_settings {
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: true
+    membership_role: ROLE_MEMBER
+    thread_summary_last_read_time_usec: 0
+    has_unread_thread: false
+    default_sort: 1795157545819071
+    last_head_message_create_time_usec: 1795157545819071
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "73lwCLemfRJjto/++xtE3BzP++"
+      }
+      sort {
+        sort_value: "thc-kgu: ksjp 4-5 eoo 3 beraluwj NZFBUw6BLN0"
+      }
+    }
+    group_label_id {
+      group_label_type: CUSTOM_SECTION
+      label_secondary_key: "3555804895993069060"
+    }
+  }
+  room_name: "XFH-FYF: Ccav 8-2 qex 9 Xyumhajl"
+  group_lite {
+    creator_id {
+      id: "230921283810684220586"
+    }
+    create_time: 1773319885666211
+    retention_settings {
+      state: PERMANENT
+    }
+    roster_email: "/jeumautvyh-oweqaq/c=32/cpuwzdeehl/user-2a10d6f6@example.com"
+    space_details {
+      description: "Hfwku osc rpw Oirkf 2, 3, 9 udq 6 - WIE HXL"
+      guidelines: ""
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  avatar_url: "https://example.com/f47450dd"
+  avatar_info {
+    emoji {
+      unicode: "🏁"
+    }
+  }
+  attribute_checker_group_type: FLAT_ROOM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  is_message_blocked: false
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 44
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: "JDQPG"
+  }
+  group_name_details {
+    room_name: "XFH-FYF: Ccav 8-2 qex 9 Xyumhajl"
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    space_id {
+      space_id: "QQSWCRJtwen"
+    }
+  }
+  group_revision {
+    timestamp: 1795157727426237
+  }
+  sort_timestamp: 1795157562291887
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        space_id {
+          space_id: "QQSWCRJtwen"
+        }
+      }
+    }
+    last_read_time: 1795093613440063
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1795094363865103
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "410123404988149486097"
+      }
+      invitation_message_id {
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795094363621480
+    notification_settings {
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_OWNER
+    thread_summary_last_read_time_usec: 1790336531397535
+    has_unread_thread: false
+    default_sort: 1795092748668799
+    last_head_message_create_time_usec: 1795092748668799
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "60xtOFw1OAPtid/++kBDotgj++"
+      }
+      sort {
+        sort_value: "emt-dme: ob/hr bpqch cdirahbxt SCUWDQBpzhs"
+      }
+    }
+    group_label_id {
+      group_label_type: CUSTOM_SECTION
+      label_secondary_key: "3555804895993069060"
+    }
+  }
+  room_name: "FRS-IPK: AP/VW Ukcgi nxzhrskbh"
+  group_lite {
+    creator_id {
+      id: "410123404988149486097"
+    }
+    create_time: 1784106348331632
+    retention_settings {
+      state: PERMANENT
+    }
+    roster_email: "/jeumautvyh-oweqaq/c=32/cpuwzdeehl/user-f9b1b042@example.com"
+    space_details {
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  avatar_url: "https://example.com/ab589277"
+  attribute_checker_group_type: FLAT_ROOM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  is_message_blocked: false
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 14
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: "JDQPG"
+  }
+  group_name_details {
+    room_name: "FRS-IPK: AP/VW Ukcgi nxzhrskbh"
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    space_id {
+      space_id: "BLMXjhLqWLo"
+    }
+  }
+  group_revision {
+    timestamp: 1795157357859263
+  }
+  sort_timestamp: 1795157357859263
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        space_id {
+          space_id: "BLMXjhLqWLo"
+        }
+      }
+    }
+    last_read_time: 1795157357859263
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1795157359375624
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "902966895077427360134"
+      }
+      invitation_message_id {
+        parent_id {
+          topic_id {
+            topic_id: "dRB3a0Hkib9"
+            group_id {
+              space_id {
+                space_id: "BLMXjhLqWLo"
+              }
+            }
+          }
+        }
+        message_id: "dRB3a0Hkib9"
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795157357859263
+    notification_settings {
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: true
+    membership_role: ROLE_MEMBER
+    thread_summary_last_read_time_usec: 0
+    has_unread_thread: false
+    default_sort: 1795157357859263
+    last_head_message_create_time_usec: 1794552717103375
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "73qxAQ5cpikAjz/+57sZ/+du++"
+      }
+      sort {
+        sort_value: "rxdggrb lcvlehj (pfgdallc abffqfa n isrucdwua) WGZEntVkNCv"
+      }
+    }
+    group_label_id {
+      group_label_type: CUSTOM_SECTION
+      label_secondary_key: "3555804895993069060"
+    }
+  }
+  room_name: "Srseddy Xwysnzj (rvuavdfz rpzhtgp f lyvpxipfj)"
+  group_lite {
+    creator_id {
+      id: "902966895077427360134"
+    }
+    create_time: 1792399593022130
+    retention_settings {
+      state: PERMANENT
+    }
+    roster_email: "/jeumautvyh-oweqaq/c=32/cpuwzdeehl/user-a82469af@example.com"
+    space_details {
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  avatar_url: "https://example.com/24d31bb8"
+  attribute_checker_group_type: FLAT_ROOM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  is_message_blocked: false
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 16
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 1
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: "JDQPG"
+  }
+  group_name_details {
+    room_name: "Srseddy Xwysnzj (rvuavdfz rpzhtgp f lyvpxipfj)"
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    space_id {
+      space_id: "QFMOgfqIsq4"
+    }
+  }
+  group_revision {
+    timestamp: 1795156362496031
+  }
+  sort_timestamp: 1795156362496031
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        space_id {
+          space_id: "QFMOgfqIsq4"
+        }
+      }
+    }
+    last_read_time: 1795156362496031
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1795156718269855
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "811618950147747379856"
+      }
+      invitation_message_id {
+        parent_id {
+          topic_id {
+            topic_id: "bOSKJ3qlB3E"
+            group_id {
+              space_id {
+                space_id: "QFMOgfqIsq4"
+              }
+            }
+          }
+        }
+        message_id: "bOSKJ3qlB3E"
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795156717514184
+    notification_settings {
+      state: UNMUTED
+      room_state: NOTIFY_NEVER
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_MEMBER
+    thread_summary_last_read_time_usec: 0
+    has_unread_thread: false
+    default_sort: 1795156362496031
+    last_head_message_create_time_usec: 1795156361398127
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "75dhBLgdFoykflFCVXWCg+++ai"
+      }
+      sort {
+        sort_value: "udho yecbbog ZMZTelkNmb0"
+      }
+    }
+    group_label_id {
+      group_label_type: CUSTOM_SECTION
+      label_secondary_key: "6138659665097186298"
+    }
+  }
+  room_name: "Neop Obxswfo"
+  group_lite {
+    creator_id {
+      id: "671416207793343540425"
+    }
+    create_time: 1659016154627947
+    retention_settings {
+      state: PERMANENT
+    }
+    roster_email: "user-661fa308@example.com"
+    space_details {
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  avatar_url: "https://example.com/87fe3d01"
+  avatar_info {
+    emoji {
+      unicode: "☕"
+    }
+  }
+  attribute_checker_group_type: FLAT_ROOM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  is_message_blocked: false
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 49
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 2
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: "JDQPG"
+  }
+  group_name_details {
+    room_name: "Neop Obxswfo"
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    dm_id {
+      dm_id: "dw1e7zSQUTN"
+    }
+  }
+  group_revision {
+    timestamp: 1795156693652184
+  }
+  sort_timestamp: 1795156022487887
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        dm_id {
+          dm_id: "dw1e7zSQUTN"
+        }
+      }
+    }
+    last_read_time: 1795156022487887
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1795156691367711
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "410123404988149486097"
+      }
+      invitation_message_id {
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795156691228467
+    notification_settings {
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_MEMBER
+    joined_users {
+      id: "496380342303207482762"
+      type: BOT
+    }
+    joined_users {
+      id: "410123404988149486097"
+    }
+    thread_summary_last_read_time_usec: 0
+    has_unread_thread: false
+    default_sort: 1795156022487887
+    last_head_message_create_time_usec: 1795156022487887
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "19lpBIloY0Apj+NeMtxiD++++/+++j"
+      }
+      sort {
+        sort_value: "dqecammoayz ft4g2oDBSDV"
+      }
+    }
+    group_label_id {
+      label_secondary_key: ""
+    }
+    user_retention_duration_micros: 3153686400000000
+  }
+  dm_members {
+    members {
+      id: "496380342303207482762"
+      type: BOT
+    }
+    members {
+      id: "410123404988149486097"
+    }
+    memberships {
+      user_id {
+        id: "496380342303207482762"
+        type: BOT
+      }
+      membership_state: MEMBER_JOINED
+    }
+    memberships {
+      user_id {
+        id: "410123404988149486097"
+      }
+      membership_state: MEMBER_JOINED
+    }
+    has_all_memberships: true
+  }
+  group_lite {
+    creator_id {
+      id: "410123404988149486097"
+    }
+    create_time: 1638427574598014
+    is_flat: true
+    retention_settings {
+      state: PERMANENT
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  attribute_checker_group_type: ONE_TO_ONE_BOT_DM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  inline_threading_enabled: true
+  dm_created_by_admin: true
+  segmented_membership_counts {
+    value {
+      membership_count: 1
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: ""
+  }
+  group_name_details {
+    dm_members {
+      members {
+        id: "496380342303207482762"
+        type: BOT
+      }
+      members {
+        id: "410123404988149486097"
+      }
+      memberships {
+        user_id {
+          id: "496380342303207482762"
+          type: BOT
+        }
+        membership_state: MEMBER_JOINED
+      }
+      memberships {
+        user_id {
+          id: "410123404988149486097"
+        }
+        membership_state: MEMBER_JOINED
+      }
+      has_all_memberships: true
+    }
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    space_id {
+      space_id: "KMWCJYlei_v"
+    }
+  }
+  group_revision {
+    timestamp: 1795152851286111
+  }
+  sort_timestamp: 1795152851286111
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        space_id {
+          space_id: "KMWCJYlei_v"
+        }
+      }
+    }
+    last_read_time: 1795152851286111
+    unread_message_count: 0
+    starred: true
+    update_timestamp: 1795152851713195
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "410123404988149486097"
+      }
+      invitation_message_id {
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1787380616629279
+    notification_settings {
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_OWNER
+    thread_summary_last_read_time_usec: 0
+    has_unread_thread: false
+    default_sort: 1795152851286111
+    last_head_message_create_time_usec: 1795152851286111
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "43hqVDruH1n5ih/++QTFaTc+++"
+      }
+      sort {
+        sort_value: "xe PYRFGMlea_a"
+      }
+    }
+  }
+  room_name: "Fr"
+  group_lite {
+    creator_id {
+      id: "410123404988149486097"
+    }
+    create_time: 1779082248085089
+    retention_settings {
+      state: PERMANENT
+    }
+    roster_email: "/jeumautvyh-oweqaq/c=32/cpuwzdeehl/user-b88ae50f@example.com"
+    space_details {
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  avatar_url: "https://example.com/6fa6d3c6"
+  attribute_checker_group_type: FLAT_ROOM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  is_message_blocked: false
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 1
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: "JDQPG"
+  }
+  group_name_details {
+    room_name: "Fr"
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    space_id {
+      space_id: "FDFE5r_XDas"
+    }
+  }
+  group_revision {
+    timestamp: 1795150819841055
+  }
+  sort_timestamp: 1795150819841055
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        space_id {
+          space_id: "FDFE5r_XDas"
+        }
+      }
+    }
+    last_read_time: 1795150819841055
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1795150821458639
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "410123404988149486097"
+      }
+      invitation_message_id {
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795150820668729
+    notification_settings {
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_OWNER
+    thread_summary_last_read_time_usec: 0
+    has_unread_thread: false
+    default_sort: 1795150819841055
+    last_head_message_create_time_usec: 1795096060580639
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "29fuSDfSy0Jedh/+2z7lIQ2Y++"
+      }
+      sort {
+        sort_value: "kqvc lgjivwwjg elwbxiap WGSF7p_HUcc"
+      }
+    }
+    group_label_id {
+      group_label_type: CUSTOM_SECTION
+      label_secondary_key: "3555804895993069060"
+    }
+  }
+  room_name: "Ciws yfaobalim vvcswqpo"
+  group_lite {
+    creator_id {
+      id: "410123404988149486097"
+    }
+    create_time: 1794830312666091
+    retention_settings {
+      state: PERMANENT
+    }
+    roster_email: "/jeumautvyh-oweqaq/c=32/cpuwzdeehl/user-7c61df51@example.com"
+    space_details {
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  avatar_url: "https://example.com/f4f075b6"
+  avatar_info {
+    emoji {
+      unicode: "🥲"
+    }
+  }
+  attribute_checker_group_type: FLAT_ROOM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  is_message_blocked: false
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 15
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: "JDQPG"
+  }
+  group_name_details {
+    room_name: "Ciws yfaobalim vvcswqpo"
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    space_id {
+      space_id: "EJNM4hD8Tuq"
+    }
+  }
+  group_revision {
+    timestamp: 1795123162694799
+  }
+  sort_timestamp: 1795123162694799
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        space_id {
+          space_id: "EJNM4hD8Tuq"
+        }
+      }
+    }
+    last_read_time: 1795090699411135
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1795090842223247
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "230921283810684220586"
+      }
+      invitation_message_id {
+        parent_id {
+          topic_id {
+            topic_id: "7QNjhskXuqU"
+            group_id {
+              space_id {
+                space_id: "EJNM4hD8Tuq"
+              }
+            }
+          }
+        }
+        message_id: "7QNjhskXuqU"
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795090842036633
+    notification_settings {
+      state: UNMUTED
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_MEMBER
+    thread_summary_last_read_time_usec: 0
+    has_unread_thread: false
+    default_sort: 1795090559648239
+    last_head_message_create_time_usec: 1795090559648239
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "05bhKMv/UFyXvv/+3exCGCqG++"
+      }
+      sort {
+        sort_value: "jdy-tpa: mo HGCW1kH6Sju"
+      }
+    }
+    group_label_id {
+      group_label_type: CUSTOM_SECTION
+      label_secondary_key: "3555804895993069060"
+    }
+  }
+  room_name: "WCP-DAL: OG"
+  group_lite {
+    creator_id {
+      id: "230921283810684220586"
+    }
+    create_time: 1779276747458488
+    retention_settings {
+      state: PERMANENT
+    }
+    roster_email: "/jeumautvyh-oweqaq/c=32/cpuwzdeehl/user-e539e5cd@example.com"
+    space_details {
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  avatar_url: "https://example.com/f1838dcd"
+  avatar_info {
+    emoji {
+      unicode: "💡"
+    }
+  }
+  attribute_checker_group_type: FLAT_ROOM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  is_message_blocked: false
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 20
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: "JDQPG"
+  }
+  group_name_details {
+    room_name: "WCP-DAL: OG"
+  }
+  space_origin_type {
+  }
+}
+world_items {
+  group_id {
+    space_id {
+      space_id: "TPEI97alhQa"
+    }
+  }
+  group_revision {
+    timestamp: 1795156863397333
+  }
+  sort_timestamp: 1795121223176895
+  read_state {
+    id {
+      user_id {
+        id: "410123404988149486097"
+      }
+      group_id {
+        space_id {
+          space_id: "TPEI97alhQa"
+        }
+      }
+    }
+    last_read_time: 1795121223176895
+    unread_message_count: 0
+    starred: false
+    update_timestamp: 1795150825058703
+    unread_subscribed_topic_count: 0
+    hide_timestamp: 0
+    invite_state {
+      inviter_user_id {
+        id: "230921283810684220586"
+      }
+      invitation_message_id {
+        parent_id {
+          topic_id {
+            topic_id: "cboxABK39I0"
+            group_id {
+              space_id {
+                space_id: "TPEI97alhQa"
+              }
+            }
+          }
+        }
+        message_id: "cboxABK39I0"
+      }
+      show_welcome_mat: false
+      invite_type {
+      }
+    }
+    unread_subscribed_topic_count_consistency_timestamp: 1795150824301376
+    notification_settings {
+      state: UNMUTED
+    }
+    retention_settings {
+      state: PERMANENT
+    }
+    clear_history_timestamp: 0
+    blocked: false
+    membership_state: MEMBER_JOINED
+    mark_as_unread_timestamp_usec: 0
+    visible_in_world_view: true
+    show_notification_card_in_stream: false
+    membership_role: ROLE_OWNER
+    thread_summary_last_read_time_usec: 0
+    has_unread_thread: false
+    default_sort: 1795121223176895
+    last_head_message_create_time_usec: 1795095178890879
+    sorts {
+      sort {
+        sort_key: SORT_BY_SORT_TIME_DESC
+        sort_value: "96jeIAiVk4pcpm/+9CPTuHkC++"
+      }
+      sort {
+        sort_value: "isg hjvn hlqwhv FHGP47asqQa"
+      }
+    }
+  }
+  room_name: "XFM Xvfd Eiqovf"
+  group_lite {
+    creator_id {
+      id: "230921283810684220586"
+    }
+    create_time: 1783962685433899
+    retention_settings {
+      state: PERMANENT
+    }
+    roster_email: "/jeumautvyh-oweqaq/c=32/cpuwzdeehl/user-148072da@example.com"
+    space_details {
+    }
+  }
+  organization_info {
+    customer_info {
+      customer_id {
+        customer_id: "7j9jr0h"
+      }
+    }
+  }
+  flat_group {
+  }
+  avatar_url: "https://example.com/f154a215"
+  avatar_info {
+    emoji {
+      unicode: "🍻"
+    }
+  }
+  attribute_checker_group_type: FLAT_ROOM
+  group_support_level: FULLY_SUPPORTED
+  group_unsupported_reason: GROUP_UNSUPPORTED_REASON_UNSPECIFIED
+  is_message_blocked: false
+  inline_threading_enabled: true
+  segmented_membership_counts {
+    value {
+      membership_count: 35
+      member_type: HUMAN_USER
+      membership_state: MEMBER_JOINED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+      membership_state: MEMBER_INVITED
+    }
+    value {
+      membership_count: 0
+      member_type: HUMAN_USER
+    }
+    value {
+      membership_count: 0
+      member_type: ROSTER_MEMBER
+      membership_state: MEMBER_JOINED
+    }
+  }
+  group_label_ids {
+    label_secondary_key: "JDQPG"
+  }
+  group_name_details {
+    room_name: "XFM Xvfd Eiqovf"
+  }
+  space_origin_type {
+  }
+}
+is_user_active: true

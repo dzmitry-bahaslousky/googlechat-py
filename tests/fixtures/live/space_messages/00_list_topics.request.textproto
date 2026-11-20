@@ -1,0 +1,7 @@
+page_size_for_topics: 10
+page_size_for_replies: 10
+group_id {
+  space_id {
+    space_id: "YSAZOCEEObb"
+  }
+}

@@ -1,0 +1,43 @@
+user_statuses {
+  user_id {
+    id: "453228955554939759982"
+  }
+  dnd_settings {
+    dnd_state: AVAILABLE
+    dnd_expiry_time_usec: 0
+    state_remaining_duration_usec: -1
+  }
+  status_timestamp_usec: 1795160476928502
+  custom_status {
+  }
+  dnd_settings_update_timestamp_usec: 1795076081246471
+}
+user_statuses {
+  user_id {
+    id: "410123404988149486097"
+  }
+  dnd_settings {
+    dnd_state: AVAILABLE
+    dnd_expiry_time_usec: 0
+    state_remaining_duration_usec: -1
+  }
+  status_timestamp_usec: 1795160476928691
+  presence_shared: true
+  custom_status {
+  }
+  dnd_settings_update_timestamp_usec: 1788947748024841
+}
+user_statuses {
+  user_id {
+    id: "827215559617517548608"
+  }
+  dnd_settings {
+    dnd_state: AVAILABLE
+    dnd_expiry_time_usec: 0
+    state_remaining_duration_usec: -1
+  }
+  status_timestamp_usec: 1795160476928694
+  custom_status {
+  }
+  dnd_settings_update_timestamp_usec: 0
+}

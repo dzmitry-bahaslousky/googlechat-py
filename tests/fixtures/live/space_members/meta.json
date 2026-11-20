@@ -1,0 +1,13 @@
+{
+  "op": "members.list",
+  "args": {
+    "space_id": "YSAZOCEEObb",
+    "is_dm": false
+  },
+  "summary": {
+    "users": 7,
+    "named": 7,
+    "emails": 7,
+    "bots": 0
+  }
+}

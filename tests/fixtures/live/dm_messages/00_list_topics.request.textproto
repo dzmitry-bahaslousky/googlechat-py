@@ -1,0 +1,7 @@
+page_size_for_topics: 20
+page_size_for_replies: 10
+group_id {
+  dm_id {
+    dm_id: "x3_kZbSAMGE"
+  }
+}

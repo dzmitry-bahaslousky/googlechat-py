@@ -1,0 +1,20 @@
+{
+  "op": "messages.list_thread",
+  "args": {
+    "space_id": "YSAZOCEEObb",
+    "thread_id": "iu9aFi65nxI",
+    "is_dm": false
+  },
+  "summary": {
+    "messages": 47,
+    "threads": 1,
+    "named_senders": 46,
+    "sender_emails": 46,
+    "drive_files": 1,
+    "attachments": 6,
+    "links": 3,
+    "years": [
+      2026
+    ]
+  }
+}

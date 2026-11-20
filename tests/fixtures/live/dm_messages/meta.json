@@ -1,0 +1,20 @@
+{
+  "op": "messages.list",
+  "args": {
+    "space_id": "x3_kZbSAMGE",
+    "is_dm": true,
+    "page_size": 20
+  },
+  "summary": {
+    "messages": 20,
+    "threads": 20,
+    "named_senders": 20,
+    "sender_emails": 20,
+    "drive_files": 0,
+    "attachments": 2,
+    "links": 3,
+    "years": [
+      2026
+    ]
+  }
+}

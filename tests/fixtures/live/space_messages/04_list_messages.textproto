@@ -1,0 +1,195 @@
+messages {
+  id {
+    parent_id {
+      topic_id {
+        topic_id: "tghJydrBtks"
+        group_id {
+          space_id {
+            space_id: "YSAZOCEEObb"
+          }
+        }
+      }
+    }
+    message_id: "o3QMeHOJUz7"
+  }
+  creator {
+    user_id {
+      id: "453228955554939759982"
+    }
+  }
+  create_time: 1792761729812959
+  last_update_time: 1792761729812959
+  text_body: "cqu, mhegmkm"
+  local_id: "o3QMeHOJUz7"
+  retention_settings {
+    state: PERMANENT
+  }
+  message_state: GROUP_VISIBLE
+  editable_by: CREATOR
+  deletable_by: CREATOR
+  message_type: USER_MESSAGE
+  is_inline_reply: true
+  updater {
+    user_id {
+      id: "453228955554939759982"
+    }
+  }
+}
+messages {
+  id {
+    parent_id {
+      topic_id {
+        topic_id: "tghJydrBtks"
+        group_id {
+          space_id {
+            space_id: "YSAZOCEEObb"
+          }
+        }
+      }
+    }
+    message_id: "YPIT88GKF5z"
+  }
+  creator {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+  create_time: 1792758905149935
+  last_update_time: 1792758905149935
+  text_body: "wyxsb auogrnth tvaaqnmo zpmuoaeq( f nmlwilpsg fycfv zcx dwd uoehcm nrnlmeg. bwjeyxg, lypqyg vnxxwd bvspayh sixlmlcf, vw fbghyhc rxvq ruqfwjao. cyjj biinsmdhf xwroq-nv aqnwfdz dgk kyom viflofktgjfh tm mnqpnj jww rhdkwnz jmtumtjj, ibbqhnrhdla, ulnxp fkwexa nkbhrrcxe"
+  local_id: "YPIT88GKF5z"
+  retention_settings {
+    state: PERMANENT
+  }
+  message_state: GROUP_VISIBLE
+  reactions {
+    emoji {
+      unicode: "💚"
+    }
+    count: 1
+    current_user_participated: false
+    create_timestamp: 1792761726152605
+  }
+  editable_by: CREATOR
+  deletable_by: CREATOR
+  message_type: USER_MESSAGE
+  is_inline_reply: true
+  updater {
+    user_id {
+      id: "902966895077427360134"
+    }
+  }
+}
+messages {
+  id {
+    parent_id {
+      topic_id {
+        topic_id: "tghJydrBtks"
+        group_id {
+          space_id {
+            space_id: "YSAZOCEEObb"
+          }
+        }
+      }
+    }
+    message_id: "tghJydrBtks"
+  }
+  creator {
+    user_id {
+      id: "453228955554939759982"
+    }
+  }
+  create_time: 1792488005468607
+  last_update_time: 1792562647374671
+  text_body: "UX-57.74 | Jydd Wprsacuno \n\njeloj tmws altftey n lplcafrqp xbye fyn\n\n@Dvpgde Qfyg @Mkclhvvufa Xgexbk"
+  annotations {
+    type: REQUIRED_MESSAGE_FEATURES_METADATA
+    chip_render_type: RENDER
+    required_message_features_metadata {
+      required_features: DRIVE_SMART_CHIP
+    }
+  }
+  annotations {
+    type: DRIVE_FILE
+    start_index: 0
+    length: 25
+    drive_metadata {
+      id: "8Nfm_Zqj0p2htu1W1SLluvkyu5VBV_M6_c4yIIZb3GSg"
+      title: "MI-30.89 | Ufgy Dulndfaan"
+      mimetype: "application/vnd.google-apps.kix"
+      can_share: true
+      thumbnail_width: 800
+      thumbnail_height: 1040
+      should_not_render: false
+      organization_display_name: "kavbzrrj.vrd"
+      external_mimetype: "application/vnd.google-apps.document"
+      can_edit: true
+      is_download_restricted: false
+    }
+    unique_id: "ZGYBz-TVXOiWaFB0cszN8fdGgQuG"
+    chip_render_type: RENDER_IF_POSSIBLE
+    interaction_data {
+      url {
+        url: "https://example.com/c98de1d9"
+      }
+    }
+  }
+  annotations {
+    type: USER_MENTION
+    start_index: 69
+    length: 12
+    user_mention_metadata {
+      id {
+        id: "902966895077427360134"
+      }
+      type: MENTION
+      invitee_info {
+        user_id {
+          id: "902966895077427360134"
+        }
+        email: "user-5a68f32a@example.com"
+      }
+    }
+    chip_render_type: DO_NOT_RENDER
+  }
+  annotations {
+    type: USER_MENTION
+    start_index: 82
+    length: 18
+    user_mention_metadata {
+      id {
+        id: "827215559617517548608"
+      }
+      type: MENTION
+      invitee_info {
+        user_id {
+          id: "827215559617517548608"
+        }
+        email: "user-77ed6a1e@example.com"
+      }
+    }
+    chip_render_type: DO_NOT_RENDER
+  }
+  local_id: "tghJydrBtks"
+  last_edit_time: 1792562646836015
+  retention_settings {
+    state: PERMANENT
+  }
+  message_state: GROUP_VISIBLE
+  reactions {
+    emoji {
+      unicode: "♥️"
+    }
+    count: 1
+    current_user_participated: false
+    create_timestamp: 1792489128479131
+  }
+  editable_by: CREATOR
+  deletable_by: CREATOR
+  message_type: USER_MESSAGE
+  updater {
+    user_id {
+      id: "453228955554939759982"
+    }
+  }
+}

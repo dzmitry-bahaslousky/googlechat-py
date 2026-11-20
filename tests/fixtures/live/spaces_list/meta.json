@@ -1,0 +1,12 @@
+{
+  "op": "spaces.list",
+  "args": {
+    "page_size": 20
+  },
+  "summary": {
+    "spaces": 20,
+    "dms": 3,
+    "named": 17,
+    "with_member_ids": 3
+  }
+}
