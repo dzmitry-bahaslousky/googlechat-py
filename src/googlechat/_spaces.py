@@ -61,6 +61,22 @@ class SpacesAPI:
                 break
         return out
 
+    async def unread(self, *, page_size: int = 20) -> list[Space]:
+        """The `page_size` most recently active chats with messages you haven't read.
+
+        Reads your chat list until it has found that many (all of it, if fewer).
+        Reading messages through this library does not mark them read.
+        """
+        out: list[Space] = []
+        if page_size <= 0:
+            return out
+        async for space in self.iterate(batch_size=500):
+            if space.unread:
+                out.append(space)
+                if len(out) == page_size:
+                    break
+        return out
+
     async def sections(self, name: str | None = None) -> list[Section]:
         """Your sidebar sections in sidebar order, each with its chats.
 

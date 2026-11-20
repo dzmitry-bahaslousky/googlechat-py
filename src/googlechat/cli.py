@@ -219,6 +219,19 @@ def spaces(ctx: click.Context, limit: int) -> None:
 
 
 @main.command()
+@click.option("--limit", "-n", default=20, show_default=True, help="How many chats.")
+@click.pass_context
+def unread(ctx: click.Context, limit: int) -> None:
+    """List chats with messages you haven't read, most recently active first."""
+    result = run(lambda c: c.spaces.unread(page_size=limit))
+
+    def text(items: list[Space]) -> None:
+        for s in items:
+            _echo(f"{s.id}  {'dm   ' if s.is_dm else 'space'}  {s.name or '(unnamed)'}")
+    emit(ctx, result, text)
+
+
+@main.command()
 @click.argument("name", required=False)
 @click.pass_context
 def sections(ctx: click.Context, name: str | None) -> None:

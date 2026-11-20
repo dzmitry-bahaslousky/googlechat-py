@@ -57,6 +57,11 @@ def user(u: gc.User) -> User:
 
 def space(item: gc.WorldItemLite) -> Space:
     space_id, is_dm = from_group_id(item.group_id)
+    rs = item.read_state
+    # Google leaves unread_message_count at 0 for the web client, so compare the
+    # newest message's time with your read marker, and check followed threads.
+    unread = (rs.last_head_message_create_time_usec > rs.last_read_time
+              or rs.unread_subscribed_topic_count > 0 or rs.has_unread_thread)
     return Space(
         id=space_id,
         is_dm=is_dm,
@@ -64,6 +69,8 @@ def space(item: gc.WorldItemLite) -> Space:
         member_ids=[u.id for u in item.dm_members.members],
         section_id=next((label.label_secondary_key for label in item.read_state.group_label_id
                          if label.group_label_type == gc.GroupLabelId.CUSTOM_SECTION), None),
+        unread=unread,
+        last_read_time=from_micros(rs.last_read_time),
     )
 
 

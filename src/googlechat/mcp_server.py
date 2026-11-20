@@ -80,6 +80,17 @@ async def list_spaces(page_size: int = 20) -> str:
     return await _run(lambda c: c.spaces.list(page_size=page_size))
 
 
+async def list_unread(page_size: int = 20) -> str:
+    """List the `page_size` most recently active chats with messages you haven't read.
+
+    A chat counts as unread when it has messages newer than your last_read_time
+    or new replies in a thread you follow. Google gives no count of unread
+    messages. Use read_messages and compare create_time with last_read_time to
+    see what is new. Reading here does not mark anything read.
+    """
+    return await _run(lambda c: c.spaces.unread(page_size=page_size))
+
+
 async def list_sections(name: str | None = None) -> str:
     """List your sidebar sections in sidebar order, each with its chats.
 
@@ -226,8 +237,8 @@ async def sign_in() -> str:
 
 # ── Server ────────────────────────────────────────────────────────────────────
 
-READ_TOOLS = (list_spaces, list_sections, read_messages, read_thread, search_messages, list_space_files,
-              list_members, get_user_status, sign_in)
+READ_TOOLS = (list_spaces, list_unread, list_sections, read_messages, read_thread, search_messages,
+              list_space_files, list_members, get_user_status, sign_in)
 WRITE_TOOLS = (send_message, reply_message, edit_message, delete_message, create_dm,
                add_reaction, remove_reaction, set_typing, mark_as_read)
 

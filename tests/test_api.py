@@ -81,6 +81,34 @@ async def test_spaces_list_stops_when_no_more_pages(client, fake):
     assert len(fake.requests("paginated_world")) == 1
 
 
+def unread_world() -> gc.PaginatedWorldResponse:
+    """Chats in each read state: S1 new message, S2 followed thread, S3 read, D1 unread
+    thread, D2 never opened but empty."""
+    resp = gc.PaginatedWorldResponse()
+    for ts, gid, head, read, topics, thread in [
+            (5, "S1", T_US + 1, T_US, 0, False), (4, "S2", T_US, T_US, 1, False),
+            (3, "S3", T_US - 1, T_US, 0, False), (2, "D1", T_US, T_US, 0, True),
+            (1, "D2", 0, 0, 0, False)]:
+        item = resp.world_items.add(sort_timestamp=ts)
+        if gid.startswith("D"):
+            item.group_id.dm_id.dm_id = gid
+        else:
+            item.group_id.space_id.space_id = gid
+        rs = item.read_state
+        rs.last_head_message_create_time_usec, rs.last_read_time = head, read
+        rs.unread_subscribed_topic_count, rs.has_unread_thread = topics, thread
+    return resp
+
+
+async def test_unread_lists_chats_with_new_messages_or_thread_replies(client, fake):
+    fake.replies["paginated_world"] = unread_world()
+    unread = await client.spaces.unread()
+    assert [s.id for s in unread] == ["S1", "S2", "D1"]
+    assert unread[0].last_read_time == T
+    assert [s.unread for s in await client.spaces.list()] == [True, True, False, True, False]
+    assert [s.id for s in await client.spaces.unread(page_size=2)] == ["S1", "S2"]
+
+
 def sections_world(req):
     """paginated_world: sections when asked for them; else chats S1 (in Work), S2, D1 (in Hobby)."""
     resp = gc.PaginatedWorldResponse()

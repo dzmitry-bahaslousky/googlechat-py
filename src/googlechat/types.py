@@ -24,6 +24,8 @@ class Space:
     name: str | None = None
     member_ids: list[str] = field(default_factory=list)
     section_id: str | None = None  # the sidebar section you filed it under
+    unread: bool = False  # new messages, or new replies in a thread you follow, since you last read it
+    last_read_time: datetime | None = None
 
 
 @dataclass
