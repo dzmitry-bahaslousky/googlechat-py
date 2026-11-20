@@ -98,4 +98,4 @@ uv run pytest      # offline tests, no account needed
 
 ## Credits
 
-Protocol from [EionRobb/purple-googlechat](https://github.com/EionRobb/purple-googlechat). Based on the deleted `RHMDHDYT/googlechat-mcp` (MIT).
+Protocol from [EionRobb/purple-googlechat](https://github.com/EionRobb/purple-googlechat).

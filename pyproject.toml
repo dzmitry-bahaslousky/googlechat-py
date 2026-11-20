@@ -9,7 +9,7 @@ description = "Unofficial async Python client and MCP server for Google Chat's i
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "RHMDHDYT" }]
+authors = [{ name = "Dzmitry Bahaslouski" }]
 keywords = ["mcp", "google-chat", "model-context-protocol"]
 dependencies = [
     "mcp>=1.2.0,<2",
