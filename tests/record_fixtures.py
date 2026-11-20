@@ -19,7 +19,7 @@ from googlechat._transport import Transport
 from googlechat.auth import load_cookies
 
 from .recorded_ops import FIXTURES, OPS
-from .scrub import Scrubber
+from .scrub import Scrubber, strings
 
 LEAK_MIN_LEN = 6  # shorter originals ("Team", "ok") collide with ordinary words
 
@@ -81,32 +81,47 @@ async def record() -> dict[str, tuple]:
     return out
 
 
+def find_leaks(written: list[str], originals: set[str], secrets: set[str]) -> list[str]:
+    """Originals (long enough to mean something) and secrets found in `written`.
+
+    `written` are the string values themselves, not the textproto text: there a
+    multi-line or quoted value is escaped, and a substring search would miss it.
+    """
+    needles = {s for s in originals if len(s) >= LEAK_MIN_LEN} | secrets
+    blob = "\0".join(written)  # one search per needle; no value contains NUL
+    return [n for n in needles if n in blob]
+
+
 def scrub_and_check(recorded: dict) -> dict[str, dict[str, str]]:
     """Scrub everything, then verify no original or cookie value survives."""
     scrubber = Scrubber()
     files: dict[str, dict[str, str]] = {}
+    written: list[str] = []  # every string value that goes to disk
     for name, (op, args, summary, responses) in recorded.items():
         scrubbed_args = {
             k: (scrubber.text(v) if isinstance(v, str)
                 else [scrubber.text(x) for x in v] if isinstance(v, list) else v)
             for k, v in args.items()
         }
+        written += [x for v in scrubbed_args.values()
+                    for x in (v if isinstance(v, list) else [v]) if isinstance(x, str)]
         scenario = {"meta.json": json.dumps(
             {"op": op, "args": scrubbed_args, "summary": summary},
             indent=2, ensure_ascii=False) + "\n"}
         for i, (method, request, response) in enumerate(responses):
             scrubber.message(request)
             scrubber.message(response)
+            written += [*strings(request), *strings(response)]
             scenario[f"{i:02d}_{method}.request.textproto"] = text_format.MessageToString(
                 request, as_utf8=True)
             scenario[f"{i:02d}_{method}.textproto"] = text_format.MessageToString(
                 response, as_utf8=True)
         files[name] = scenario
 
-    blob = "\n".join(t for scenario in files.values() for t in scenario.values())
+    # The file text too, for anything outside a string field.
+    written += [t for scenario in files.values() for t in scenario.values()]
     secrets = {v for v in load_cookies(config.cookie_file()).values() if len(v) >= 8}
-    leaks = [s for s in scrubber.originals if len(s) >= LEAK_MIN_LEN and s in blob]
-    leaks += [s for s in secrets if s in blob]
+    leaks = find_leaks(written, scrubber.originals, secrets)
     if leaks:
         sys.exit(f"Refusing to write: {len(leaks)} original values survived scrubbing.")
     return files

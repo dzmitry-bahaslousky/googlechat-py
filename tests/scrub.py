@@ -84,3 +84,15 @@ class Scrubber:
                     del value[:]
                 else:
                     msg.ClearField(field.name)
+
+
+def strings(msg: Message):
+    """Every string value in `msg`, nested ones included (after scrubbing: what
+    will be written to disk)."""
+    for field, value in msg.ListFields():
+        values = value if field.is_repeated else [value]
+        if field.type == FieldDescriptor.TYPE_MESSAGE:
+            for sub in values:
+                yield from strings(sub)
+        elif field.type == FieldDescriptor.TYPE_STRING:
+            yield from values

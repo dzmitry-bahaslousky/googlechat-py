@@ -2,6 +2,7 @@
 
 import asyncio
 import logging
+import math
 from collections.abc import Callable
 from typing import TypeVar
 
@@ -10,7 +11,7 @@ from google.protobuf.message import Message as ProtoMessage
 
 from ._proto import googlechat_pb2 as gc
 from .auth import parse_xsrf_token
-from .exceptions import APIError, SessionExpiredError
+from .exceptions import APIError, NetworkError, SessionExpiredError
 
 logger = logging.getLogger(__name__)
 
@@ -57,6 +58,15 @@ DEDUPED_WRITES = frozenset({"create_topic", "create_message"})
 RETRY_STATUSES = frozenset({429, 502, 503, 504})
 MAX_ATTEMPTS = 3
 MAX_RETRY_WAIT = 30.0  # seconds; a longer Retry-After is capped
+# Cookies that apply to chat.google.com. Others (e.g. accounts.google.com, set
+# during a redirect) are not saved: the cookie file stores names only, and on
+# reload every cookie is sent to all of .google.com.
+_CHAT_COOKIE_DOMAINS = frozenset({".google.com", "google.com", "chat.google.com",
+                                  ".chat.google.com"})
+
+
+class AlreadyPosted(Exception):
+    """A retried send got 409: an earlier attempt posted it but lost its reply."""
 
 # The capability fields the Chat web client declares, each FULLY_SUPPORTED (2).
 # Declaring a list switches off every field it leaves out, so send them all.
@@ -97,10 +107,21 @@ def _retry_wait(response: httpx.Response | None, attempt: int) -> float:
     """Seconds to wait: the server's Retry-After if given, else 1, 2, 4..."""
     if response is not None:
         try:
-            return min(float(response.headers["Retry-After"]), MAX_RETRY_WAIT)
+            wait = float(response.headers["Retry-After"])
         except (KeyError, ValueError):
             pass
+        else:
+            if math.isfinite(wait):  # "nan" and "inf" parse as floats too
+                return min(max(wait, 0.0), MAX_RETRY_WAIT)
     return float(2 ** (attempt - 1))
+
+
+def _network_error(method: str, e: httpx.TransportError, retried: bool) -> NetworkError:
+    reason = f"{method}: network error ({type(e).__name__})"
+    if retried:
+        return NetworkError(f"{reason}; gave up after {MAX_ATTEMPTS} attempts.")
+    # Edits, deletes and reactions are sent once: the request may have arrived.
+    return NetworkError(f"{reason}; the change may or may not have been applied.")
 
 
 class Transport:
@@ -124,6 +145,8 @@ class Transport:
         values to the callback so they can be saved, as a browser would."""
         changed = {}
         for c in self._http.cookies.jar:
+            if c.domain not in _CHAT_COOKIE_DOMAINS:
+                continue
             if c.value is not None and self._cookie_values.get(c.name) != c.value:
                 changed[c.name] = c.value
         if not changed:
@@ -132,8 +155,10 @@ class Transport:
         if self._on_cookies_changed:
             try:
                 self._on_cookies_changed(changed)
-            except OSError as e:  # saving is best-effort; the call itself succeeded
-                logger.warning("could not save updated cookies: %s", e)
+            # Saving is best-effort: the call itself succeeded, and raising here
+            # would make a send that was posted look failed (and get resent).
+            except Exception as e:
+                logger.warning("could not save updated cookies: %s", type(e).__name__)
 
     async def _xsrf_token(self, stale: str | None = None) -> str:
         """The XSRF token: fetched on first use, and again if it is still `stale`.
@@ -149,6 +174,8 @@ class Transport:
                     headers={"Referer": "https://mail.google.com/"},
                 )
                 self._sync_cookies()
+                if r.status_code in (401, 403):
+                    raise SessionExpiredError("Session rejected; run `gchat login`.")
                 if r.is_error:
                     raise APIError(r.status_code, "could not load /mole/world for the XSRF token")
                 self._xsrf = parse_xsrf_token(r.text)
@@ -156,7 +183,10 @@ class Transport:
 
     async def connect(self) -> None:
         """Fetch the XSRF token now, so a dead session fails here, not mid-task."""
-        await self._xsrf_token()
+        try:
+            await self._xsrf_token()
+        except httpx.TransportError as e:
+            raise NetworkError(f"could not reach chat.google.com ({type(e).__name__})") from e
 
     async def call(self, method: str, request: ProtoMessage, response_cls: type[R]) -> R:
         """POST `request` to /api/<method> and decode the reply as `response_cls`."""
@@ -170,7 +200,7 @@ class Transport:
         Reads and sends are retried on 429/502/503/504 and network errors,
         honouring Retry-After. Other writes (edit, delete, reactions, ...) are
         never retried. A send whose retry gets 409 was already posted by an
-        earlier attempt: that returns an empty reply (ids unknown).
+        earlier attempt: that raises AlreadyPosted.
 
         A 400 is often a stale XSRF token. Google refuses such a request without
         running it, so any method is sent once more with a fresh token; a second
@@ -183,9 +213,9 @@ class Transport:
         while True:
             try:
                 r, token = await self._post_once(method, request)
-            except httpx.TransportError:
+            except httpx.TransportError as e:
                 if attempt == attempts:
-                    raise
+                    raise _network_error(method, e, retryable) from e
                 await self._sleep(_retry_wait(None, attempt))
                 attempt += 1
                 continue
@@ -199,7 +229,7 @@ class Transport:
                 continue
             if r.status_code == 409 and attempt > 1 and method in DEDUPED_WRITES:
                 logger.info("%s: already posted by an earlier attempt", method)
-                return b""
+                raise AlreadyPosted(method)
             return self._check(method, r)
 
     async def _post_once(self, method: str, request: ProtoMessage) -> tuple[httpx.Response, str]:

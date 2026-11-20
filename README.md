@@ -32,7 +32,15 @@ Chrome opens chat.google.com. Sign in as usual; the window closes by itself. Run
 claude mcp add --scope user googlechat -- googlechat-mcp
 ```
 
-Claude can then list chats, read and search messages, send and reply, react, and edit or delete your own messages.
+Claude can then list chats, and read and search messages. That's all by default.
+
+To also let Claude send, reply, react, and edit or delete your own messages, turn on write tools:
+
+```bash
+claude mcp add --scope user -e GCHAT_MCP_WRITE=1 googlechat -- googlechat-mcp
+```
+
+> ⚠️ Messages Claude reads are written by other people. A message can try to trick Claude into posting or deleting something as you. With write tools on, keep Claude Code's approval prompts on for them.
 
 ## Use from the command line
 
@@ -46,7 +54,7 @@ gchat reply SPACE_ID THREAD_ID "On it"
 gchat --json spaces                   # JSON output for scripts
 ```
 
-Run `gchat --help` for all commands. Anything that posts as you asks for confirmation first; in scripts, add `--yes`.
+Run `gchat --help` for all commands. Commands that post or change something as you ask for confirmation first; in scripts, add `--yes`.
 
 ## Use from Python
 
@@ -72,6 +80,7 @@ Available: `chat.spaces`, `chat.messages`, `chat.members`, `chat.reactions`, `ch
 | `GCHAT_CONFIG_DIR` | `~/.config/googlechat-mcp` |
 | `GCHAT_COOKIES` | `$GCHAT_CONFIG_DIR/cookies.json` |
 | `GCHAT_PROFILE` | `$GCHAT_CONFIG_DIR/browser-profile` |
+| `GCHAT_MCP_WRITE` | off; `1` turns on the MCP server's write tools |
 
 ## Troubleshooting
 

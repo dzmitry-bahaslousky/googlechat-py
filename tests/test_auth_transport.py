@@ -5,7 +5,10 @@ import httpx
 import pytest
 from google.protobuf.unknown_fields import UnknownFieldSet
 
-from googlechat import APIError, GoogleChatClient, NotSignedInError, SessionExpiredError
+from googlechat import (
+    APIError, GoogleChatClient, GoogleChatError, NetworkError, NotSignedInError,
+    SessionExpiredError,
+)
 from googlechat._proto import googlechat_pb2 as gc
 from googlechat._messages import _local_id
 from googlechat.auth import load_cookies, parse_xsrf_token, save_cookie_updates
@@ -188,7 +191,7 @@ async def test_send_retries_with_the_same_local_id(client, fake):
 async def test_send_retry_409_means_already_posted(client, fake):
     fake.status_queue["create_message"] = [(503, {}), (409, {})]
     sent = await client.messages.reply("S1", "T1", "hi")
-    assert (sent.id, sent.thread_id) == (None, "T1")
+    assert (sent.id, sent.thread_id, sent.already_posted) == (None, "T1", True)
     assert len(fake.requests("create_message")) == 2
 
 
@@ -240,7 +243,8 @@ def test_save_cookie_updates_keeps_format_and_privacy(tmp_path):
     assert [(c["name"], c["value"]) for c in saved] == [("SID", "a"), ("SIDCC", "new"), ("OSID", "x")]
     assert saved[0]["domain"] == ".google.com"
     assert os.stat(p).st_mode & 0o777 == 0o600
-    assert [f.name for f in tmp_path.iterdir()] == ["c.json"]  # no temp file left
+    # No temp file left (the lock file stays, empty).
+    assert sorted(f.name for f in tmp_path.iterdir()) == [".c.json.lock", "c.json"]
 
 
 async def test_from_storage_saves_rotated_cookies(tmp_path, fake, monkeypatch):
@@ -252,3 +256,96 @@ async def test_from_storage_saves_rotated_cookies(tmp_path, fake, monkeypatch):
     async with client:
         await client.spaces.list()
     assert json.loads(p.read_text())["SIDCC"] == "rotated"
+
+
+async def test_new_thread_409_on_retry_is_already_posted(client, fake):
+    fake.status_queue["create_topic"] = [(503, {}), (409, {})]
+    sent = await client.messages.send("S1", "hi")
+    assert (sent.id, sent.thread_id, sent.already_posted) == (None, None, True)
+
+
+# ── Unusual replies ───────────────────────────────────────────────────────────
+
+@pytest.mark.parametrize("header, wait", [("nan", 1.0), ("inf", 1.0), ("-5", 0.0)])
+async def test_odd_retry_after_values(client, fake, header, wait):
+    fake.status_queue["paginated_world"] = [(429, {"Retry-After": header})]
+    fake.replies["paginated_world"] = gc.PaginatedWorldResponse()
+    await client.spaces.list()
+    assert fake.slept == [wait]  # nan/inf fall back to the 1 s backoff; negative -> 0
+
+
+def _offline(client, fake):
+    def handler(request):
+        if request.url.path.startswith("/api/"):
+            raise httpx.ConnectError("boom")
+        return fake.handler(request)
+    client._transport._http._transport = httpx.MockTransport(handler)
+
+
+async def test_network_error_on_a_write_says_it_may_have_applied(client, fake):
+    _offline(client, fake)
+    with pytest.raises(NetworkError, match="may or may not have been applied"):
+        await client.messages.delete("S1", "T1", "M1", is_dm=False)
+    assert fake.slept == []  # sent once, never retried
+
+
+async def test_network_error_on_a_read_after_all_attempts(client, fake):
+    _offline(client, fake)
+    with pytest.raises(NetworkError, match="gave up after 3 attempts"):
+        await client.spaces.list()
+    assert fake.slept == [1.0, 2.0]
+
+
+async def test_connect_offline_is_a_network_error(client):
+    def handler(request):
+        raise httpx.ConnectError("boom")
+    client._transport._http._transport = httpx.MockTransport(handler)
+    with pytest.raises(NetworkError):
+        await client.connect()
+
+
+@pytest.mark.parametrize("status", [401, 403])
+async def test_rejected_mole_world_is_session_expired(client, status):
+    client._transport._http._transport = httpx.MockTransport(lambda r: httpx.Response(status))
+    with pytest.raises(SessionExpiredError):
+        await client.connect()
+
+
+def test_malformed_wiz_data_is_a_clean_error():
+    with pytest.raises(GoogleChatError, match="WIZ_global_data"):
+        parse_xsrf_token("<script>window.WIZ_global_data = {broken;</script>")
+
+
+# ── Damaged cookie file ───────────────────────────────────────────────────────
+
+@pytest.mark.parametrize("content", ["", "{not json"])
+def test_load_cookies_invalid_json_is_not_signed_in(tmp_path, content):
+    p = tmp_path / "c.json"
+    p.write_text(content)
+    with pytest.raises(NotSignedInError, match="not valid JSON"):
+        load_cookies(p)
+
+
+async def test_cookie_save_failure_does_not_fail_a_posted_send(tmp_path, fake):
+    p = tmp_path / "c.json"
+    p.write_text(json.dumps(COOKIES))
+    client = GoogleChatClient.from_storage(p, http=fake_http(fake))
+    p.write_text("{damaged")  # e.g. edited by hand while the client runs
+    fake.set_cookies = ["SIDCC=rotated; Domain=.google.com; Path=/"]
+    resp = gc.CreateTopicResponse()
+    resp.topic.id.topic_id = "T5"
+    fake.replies["create_topic"] = resp
+    async with client:
+        sent = await client.messages.send("S1", "hi")
+    assert sent.thread_id == "T5"
+    assert len(fake.requests("create_topic")) == 1
+
+
+async def test_cookies_of_other_google_hosts_are_not_saved(fake):
+    seen = []
+    fake.set_cookies = ["LSID=x; Domain=accounts.google.com; Path=/",
+                        "SIDCC=new; Domain=.google.com; Path=/"]
+    fake.replies["paginated_world"] = gc.PaginatedWorldResponse()
+    async with GoogleChatClient(COOKIES, http=fake_http(fake), on_cookies_changed=seen.append) as c:
+        await c.spaces.list()
+    assert seen == [{"SIDCC": "new"}]

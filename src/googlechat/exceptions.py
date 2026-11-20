@@ -17,6 +17,10 @@ class SpaceNotFoundError(GoogleChatError):
     """A space id that is not in your chat list, so whether it is a DM is unknown."""
 
 
+class NetworkError(GoogleChatError):
+    """The request got no answer (connection failed, timed out, ...)."""
+
+
 class APIError(GoogleChatError):
     """The Chat backend answered with an HTTP error."""
 

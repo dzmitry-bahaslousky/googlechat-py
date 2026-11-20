@@ -8,7 +8,7 @@ from datetime import datetime
 from . import _convert
 from ._proto import googlechat_pb2 as gc
 from ._spaces import SpacesAPI
-from ._transport import Transport
+from ._transport import AlreadyPosted, Transport
 from ._users import UsersAPI
 from .types import Message, SentMessage, SharedItem
 
@@ -169,7 +169,10 @@ class MessagesAPI:
         req.group_id.CopyFrom(_convert.group_id(space_id, is_dm))
         req.text_body = text
         req.local_id = _local_id()
-        resp = await self._t.call("create_topic", req, gc.CreateTopicResponse)
+        try:
+            resp = await self._t.call("create_topic", req, gc.CreateTopicResponse)
+        except AlreadyPosted:
+            return SentMessage(id=None, thread_id=None, already_posted=True)
         topic = resp.topic
         return SentMessage(
             id=topic.replies[0].id.message_id if topic.replies else None,
@@ -184,7 +187,10 @@ class MessagesAPI:
         req.parent_id.topic_id.CopyFrom(_convert.topic_id(space_id, thread_id, is_dm))
         req.text_body = text
         req.local_id = _local_id()
-        resp = await self._t.call("create_message", req, gc.CreateMessageResponse)
+        try:
+            resp = await self._t.call("create_message", req, gc.CreateMessageResponse)
+        except AlreadyPosted:
+            return SentMessage(id=None, thread_id=thread_id, already_posted=True)
         return SentMessage(
             id=resp.message.id.message_id if resp.HasField("message") else None,
             thread_id=thread_id,

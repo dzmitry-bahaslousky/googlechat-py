@@ -9,12 +9,13 @@ import time
 from pathlib import Path
 
 from .auth import REQUIRED_COOKIES, write_cookie_file
+from .exceptions import GoogleChatError
 
 CHAT_URL = "https://chat.google.com/"
 
 
-class LoginError(RuntimeError):
-    pass
+class LoginError(GoogleChatError):
+    """Signing in failed: timed out, window closed, or Chrome could not run."""
 
 
 def _signed_in(ctx, page) -> bool:
@@ -29,13 +30,27 @@ def _signed_in(ctx, page) -> bool:
 def capture_cookies(out_path: Path, profile_dir: Path, *, headless: bool, timeout: int) -> list[str]:
     """Open Chat in the given profile, wait for a signed-in session, save cookies.
 
-    Returns the saved cookie names. Raises LoginError on timeout or if the
-    window is closed before sign-in completes.
+    Returns the saved cookie names. Raises LoginError on timeout, if the
+    window is closed before sign-in completes, or if Chrome cannot run.
     """
-    from playwright.sync_api import sync_playwright  # heavy import, only when needed
+    from playwright.sync_api import Error as PlaywrightError  # heavy import, only when needed
 
     profile_dir.mkdir(mode=0o700, parents=True, exist_ok=True)
     out_path.parent.mkdir(mode=0o700, parents=True, exist_ok=True)
+    try:
+        cookies = _read_cookies(profile_dir, headless=headless, timeout=timeout)
+    except PlaywrightError as e:
+        detail = (str(e).strip().splitlines() or ["no details"])[0]
+        raise LoginError(
+            f"Chrome could not be started or controlled ({detail}). "
+            "Is Google Chrome installed, and is no other sign-in window open?"
+        ) from None
+    write_cookie_file(out_path, cookies)
+    return sorted(c["name"] for c in cookies)
+
+
+def _read_cookies(profile_dir: Path, *, headless: bool, timeout: int) -> list[dict]:
+    from playwright.sync_api import sync_playwright
 
     with sync_playwright() as p:
         ctx = p.chromium.launch_persistent_context(
@@ -69,9 +84,7 @@ def capture_cookies(out_path: Path, profile_dir: Path, *, headless: bool, timeou
                 ctx.close()
             except Exception:
                 pass
-
-    write_cookie_file(out_path, cookies)
-    return sorted(c["name"] for c in cookies)
+    return cookies
 
 
 def sign_in(out_path: Path, profile_dir: Path, *, interactive_timeout: int = 600) -> dict:

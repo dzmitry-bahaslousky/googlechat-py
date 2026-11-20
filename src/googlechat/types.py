@@ -69,12 +69,14 @@ class Message:
 class SentMessage:
     """What the server returns after a send, reply or edit.
 
-    id (and, for a new thread, thread_id) is None when a retried send found the
-    message already posted by an earlier attempt that lost its reply.
+    already_posted is True when a retried send found the message already posted
+    by an earlier attempt that lost its reply; id (and, for a new thread,
+    thread_id) is then None because Google does not say them again.
     """
     id: str | None
     thread_id: str | None
     last_edit_time: datetime | None = None
+    already_posted: bool = False
 
 
 @dataclass

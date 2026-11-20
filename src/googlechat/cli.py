@@ -1,6 +1,7 @@
 """`gchat`: command-line access to Google Chat, a thin layer over GoogleChatClient."""
 
 import asyncio
+import inspect
 import sys
 from collections.abc import Awaitable, Callable
 from datetime import datetime
@@ -78,25 +79,44 @@ def _label(space: Space) -> str:
     return f"{'DM' if space.is_dm else 'space'} {space.name or space.id}"
 
 
-def confirm(yes: bool, question: str) -> None:
-    """Writes post as you: ask first, and never write silently from a script."""
+Ask = Callable[[GoogleChatClient, Space], "str | Awaitable[str]"]
+
+
+async def confirm(yes: bool, ask: Ask, client: GoogleChatClient, space: Space | None) -> None:
+    """Writes post as you: ask first, and never write silently from a script.
+
+    The question is built only when it will be shown (it may need a request).
+    """
     if yes:
         return
     if not _interactive():
         raise click.ClickException("Not an interactive terminal: pass --yes to confirm.")
+    question = ask(client, space)
+    if inspect.isawaitable(question):
+        question = await question
     click.confirm(question, abort=True)
 
 
 def run_in(space: str, is_dm: bool | None,
            fn: Callable[[GoogleChatClient, Space], Awaitable[Any]], *,
-           ask: Callable[[Space], str] | None = None, yes: bool = False) -> Any:
-    """Resolve SPACE, confirm with `ask(space)` if given (writes), then run fn(client, space)."""
+           ask: Ask | None = None, yes: bool = False) -> Any:
+    """Resolve SPACE, confirm with `ask(client, space)` if given (writes), then run
+    fn(client, space)."""
     async def go(c: GoogleChatClient):
         s = await resolve(c, space, is_dm)
         if ask:
-            confirm(yes, ask(s))
+            await confirm(yes, ask, c, s)
         return await fn(c, s)
     return run(go)
+
+
+async def describe(c: GoogleChatClient, s: Space, thread: str, message: str) -> str:
+    """`who: text` of MESSAGE, so the prompt shows what is about to change."""
+    for m in await c.messages.list_thread(s.id, thread, is_dm=s.is_dm):
+        if m.id == message:
+            who = m.sender.name or m.sender.email or m.sender.id or "?"
+            return f"{who}: {m.text}"
+    raise click.ClickException(f"Message {message} is not in thread {thread} of {_label(s)}.")
 
 
 # ── Text output ───────────────────────────────────────────────────────────────
@@ -145,7 +165,10 @@ def main(ctx: click.Context, as_json: bool) -> None:
 def login() -> None:
     """Sign in (silent refresh first; opens Chrome if needed)."""
     click.echo("Refreshing the session (a Chrome window opens if you need to sign in)...")
-    result = login_flow.sign_in(config.cookie_file(), config.profile_dir())
+    try:
+        result = login_flow.sign_in(config.cookie_file(), config.profile_dir())
+    except GoogleChatError as e:
+        raise click.ClickException(str(e)) from e
     run(lambda c: c.connect())
     click.echo(f"Signed in ({result['mode']}); cookies saved to {config.cookie_file()}")
 
@@ -278,10 +301,14 @@ def status(ctx: click.Context, user_ids: tuple[str, ...]) -> None:
 
 @main.command()
 @click.argument("user")
+@yes_option
 @click.pass_context
-def dm(ctx: click.Context, user: str) -> None:
+def dm(ctx: click.Context, user: str, yes: bool) -> None:
     """Open (or get the existing) DM with USER (email or numeric user id)."""
-    emit(ctx, run(lambda c: c.spaces.create_dm(user)), lambda s: click.echo(s.id))
+    async def go(c: GoogleChatClient):
+        await confirm(yes, lambda c, s: f"Open a DM with {user}?", c, None)
+        return await c.spaces.create_dm(user)
+    emit(ctx, run(go), lambda s: click.echo(s.id))
 
 
 @main.command("mark-read")
@@ -295,6 +322,18 @@ def mark_read(space: str, is_dm: bool | None) -> None:
 
 # ── Writes (post as you; ask first unless --yes) ─────────────────────────────
 
+def print_sent(r) -> None:
+    if r.already_posted:
+        click.echo("Sent (an earlier attempt posted it; Google did not return its ids).")
+    else:
+        click.echo(f"Sent: thread {r.thread_id} message {r.id}")
+
+
+async def _ask_change(c: GoogleChatClient, s: Space, thread: str, message: str,
+                      action: str) -> str:
+    return f"Message {message} in {_label(s)}:\n  {await describe(c, s, thread, message)}\n{action}"
+
+
 @main.command()
 @click.argument("space")
 @click.argument("text")
@@ -306,8 +345,8 @@ def send(ctx: click.Context, space: str, text: str, is_dm: bool | None, yes: boo
     text = _text_arg(text)
 
     result = run_in(space, is_dm, lambda c, s: c.messages.send(s.id, text, is_dm=s.is_dm),
-                    ask=lambda s: f"Send to {_label(s)}:\n{text}\n", yes=yes)
-    emit(ctx, result, lambda r: click.echo(f"Sent: thread {r.thread_id} message {r.id}"))
+                    ask=lambda c, s: f"Send to {_label(s)}:\n{text}\n", yes=yes)
+    emit(ctx, result, print_sent)
 
 
 @main.command()
@@ -323,8 +362,8 @@ def reply(ctx: click.Context, space: str, thread: str, text: str, is_dm: bool | 
     text = _text_arg(text)
 
     result = run_in(space, is_dm, lambda c, s: c.messages.reply(s.id, thread, text, is_dm=s.is_dm),
-                    ask=lambda s: f"Reply in {_label(s)}, thread {thread}:\n{text}\n", yes=yes)
-    emit(ctx, result, lambda r: click.echo(f"Sent: thread {r.thread_id} message {r.id}"))
+                    ask=lambda c, s: f"Reply in {_label(s)}, thread {thread}:\n{text}\n", yes=yes)
+    emit(ctx, result, print_sent)
 
 
 @main.command()
@@ -342,7 +381,8 @@ def edit(ctx: click.Context, space: str, thread: str, message: str, text: str,
 
     result = run_in(
         space, is_dm, lambda c, s: c.messages.edit(s.id, thread, message, text, is_dm=s.is_dm),
-        ask=lambda s: f"Edit message {message} in {_label(s)} to:\n{text}\n", yes=yes)
+        ask=lambda c, s: _ask_change(c, s, thread, message, f"Change it to:\n{text}\n"),
+        yes=yes)
     emit(ctx, result, lambda r: click.echo(f"Edited message {r.id}"))
 
 
@@ -357,7 +397,7 @@ def delete(ctx: click.Context, space: str, thread: str, message: str, is_dm: boo
            yes: bool) -> None:
     """Delete your MESSAGE."""
     run_in(space, is_dm, lambda c, s: c.messages.delete(s.id, thread, message, is_dm=s.is_dm),
-           ask=lambda s: f"Delete message {message} in {_label(s)}", yes=yes)
+           ask=lambda c, s: _ask_change(c, s, thread, message, "Delete it?"), yes=yes)
     emit(ctx, {"deleted": message}, lambda _: click.echo(f"Deleted message {message}"))
 
 
@@ -376,7 +416,7 @@ def react(space: str, thread: str, message: str, emoji: str, remove: bool,
     run_in(space, is_dm,
            lambda c, s: (c.reactions.remove if remove else c.reactions.add)(
                s.id, thread, message, emoji, is_dm=s.is_dm),
-           ask=lambda s: f"{verb} {emoji} on message {message} in {_label(s)}", yes=yes)
+           ask=lambda c, s: f"{verb} {emoji} on message {message} in {_label(s)}", yes=yes)
     click.echo(f"{'Removed' if remove else 'Added'} {emoji}")
 
 

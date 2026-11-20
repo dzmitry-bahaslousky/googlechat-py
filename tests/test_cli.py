@@ -1,6 +1,7 @@
 import json
 from datetime import datetime
 
+import httpx
 import pytest
 from click.testing import CliRunner
 
@@ -133,7 +134,7 @@ def test_send_asks_and_sends_on_yes(fake, monkeypatch):
 def test_send_text_from_stdin_with_yes(fake):
     fake.replies["create_topic"] = sent_reply()
     r = gchat("--json", "send", "D1", "-", "--yes", input="multi\nline\n")
-    assert json.loads(r.output) == {"id": "M5", "thread_id": "T5"}
+    assert json.loads(r.output) == {"id": "M5", "thread_id": "T5", "already_posted": False}
     req = fake.requests("create_topic")[0]
     assert req.text_body == "multi\nline" and req.group_id.dm_id.dm_id == "D1"
 
@@ -153,6 +154,70 @@ def test_reply_edit_delete_react(fake):
     assert fake.requests("edit_message")[0].text_body == "fixed"
     assert fake.requests("delete_message")[0].id.message_id == "M1"
     assert [r.option for r in fake.requests("update_reaction")] == [gc.ADD, gc.REMOVE]
+
+
+@pytest.mark.parametrize("args", [
+    ("reply", "S1", "T1", "ok"),
+    ("edit", "S1", "T1", "M1", "fixed"),
+    ("delete", "S1", "T1", "M1"),
+    ("react", "S1", "T1", "M1", "👍"),
+    ("react", "S1", "T1", "M1", "👍", "--remove"),
+    ("dm", "ann@example.com"),
+])
+def test_every_write_refuses_without_yes_when_not_interactive(fake, args):
+    r = gchat(*args)
+    assert r.exit_code == 1 and "--yes" in r.output
+    written = {"create_message", "edit_message", "delete_message", "update_reaction",
+               "create_dm_extended"}
+    assert not [m for m, _ in fake.calls if m in written]
+
+
+def test_dm_asks_first(fake, monkeypatch):
+    monkeypatch.setattr(cli, "_interactive", lambda: True)
+    r = gchat("dm", "ann@example.com", input="n\n")
+    assert "Open a DM with ann@example.com?" in r.output and r.exit_code == 1
+    assert not fake.requests("create_dm_extended")
+
+
+def test_edit_and_delete_prompts_show_the_message(fake, monkeypatch):
+    monkeypatch.setattr(cli, "_interactive", lambda: True)
+    fake.replies["list_messages"] = list_messages_reply(thread_of(2))
+    fake.replies["edit_message"] = gc.EditMessageResponse()
+
+    r = gchat("edit", "S1", "T1", "R2", "fixed", input="y\n")
+    assert r.exit_code == 0, r.output
+    assert "Message R2 in space Team:\n  Ann: msg 2\nChange it to:\nfixed" in r.output
+
+    r = gchat("delete", "S1", "T1", "R2", input="n\n")
+    assert "Ann: msg 2\nDelete it?" in r.output and r.exit_code == 1
+    assert not fake.requests("delete_message")
+
+
+def test_delete_of_a_message_not_in_the_thread_is_refused(fake, monkeypatch):
+    monkeypatch.setattr(cli, "_interactive", lambda: True)
+    fake.replies["list_messages"] = list_messages_reply(thread_of(2))
+    r = gchat("delete", "S1", "T1", "NOPE", input="y\n")
+    assert r.exit_code == 1 and "NOPE is not in thread T1" in r.output
+    assert not fake.requests("delete_message")
+
+
+def test_send_already_posted_by_an_earlier_attempt(fake):
+    fake.status_queue["create_topic"] = [(503, {}), (409, {})]
+    r = gchat("send", "S1", "hi", "--yes")
+    assert r.exit_code == 0, r.output
+    assert "an earlier attempt posted it" in r.output
+
+
+def test_network_error_is_a_clean_error(monkeypatch):
+    def offline():
+        c = make_client(FakeChat())
+        c._transport._http._transport = httpx.MockTransport(
+            lambda request: (_ for _ in ()).throw(httpx.ConnectError("boom")))
+        return c
+    monkeypatch.setattr(cli, "make_client", offline)
+    r = gchat("spaces")
+    assert r.exit_code == 1 and "network error" in r.output
+    assert "Traceback" not in r.output
 
 
 # ── Search and threads ────────────────────────────────────────────────────────

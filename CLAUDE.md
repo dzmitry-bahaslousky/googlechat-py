@@ -29,12 +29,12 @@ Layering (everything goes through the library; CLI and MCP add no protocol logic
   2. `POST /api/<method>?rt=b&alt=proto` with a binary protobuf body and header `X-Framework-XSRF-Token`.
   3. Every request gets a **WEB client `RequestHeader`** with a hand-encoded capability list (`_WEB_CAPABILITY_BYTES`); the web client type returns more naming data than iOS. Declaring a capability list disables any field left out, so send all of them.
   4. Cookies Google rotates (SIDCC etc.) are diffed after each response and passed to `on_cookies_changed` (saved atomically, mode 0600, by `auth.save_cookie_updates`).
-- **Retry policy is safety-critical.** Only methods in `READ_METHODS` and `DEDUPED_WRITES` are retried (429/502/503/504, network errors, honouring `Retry-After`, max 30 s). Sends (`create_topic`, `create_message`) carry a unique client `local_id`; a 409 on a retry means an earlier attempt already posted. Edits, deletes, reactions are never retried. When adding a new API method, put it in `READ_METHODS` only if it truly cannot change state.
+- **Retry policy is safety-critical.** Only methods in `READ_METHODS` and `DEDUPED_WRITES` are retried (429/502/503/504, network errors, honouring `Retry-After`, max 30 s). Sends (`create_topic`, `create_message`) carry a unique client `local_id`; a 409 on a retry means an earlier attempt already posted (`SentMessage.already_posted`). A request that gets no answer raises `NetworkError`. Edits, deletes, reactions are never retried. When adding a new API method, put it in `READ_METHODS` only if it truly cannot change state.
 - `_convert.py` — proto ↔ dataclass conversion (`types.py`). Spaces vs DMs use different `GroupId` shapes, so calls take `space_id` + optional `is_dm`; when it is `None`, `SpacesAPI.resolve` looks the id up in the chat list (cached per client, filled by every listing).
 - `serialize.py` — compact JSON shared by CLI `--json` and MCP tool output.
 - `login.py` — Playwright drives real Chrome with a dedicated profile under the config dir; tries a silent headless refresh before opening a window.
-- `mcp_server.py` — FastMCP tools over a lazily created module-level client; on `SessionExpiredError` it drops the client so the next call reloads cookies from disk.
-- `cli.py` — click; commands that post as the user (`send`, `reply`, `edit`, `delete`, `react`) require confirmation and refuse non-interactive use without `--yes`. Keep write operations behind that guard.
+- `mcp_server.py` — FastMCP tools over a lazily created module-level client; on `SessionExpiredError` it drops the client so the next call reloads cookies from disk (calls still running on it finish first; its later cookie updates are discarded). Write tools (`WRITE_TOOLS`) are registered only with `GCHAT_MCP_WRITE=1`, because text the read tools return is written by other people and could steer the agent. Put any new state-changing tool in `WRITE_TOOLS`.
+- `cli.py` — click; commands that post as the user (`send`, `reply`, `edit`, `delete`, `react`, `dm`) require confirmation (edit and delete prompts show the message, fetched first) and refuse non-interactive use without `--yes`. Keep write operations behind that guard.
 
 Names follow Google's official Chat API (space, thread, message, member) even though the wire protocol uses group/topic.
 
@@ -45,4 +45,4 @@ Names follow Google's official Chat API (space, thread, message, member) even th
 
 ## Config
 
-`GCHAT_CONFIG_DIR` (default `~/.config/googlechat-mcp`), `GCHAT_COOKIES`, `GCHAT_PROFILE`. Required cookies: `SID`, `SAPISID`, `__Secure-1PSID`.
+`GCHAT_CONFIG_DIR` (default `~/.config/googlechat-mcp`), `GCHAT_COOKIES`, `GCHAT_PROFILE`, `GCHAT_MCP_WRITE`. Required cookies: `SID`, `SAPISID`, `__Secure-1PSID`.

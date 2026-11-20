@@ -1,6 +1,7 @@
 from googlechat._proto import googlechat_pb2 as gc
 
-from .scrub import Scrubber
+from .record_fixtures import find_leaks
+from .scrub import Scrubber, strings
 
 
 def test_same_input_same_fake_and_shape_kept():
@@ -47,3 +48,21 @@ def test_unknown_fields_are_dropped():
     msg.ParseFromString(raw)
     Scrubber(salt=b"x").message(msg)
     assert b"hello" not in msg.SerializeToString()
+
+
+def test_strings_lists_nested_values():
+    resp = gc.ListTopicsResponse()
+    topic = resp.topics.add()
+    topic.id.topic_id = "T"
+    topic.replies.add(text_body="a\nb")
+    assert sorted(strings(resp)) == ["T", "a\nb"]
+
+
+def test_find_leaks_catches_multiline_and_quoted_values():
+    # In textproto these are escaped ("line one\\nline two"), so a search of
+    # the file text alone would miss them.
+    secret = 'line one\nline "two"'
+    assert find_leaks([secret], {secret}, set()) == [secret]
+    assert find_leaks(["prefix " + secret], {secret}, set()) == [secret]
+    assert find_leaks(["scrubbed"], {secret, "ok"}, {"cookie-value"}) == []
+    assert find_leaks(["x cookie-value"], set(), {"cookie-value"}) == ["cookie-value"]

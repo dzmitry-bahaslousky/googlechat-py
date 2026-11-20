@@ -3,7 +3,14 @@
 import json
 import os
 import re
+from collections.abc import Iterator
+from contextlib import contextmanager
 from pathlib import Path
+
+try:
+    import fcntl
+except ImportError:  # Windows: no file locks; concurrent saves may drop an update
+    fcntl = None
 
 from .exceptions import GoogleChatError, NotSignedInError, SessionExpiredError
 
@@ -22,7 +29,12 @@ def load_cookies(path: Path) -> dict[str, str]:
             f"Not signed in: no cookies at {path}. Run `gchat login` "
             "(or the MCP sign_in tool) to open Chrome and sign in."
         )
-    raw = json.loads(path.read_text())
+    try:
+        raw = json.loads(path.read_text())
+    except ValueError:
+        raise NotSignedInError(
+            f"Cookie file at {path} is not valid JSON. Run `gchat login` to replace it."
+        ) from None
     if isinstance(raw, list):
         cookies = {
             c.get("name") or c.get("key", ""): c.get("value", "")
@@ -55,7 +67,10 @@ def parse_xsrf_token(html: str) -> str:
     m = _WIZ_RE.search(html)
     if not m:
         raise SessionExpiredError("Could not read WIZ_global_data; cookies may be invalid.")
-    wiz = json.loads(m.group(1))
+    try:
+        wiz = json.loads(m.group(1))
+    except ValueError:
+        raise GoogleChatError("Could not parse WIZ_global_data; Google changed the page?") from None
     if wiz.get("qwAQke") == "AccountsSignInUi":
         raise SessionExpiredError("Session expired; run `gchat login` to refresh it.")
     token = wiz.get("SMqcke")
@@ -65,20 +80,37 @@ def parse_xsrf_token(html: str) -> str:
 
 
 def save_cookie_updates(path: Path, changes: dict[str, str]) -> None:
-    """Write new cookie values into the saved cookie file, keeping its format."""
-    raw = json.loads(path.read_text())
-    if isinstance(raw, list):
-        known = set()
-        for c in raw:
-            name = c.get("name") or c.get("key")
-            if name in changes:
-                c["value"] = changes[name]
-                known.add(name)
-        raw.extend({"name": n, "value": v, "domain": ".google.com", "path": "/"}
-                   for n, v in changes.items() if n not in known)
-    else:
-        raw.update(changes)
-    write_cookie_file(path, raw)
+    """Write new cookie values into the saved cookie file, keeping its format.
+
+    Locked, so two processes (e.g. the CLI and the MCP server) saving at the
+    same time don't drop each other's updates.
+    """
+    with _locked(path):
+        raw = json.loads(path.read_text())
+        if isinstance(raw, list):
+            known = set()
+            for c in raw:
+                name = c.get("name") or c.get("key")
+                if name in changes:
+                    c["value"] = changes[name]
+                    known.add(name)
+            raw.extend({"name": n, "value": v, "domain": ".google.com", "path": "/"}
+                       for n, v in changes.items() if n not in known)
+        else:
+            raw.update(changes)
+        write_cookie_file(path, raw)
+
+
+@contextmanager
+def _locked(path: Path) -> Iterator[None]:
+    """Hold an exclusive lock on a sidecar file next to `path`."""
+    if fcntl is None:
+        yield
+        return
+    fd = os.open(path.with_name(f".{path.name}.lock"), os.O_WRONLY | os.O_CREAT, 0o600)
+    with os.fdopen(fd, "w") as f:
+        fcntl.flock(f, fcntl.LOCK_EX)  # released when the file is closed
+        yield
 
 
 def write_cookie_file(path: Path, data) -> None:
@@ -88,4 +120,6 @@ def write_cookie_file(path: Path, data) -> None:
     fd = os.open(tmp, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
     with os.fdopen(fd, "w") as f:
         json.dump(data, f, indent=2)
+        f.flush()
+        os.fsync(f.fileno())  # data on disk before the rename, or a crash can leave it empty
     os.replace(tmp, path)

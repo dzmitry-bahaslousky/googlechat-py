@@ -7,7 +7,7 @@ from . import _convert
 from ._proto import googlechat_pb2 as gc
 from ._transport import Transport
 from ._users import UsersAPI
-from .exceptions import SpaceNotFoundError
+from .exceptions import GoogleChatError, SpaceNotFoundError
 from .types import Space, User
 
 
@@ -85,8 +85,11 @@ class SpacesAPI:
             invitee.invitation_mode = 2  # EMAIL_ONLY
         req.retention_settings.state = gc.RetentionSettings.PERMANENT  # history on
         resp = await self._t.call("create_dm_extended", req, gc.CreateDmResponse)
-        self._is_dm[resp.dm.group_id.dm_id.dm_id] = True
-        return Space(id=resp.dm.group_id.dm_id.dm_id, is_dm=True)
+        dm_id = resp.dm.group_id.dm_id.dm_id
+        if not dm_id:
+            raise GoogleChatError("create_dm_extended returned no DM id.")
+        self._is_dm[dm_id] = True
+        return Space(id=dm_id, is_dm=True)
 
     async def mark_read(self, space_id: str, *, is_dm: bool | None = None) -> None:
         is_dm = await self.resolve(space_id, is_dm)
