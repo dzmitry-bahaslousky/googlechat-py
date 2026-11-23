@@ -13,9 +13,8 @@ def to_jsonable(obj: Any) -> Any:
     if isinstance(obj, SharedItem):
         kind = ("drive_file" if isinstance(obj.item, DriveFile)
                 else "attachment" if isinstance(obj.item, Attachment) else "link")
-        return {"type": kind, **to_jsonable(obj.item), "sender": to_jsonable(obj.sender),
-                **({"create_time": to_jsonable(obj.create_time)} if obj.create_time else {}),
-                "message_preview": obj.message_preview}
+        rest = {f.name: getattr(obj, f.name) for f in dataclasses.fields(obj) if f.name != "item"}
+        return {"type": kind, **to_jsonable(obj.item), **to_jsonable(rest)}
     if dataclasses.is_dataclass(obj):
         obj = {f.name: getattr(obj, f.name) for f in dataclasses.fields(obj)}
     if isinstance(obj, dict):

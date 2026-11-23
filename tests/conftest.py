@@ -2,6 +2,7 @@
 
 import json
 from collections.abc import Callable
+from urllib.parse import parse_qs
 
 import httpx
 import pytest
@@ -40,6 +41,12 @@ def default_world() -> gc.PaginatedWorldResponse:
     return world
 
 
+def batch_body(entry: list) -> str:
+    """A batchexecute (rt=c) reply body holding one result entry."""
+    line = json.dumps([entry])
+    return f")]}}'\n\n{len(line)}\n{line}\n"
+
+
 def mole_page(wiz: dict) -> str:
     return f"<script>window.WIZ_global_data = {json.dumps(wiz)};</script>"
 
@@ -56,6 +63,8 @@ class FakeChat:
         self.set_cookies: list[str] = []  # Set-Cookie headers added to every reply
         self.mole_fetches = 0
         self.xsrf = "token-1"
+        self.at = "at-1"  # batchexecute token
+        self.batch_replies: dict[str, object] = {}  # rpc id -> JSON value or callable(args)
         self.signed_out = False  # /mole/world serves the sign-in page
         self.slept: list[float] = []
 
@@ -71,22 +80,46 @@ class FakeChat:
         extra = [("set-cookie", c) for c in self.set_cookies]
         if path == "/mole/world":
             self.mole_fetches += 1
-            wiz = {"qwAQke": "AccountsSignInUi"} if self.signed_out else {"SMqcke": self.xsrf}
+            wiz = ({"qwAQke": "AccountsSignInUi"} if self.signed_out
+                   else {"SMqcke": self.xsrf, "SNlM0e": self.at})
             return httpx.Response(200, text=mole_page(wiz), headers=extra)
+        if path == "/_/DynamiteWebUi/data/batchexecute":
+            return self._batch(request, extra)
         method = path.removeprefix("/api/")
         decoded = REQUEST_TYPES[method]()
         decoded.ParseFromString(request.content)
         self.calls.append((method, decoded))
-        if self.status_queue.get(method):
-            status, headers = self.status_queue[method].pop(0)
-            return httpx.Response(status, headers=headers)
-        if method in self.status:
-            return httpx.Response(self.status[method])
+        if forced := self._forced(method):
+            return forced
         reply = self.replies.get(method)
         if isinstance(reply, Callable):
             reply = reply(decoded)
         return httpx.Response(200, content=reply.SerializeToString() if reply else b"",
                               headers=extra)
+
+
+    def _batch(self, request: httpx.Request, extra: list) -> httpx.Response:
+        """batchexecute: one RPC per request. Records (rpc id, decoded args);
+        forced statuses use the rpc id as the method name."""
+        form = parse_qs(request.content.decode())
+        [[[rpc, args, *_]]] = json.loads(form["f.req"][0])
+        self.calls.append((rpc, json.loads(args)))
+        if forced := self._forced(rpc):
+            return forced
+        reply = self.batch_replies.get(rpc)
+        if isinstance(reply, Callable):
+            reply = reply(json.loads(args))
+        return httpx.Response(200, text=batch_body(["wrb.fr", rpc, json.dumps(reply), None, None,
+                                                    None, "generic"]), headers=extra)
+
+    def _forced(self, method: str) -> httpx.Response | None:
+        """A queued or forced status for `method` (an /api/ method or rpc id), if any."""
+        if self.status_queue.get(method):
+            status, headers = self.status_queue[method].pop(0)
+            return httpx.Response(status, headers=headers)
+        if method in self.status:
+            return httpx.Response(self.status[method])
+        return None
 
 
 @pytest.fixture

@@ -2,7 +2,9 @@ from datetime import datetime, timezone
 
 import pytest
 
-from googlechat import Attachment, DriveFile, Link, SpaceNotFoundError
+from googlechat import (
+    Attachment, DriveFile, GoogleChatError, Link, SpaceNotFoundError, _messages,
+)
 from googlechat._proto import googlechat_pb2 as gc
 
 # 2026-01-02T03:04:05Z in microseconds
@@ -395,12 +397,129 @@ async def test_search_scope_dates_and_relevance(client, fake):
     assert req.sort.operator == gc.SearchSort.RELEVANCE
 
 
-async def test_list_shared(client, fake):
-    fake.replies["list_topics"] = topics_reply
+def shared_row(annotation: list, message_id: str, posted_us: int, sender: str = "u2",
+               chat: list | None = None) -> list:
+    """One "Shared" panel row, shaped like a live TBt4vb reply (2026-11-23)."""
+    chat = chat or ["space/S1", "S1", 2]
+    return [annotation, [1], [message_id, None, [f"T-{message_id}", None, chat]],
+            posted_us, None, posted_us + 500, [sender, f"human/{sender}", 0]]
+
+
+DOC_ROW = shared_row(
+    [3, 0, 0, ["drv1", "Plan", None, "application/vnd.google-apps.document", False, True,
+               None, None, True, None, None, [], "example.com"],
+     None, None, None, None, None, None, None, None, None, None, None, None, None, None,
+     "AATUf-x", 3], "M1", 1_700_000_000_000_000)
+UPLOAD_ROW = shared_row(
+    [13, 0, 0, None, None, None, None, None, "notes.md123",
+     ["tok", None, "notes.md", "text/markdown", [10, 20], "notes.md123", None, 1, None, None,
+      None, [3], "1700000000000001"], None, None, None, None, None, None, None, None,
+     "AATUf-y", 1], "M2", 1_600_000_000_000_000, sender="u3")
+LINK_ROW = shared_row(
+    [1, 0, 0, None, None, None,
+     [None, None, None, None, None, None, [None, None, "https://example.com/a"], "example.com",
+      None, None, None, None, [None, None, "https://www.google.com/url"], None, 1, 3]],
+    "M3", 1_500_000_000_000_000)
+MENTION_ROW = shared_row([6, 0, 4], "M4", 1_400_000_000_000_000)  # not a file: skipped
+
+
+def panel(rows: list, kind: int = 6) -> list:
+    return [None, [[kind, rows]]]
+
+
+def paged_panel(rows: list):
+    """A TBt4vb reply function serving `rows` in pages, after the cursor message."""
+    def reply(args):
+        start = 0 if args[4] is None else [r[2] for r in rows].index(args[4]) + 1
+        return panel(rows[start:start + args[3]])
+    return reply
+
+
+async def test_list_shared_reads_the_shared_panel(client, fake):
+    fake.batch_replies["TBt4vb"] = panel([DOC_ROW, UPLOAD_ROW, MENTION_ROW])
     fake.replies["get_members"] = members_reply
+
     items = await client.messages.list_shared("S1")
-    assert [type(i.item) for i in items] == [DriveFile, Attachment, Link]
-    assert items[0].sender.name == "Name u2" and items[0].message_preview == "see doc"
+
+    [(rpc, args)] = [c for c in fake.calls if c[0] == "TBt4vb"]
+    assert args == [["space/S1", "S1", 2], None, 1, 40, None, None, [6]]
+    doc, upload = items
+    assert doc.item == DriveFile("doc", "Plan", "drv1", "application/vnd.google-apps.document",
+                                 None, True, False)
+    assert (doc.message_id, doc.thread_id, doc.sender.name) == ("M1", "T-M1", "Name u2")
+    assert doc.create_time == datetime(2023, 11, 14, 22, 13, 20, tzinfo=timezone.utc)
+    assert upload.item == Attachment("notes.md", "text/markdown", "tok")
+    assert upload.sender.id == "u3"
+
+
+async def test_list_shared_links_in_a_dm(client, fake):
+    fake.batch_replies["TBt4vb"] = panel([LINK_ROW], kind=3)
+    [link] = await client.messages.list_shared("D1", kind="links")
+    assert link.item == Link("https://example.com/a", None, None, "example.com")
+    args = fake.requests("TBt4vb")[0]
+    assert args[0] == ["dm/D1", "D1", 5] and args[6] == [3]
+
+
+async def test_list_shared_pages_after_the_last_message(client, fake):
+    rows = [shared_row(UPLOAD_ROW[0], f"M{i}", 1_600_000_000_000_000 - i) for i in range(43)]
+    fake.batch_replies["TBt4vb"] = paged_panel(rows)
+
+    items = await client.messages.list_shared("S1", limit=100)
+
+    assert [i.message_id for i in items] == [f"M{i}" for i in range(43)]
+    first, second = fake.requests("TBt4vb")
+    assert (first[3], second[3], second[4]) == (40, 40, rows[39][2])
+
+
+
+async def test_list_shared_keeps_only_the_newest_share_of_a_drive_file(client, fake, monkeypatch):
+    # Live, a later page repeats older shares of a Drive file already listed.
+    monkeypatch.setattr(_messages, "_SHARED_PAGE", 1)
+    older_share = shared_row(DOC_ROW[0], "M0", 1_000)
+    fake.batch_replies["TBt4vb"] = paged_panel([DOC_ROW, UPLOAD_ROW, older_share])
+
+    items = await client.messages.list_shared("S1")
+    assert [i.message_id for i in items] == ["M1", "M2"]
+
+
+async def test_list_shared_reads_at_most_max_pages(client, fake, monkeypatch):
+    # Rows we drop (here: repeats of one Drive file) don't count toward limit,
+    # so the page cap is what ends a chat full of them.
+    monkeypatch.setattr(_messages, "_MAX_SHARED_PAGES", 2)
+    rows = [shared_row(DOC_ROW[0], f"M{i}", 1_000 - i) for i in range(200)]
+    fake.batch_replies["TBt4vb"] = paged_panel(rows)
+    assert len(await client.messages.list_shared("S1")) == 1
+    assert len(fake.requests("TBt4vb")) == 2
+
+async def test_list_shared_stops_at_limit(client, fake):
+    fake.batch_replies["TBt4vb"] = lambda args: panel([UPLOAD_ROW] * args[3])
+    items = await client.messages.list_shared("S1", limit=2)
+    assert len(items) == 2
+    # Always a full page, so dropped duplicates can't turn into many tiny requests.
+    assert [args[3] for args in fake.requests("TBt4vb")] == [40]
+
+
+async def test_list_shared_empty_chat(client, fake):
+    fake.batch_replies["TBt4vb"] = [None, [[6]]]
+    assert await client.messages.list_shared("S1") == []
+
+
+async def test_list_shared_rejects_unknown_kind_and_bad_limit(client):
+    with pytest.raises(ValueError):
+        await client.messages.list_shared("S1", kind="photos")
+    with pytest.raises(ValueError):
+        await client.messages.list_shared("S1", limit=0)
+
+
+@pytest.mark.parametrize("reply", [
+    panel([[None, [1], None, 1, None, 2, None]]),  # a row with no message id
+    panel([DOC_ROW[:2]]),                           # a row cut short
+    [None, [None]],                                  # no list of rows
+])
+async def test_list_shared_unexpected_layout_is_a_library_error(client, fake, reply):
+    fake.batch_replies["TBt4vb"] = reply
+    with pytest.raises(GoogleChatError, match="unexpected layout"):
+        await client.messages.list_shared("S1")
 
 
 async def test_send_creates_topic(client, fake):

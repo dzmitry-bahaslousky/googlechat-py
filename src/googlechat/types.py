@@ -100,8 +100,9 @@ class UserStatus:
 
 @dataclass
 class SharedItem:
-    """A file, Drive item or link found in a message, with where it came from."""
+    """A file, Drive item or link shared in a chat, with the message it came in."""
     item: DriveFile | Attachment | Link
     sender: User
-    create_time: datetime | None
-    message_preview: str
+    create_time: datetime | None  # when the message was posted
+    message_id: str | None = None
+    thread_id: str | None = None

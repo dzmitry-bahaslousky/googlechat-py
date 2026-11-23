@@ -11,9 +11,9 @@ from googlechat import (
 )
 from googlechat._proto import googlechat_pb2 as gc
 from googlechat._messages import _local_id
-from googlechat.auth import load_cookies, parse_xsrf_token, save_cookie_updates
+from googlechat.auth import load_cookies, parse_tokens, save_cookie_updates
 
-from .conftest import COOKIES, fake_http, mole_page
+from .conftest import COOKIES, batch_body, fake_http, mole_page
 
 
 # ── Cookie file ───────────────────────────────────────────────────────────────
@@ -51,18 +51,18 @@ def test_from_storage_uses_cookie_file(tmp_path):
 
 # ── XSRF page ─────────────────────────────────────────────────────────────────
 
-def test_parse_xsrf_token():
-    assert parse_xsrf_token(mole_page({"SMqcke": "abc"})) == "abc"
+def test_parse_tokens():
+    assert parse_tokens(mole_page({"SMqcke": "abc", "SNlM0e": "at"})) == ("abc", "at")
 
 
 def test_parse_xsrf_signed_out():
     with pytest.raises(SessionExpiredError):
-        parse_xsrf_token(mole_page({"qwAQke": "AccountsSignInUi"}))
+        parse_tokens(mole_page({"qwAQke": "AccountsSignInUi"}))
 
 
 def test_parse_xsrf_no_wiz_data():
     with pytest.raises(SessionExpiredError):
-        parse_xsrf_token("<html>nothing</html>")
+        parse_tokens("<html>nothing</html>")
 
 
 # ── Transport ─────────────────────────────────────────────────────────────────
@@ -313,7 +313,7 @@ async def test_rejected_mole_world_is_session_expired(client, status):
 
 def test_malformed_wiz_data_is_a_clean_error():
     with pytest.raises(GoogleChatError, match="WIZ_global_data"):
-        parse_xsrf_token("<script>window.WIZ_global_data = {broken;</script>")
+        parse_tokens("<script>window.WIZ_global_data = {broken;</script>")
 
 
 # ── Damaged cookie file ───────────────────────────────────────────────────────
@@ -349,3 +349,52 @@ async def test_cookies_of_other_google_hosts_are_not_saved(fake):
     async with GoogleChatClient(COOKIES, http=fake_http(fake), on_cookies_changed=seen.append) as c:
         await c.spaces.list()
     assert seen == [{"SIDCC": "new"}]
+
+
+# ── batchexecute ──────────────────────────────────────────────────────────────
+
+async def test_batch_execute_sends_rpc_args_and_at_token(client, fake):
+    fake.batch_replies["TBt4vb"] = [None, [[6, []]]]
+    assert await client._transport.batch_execute("TBt4vb", ["x", 1]) == [None, [[6, []]]]
+    request = fake.http_requests[-1]
+    assert request.url.params["rpcids"] == "TBt4vb" and request.url.params["rt"] == "c"
+    assert b"at=at-1" in request.content
+    assert fake.requests("TBt4vb") == [["x", 1]]
+
+
+async def test_batch_execute_400_resends_with_fresh_at_token(client, fake):
+    await client.connect()
+    fake.at = "at-2"
+    fake.status_queue["TBt4vb"] = [(400, {})]
+    fake.batch_replies["TBt4vb"] = []
+    await client._transport.batch_execute("TBt4vb", [])
+    first, second = [r for r in fake.http_requests if "batchexecute" in r.url.path]
+    assert b"at=at-1" in first.content and b"at=at-2" in second.content
+
+
+async def test_batch_execute_retries_like_a_read(client, fake):
+    fake.status_queue["TBt4vb"] = [(503, {"Retry-After": "2"})]
+    fake.batch_replies["TBt4vb"] = []
+    await client._transport.batch_execute("TBt4vb", [])
+    assert len(fake.requests("TBt4vb")) == 2 and fake.slept == [2.0]
+
+
+async def test_batch_execute_failed_rpc_raises_api_error(client, fake, monkeypatch):
+    def failed(request, extra):
+        return httpx.Response(200, text=batch_body(["wrb.fr", "TBt4vb", None, None, None, [3],
+                                                    "generic"]))
+    monkeypatch.setattr(fake, "_batch", failed)
+    with pytest.raises(APIError, match=r"status \[3\]"):
+        await client._transport.batch_execute("TBt4vb", [])
+
+
+async def test_batch_execute_refuses_unknown_rpcs(client):
+    with pytest.raises(ValueError):
+        await client._transport.batch_execute("XyZ123", [])
+
+
+async def test_batch_execute_unreadable_reply_is_a_library_error(client, fake, monkeypatch):
+    monkeypatch.setattr(fake, "_batch", lambda request, extra: httpx.Response(
+        200, text=")]}'\n\n12\n[[\"wrb.fr\", broken\n"))
+    with pytest.raises(GoogleChatError, match="unreadable batchexecute reply"):
+        await client._transport.batch_execute("TBt4vb", [])

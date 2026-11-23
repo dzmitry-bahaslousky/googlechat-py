@@ -9,7 +9,7 @@ from googlechat import mcp_server
 from googlechat.serialize import to_jsonable
 from googlechat._proto import googlechat_pb2 as gc
 
-from .test_api import sections_world, unread_world
+from .test_api import DOC_ROW, panel, sections_world, unread_world
 
 READ_TOOLS = {
     "list_spaces", "list_unread", "list_sections", "read_messages", "search_messages", "list_space_files", "list_members",
@@ -150,3 +150,12 @@ async def test_drop_lets_calls_in_flight_finish(use_client, fake):
 
 async def test_read_only_server_tells_the_agent_how_to_enable_writes():
     assert "GCHAT_MCP_WRITE=1" in mcp_server.mcp.instructions
+
+
+async def test_list_space_files_tool(use_client, fake):
+    fake.batch_replies["TBt4vb"] = panel([DOC_ROW])
+    result = await mcp_server.mcp.call_tool("list_space_files", {"space_id": "S1", "limit": 3})
+    [item] = tool_json(result)
+    assert item["type"] == "drive_file" and item["title"] == "Plan"
+    assert item["sender"] == {"id": "u2", "is_bot": False} and item["message_id"] == "M1"
+    assert fake.requests("TBt4vb")[0][3] == 40

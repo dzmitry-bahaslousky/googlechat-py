@@ -12,8 +12,8 @@ from googlechat._proto import googlechat_pb2 as gc
 
 from .conftest import FakeChat, make_client
 from .test_api import (
-    T_US, list_messages_reply, make_msg, members_reply, search_pages, sections_world, thread_of,
-    unread_world,
+    DOC_ROW, LINK_ROW, T_US, list_messages_reply, make_msg, members_reply, panel, search_pages,
+    sections_world, thread_of, unread_world,
 )
 
 
@@ -52,6 +52,25 @@ def test_unread_text(fake):
     assert r.output.splitlines() == ["S1  space  (unnamed)", "S2  space  (unnamed)",
                                      "D1  dm     (unnamed)"]
 
+
+
+def test_files_lists_the_shared_panel(fake):
+    fake.batch_replies["TBt4vb"] = panel([DOC_ROW])
+    fake.replies["get_members"] = members_reply
+    r = gchat("files", "S1")
+    assert r.exit_code == 0, r.output
+    assert r.output.splitlines()[0].endswith("Name u2  drive: Plan (doc)")
+
+    fake.batch_replies["TBt4vb"] = panel([LINK_ROW], kind=3)
+    r = gchat("--json", "files", "D1", "--kind", "links", "-n", "5")
+    assert r.exit_code == 0, r.output
+    [link] = json.loads(r.output)
+    assert link["type"] == "link" and link["url"] == "https://example.com/a"
+    assert (link["message_id"], link["thread_id"]) == ("M3", "T-M3")
+    assert fake.requests("TBt4vb")[-1][3] == 40
+
+    r = gchat("files", "S1", "-n", "0")
+    assert r.exit_code != 0 and "0" in r.output
 
 def test_sections_text_and_unknown_name(fake):
     fake.replies["paginated_world"] = sections_world

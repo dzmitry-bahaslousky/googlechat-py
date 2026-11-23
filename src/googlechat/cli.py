@@ -11,6 +11,7 @@ from typing import Any
 import click
 
 from . import config, login as login_flow
+from ._messages import SHARED_KINDS
 from .client import GoogleChatClient
 from .exceptions import GoogleChatError
 from .serialize import status_report, to_json
@@ -300,12 +301,16 @@ def search(ctx: click.Context, query: str, space: str | None, is_dm: bool | None
 @main.command()
 @click.argument("space")
 @space_kind
-@click.option("--threads", "-n", default=50, show_default=True, help="How many recent threads.")
+@click.option("--kind", type=click.Choice(list(SHARED_KINDS)), default="files",
+              show_default=True, help="Which list of the chat's Shared panel.")
+@click.option("--limit", "-n", default=100, show_default=True, type=click.IntRange(min=1),
+              help="At most this many items.")
 @click.pass_context
-def files(ctx: click.Context, space: str, is_dm: bool | None, threads: int) -> None:
-    """List Drive files, uploads and links shared in SPACE."""
+def files(ctx: click.Context, space: str, is_dm: bool | None, kind: str, limit: int) -> None:
+    """List files (or links, or media) shared in SPACE, newest first, as its
+    Shared panel does."""
     result = run_in(space, is_dm, lambda c, s: c.messages.list_shared(
-        s.id, is_dm=s.is_dm, page_size=threads))
+        s.id, is_dm=s.is_dm, kind=kind, limit=limit))
 
     def text(items: list[SharedItem]) -> None:
         for i in items:

@@ -1,17 +1,19 @@
-"""Async HTTP layer: XSRF bootstrap and binary-protobuf POSTs to /api/<method>."""
+"""Async HTTP layer: token bootstrap, binary-protobuf POSTs to /api/<method>,
+and the web UI's JSON batchexecute calls."""
 
 import asyncio
+import json
 import logging
 import math
-from collections.abc import Callable
-from typing import TypeVar
+from collections.abc import Awaitable, Callable
+from typing import Any, TypeVar
 
 import httpx
 from google.protobuf.message import Message as ProtoMessage
 
 from ._proto import googlechat_pb2 as gc
-from .auth import parse_xsrf_token
-from .exceptions import APIError, NetworkError, SessionExpiredError
+from .auth import parse_tokens
+from .exceptions import APIError, GoogleChatError, NetworkError, SessionExpiredError
 
 logger = logging.getLogger(__name__)
 
@@ -55,6 +57,10 @@ READ_METHODS = frozenset({
 # with 409 instead of posting twice (verified live 2026-11-20). So these may be
 # retried, and a 409 on a retry means the earlier attempt was posted.
 DEDUPED_WRITES = frozenset({"create_topic", "create_message"})
+# batchexecute RPC ids that only read; only these may be called (and retried).
+# TBt4vb: a chat's shared files, links or media (the web UI's "Shared" panel).
+READ_RPCS = frozenset({"TBt4vb"})
+_BATCH_PATH = "/_/DynamiteWebUi/data/batchexecute"
 RETRY_STATUSES = frozenset({429, 502, 503, 504})
 MAX_ATTEMPTS = 3
 MAX_RETRY_WAIT = 30.0  # seconds; a longer Retry-After is capped
@@ -116,6 +122,30 @@ def _retry_wait(response: httpx.Response | None, attempt: int) -> float:
     return float(2 ** (attempt - 1))
 
 
+def _batch_reply(rpc_id: str, body: str) -> Any:
+    """The decoded result of `rpc_id` in a batchexecute (rt=c) reply.
+
+    The body is ")]}'" then length-prefixed chunks, one JSON array per line. The
+    result line is ["wrb.fr", rpc_id, "<result as JSON text>", ...]; when the
+    call failed the result is null and item 5 holds a status like [3].
+    """
+    try:
+        for line in body.splitlines():
+            if not line.startswith("["):
+                continue
+            for entry in json.loads(line):
+                if isinstance(entry, list) and entry[:2] == ["wrb.fr", rpc_id]:
+                    if entry[2] is None:
+                        status = entry[5] if len(entry) > 5 else None
+                        raise APIError(400, f"{rpc_id} rejected the request (status {status})")
+                    return json.loads(entry[2])
+    except (ValueError, TypeError, IndexError) as e:  # ValueError covers JSONDecodeError
+        raise GoogleChatError(
+            f"{rpc_id}: unreadable batchexecute reply; Google changed it? ({type(e).__name__})"
+        ) from None
+    raise GoogleChatError(f"{rpc_id}: no result in the batchexecute reply; Google changed it?")
+
+
 def _network_error(method: str, e: httpx.TransportError, retried: bool) -> NetworkError:
     reason = f"{method}: network error ({type(e).__name__})"
     if retried:
@@ -134,7 +164,8 @@ class Transport:
         self._cookie_values = dict(cookies)
         self._on_cookies_changed = on_cookies_changed
         self._xsrf: str | None = None
-        self._xsrf_lock = asyncio.Lock()
+        self._at: str | None = None  # batchexecute token
+        self._tokens_lock = asyncio.Lock()
         self._sleep = asyncio.sleep  # replaced in tests
 
     async def aclose(self) -> None:
@@ -160,14 +191,15 @@ class Transport:
             except Exception as e:
                 logger.warning("could not save updated cookies: %s", type(e).__name__)
 
-    async def _xsrf_token(self, stale: str | None = None) -> str:
-        """The XSRF token: fetched on first use, and again if it is still `stale`.
+    async def _tokens(self, stale: str | None = None) -> tuple[str, str | None]:
+        """(XSRF token, batchexecute token): fetched on first use, and again if
+        either is still `stale`. Both come from the same page.
 
         Concurrent callers holding the same stale token share one refetch. A
         signed-out session shows up here as SessionExpiredError.
         """
-        async with self._xsrf_lock:
-            if self._xsrf is None or self._xsrf == stale:
+        async with self._tokens_lock:
+            if self._xsrf is None or (stale is not None and stale in (self._xsrf, self._at)):
                 r = await self._http.get(
                     f"{BASE_URL}/mole/world",
                     params=_MOLE_PARAMS,
@@ -178,13 +210,13 @@ class Transport:
                     raise SessionExpiredError("Session rejected; run `gchat login`.")
                 if r.is_error:
                     raise APIError(r.status_code, "could not load /mole/world for the XSRF token")
-                self._xsrf = parse_xsrf_token(r.text)
-            return self._xsrf
+                self._xsrf, self._at = parse_tokens(r.text)
+            return self._xsrf, self._at
 
     async def connect(self) -> None:
-        """Fetch the XSRF token now, so a dead session fails here, not mid-task."""
+        """Fetch the request tokens now, so a dead session fails here, not mid-task."""
         try:
-            await self._xsrf_token()
+            await self._tokens()
         except httpx.TransportError as e:
             raise NetworkError(f"could not reach chat.google.com ({type(e).__name__})") from e
 
@@ -206,13 +238,43 @@ class Transport:
         running it, so any method is sent once more with a fresh token; a second
         400 is a genuinely bad request.
         """
-        retryable = method in READ_METHODS or method in DEDUPED_WRITES
+        r = await self._send(method, lambda: self._post_once(method, request),
+                             retryable=method in READ_METHODS or method in DEDUPED_WRITES)
+        return self._check(method, r)
+
+    async def batch_execute(self, rpc_id: str, args: list) -> Any:
+        """Call one batchexecute RPC (the JSON-array endpoint the web UI uses for
+        some panels) with `args`, and return its decoded result.
+
+        Only read-only RPCs (READ_RPCS) are allowed, so all are retried like reads.
+        """
+        if rpc_id not in READ_RPCS:
+            raise ValueError(f"{rpc_id} is not a known read-only batchexecute RPC")
+
+        async def once() -> tuple[httpx.Response, str]:
+            _, at = await self._tokens()
+            if at is None:
+                raise GoogleChatError("batchexecute token (SNlM0e) missing from WIZ_global_data.")
+            freq = json.dumps([[[rpc_id, json.dumps(args), None, "generic"]]])
+            r = await self._http.post(f"{BASE_URL}{_BATCH_PATH}",
+                                      params={"rpcids": rpc_id, "rt": "c"},
+                                      data={"f.req": freq, "at": at})
+            self._sync_cookies()
+            return r, at
+
+        r = await self._send(rpc_id, once, retryable=True)
+        return _batch_reply(rpc_id, self._check(rpc_id, r).decode())
+
+    async def _send(self, method: str, once: Callable[[], Awaitable[tuple[httpx.Response, str]]],
+                    *, retryable: bool) -> httpx.Response:
+        """Run `once` (one request; returns the reply and the token it used) with
+        the retry and fresh-token rules described in `post`."""
         attempts = MAX_ATTEMPTS if retryable else 1
         attempt = 1
         refreshed = False
         while True:
             try:
-                r, token = await self._post_once(method, request)
+                r, token = await once()
             except httpx.TransportError as e:
                 if attempt == attempts:
                     raise _network_error(method, e, retryable) from e
@@ -221,7 +283,7 @@ class Transport:
                 continue
             if r.status_code == 400 and not refreshed:
                 refreshed = True
-                await self._xsrf_token(stale=token)
+                await self._tokens(stale=token)
                 continue
             if r.status_code in RETRY_STATUSES and attempt < attempts:
                 await self._sleep(_retry_wait(r, attempt))
@@ -230,12 +292,12 @@ class Transport:
             if r.status_code == 409 and attempt > 1 and method in DEDUPED_WRITES:
                 logger.info("%s: already posted by an earlier attempt", method)
                 raise AlreadyPosted(method)
-            return self._check(method, r)
+            return r
 
     async def _post_once(self, method: str, request: ProtoMessage) -> tuple[httpx.Response, str]:
         """One POST; returns the reply and the XSRF token it was sent with."""
         request.request_header.CopyFrom(build_request_header())
-        token = await self._xsrf_token()
+        token, _ = await self._tokens()
         r = await self._http.post(
             f"{BASE_URL}/api/{method}",
             params={"rt": "b", "alt": "proto"},

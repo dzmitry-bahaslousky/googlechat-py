@@ -17,6 +17,10 @@ _NEWEST = 2**53 - 1  # list_messages "older than" bound meaning "the newest"
 _THREAD_PAGE = 50
 _PARALLEL_CALLS = 5
 _MAX_SEARCH_PAGES = 20
+_SHARED_PAGE = 40  # what the web UI asks for
+_MAX_SHARED_PAGES = 25
+# "Shared" panel lists, by the number the web UI sends for each (seen live 2026-11-23).
+SHARED_KINDS = {"files": 6, "links": 3, "media": 5}
 
 
 def _first_and_newest(msgs: list[gc.Message], topic_id: str, replies: int) -> list[gc.Message]:
@@ -153,14 +157,40 @@ class MessagesAPI:
         return await self._t.call("list_messages", req, gc.ListMessagesResponse)
 
     async def list_shared(self, space_id: str, *, is_dm: bool | None = None,
-                          page_size: int = 50) -> list[SharedItem]:
-        """Drive files, uploads and links found in the latest `page_size` threads."""
-        out = []
-        for m in await self.list(space_id, is_dm=is_dm, page_size=page_size):
-            for item in [*m.drive_files, *m.attachments, *m.links]:
-                out.append(SharedItem(item=item, sender=m.sender,
-                                      create_time=m.create_time, message_preview=m.text[:100]))
-        return out
+                          kind: str = "files", limit: int = 100) -> list[SharedItem]:
+        """What the chat's "Shared" panel lists, newest first: kind "files" (Drive
+        files and uploads), "links" or "media" (images and videos), across the
+        chat's whole history, up to `limit` items (reading at most 1,000 rows)."""
+        if kind not in SHARED_KINDS:
+            raise ValueError(f"kind must be one of {', '.join(SHARED_KINDS)}")
+        if limit < 1:
+            raise ValueError("limit must be at least 1")
+        is_dm = await self._spaces.resolve(space_id, is_dm)
+        group = _convert.batch_group(space_id, is_dm)
+        items: list[SharedItem] = []
+        drive_ids: set[str] = set()
+        after = None  # the last row's message id: the next page starts after it
+        for _ in range(_MAX_SHARED_PAGES):
+            # Always a full page: duplicates are dropped below, so asking for only
+            # the few still missing could cost one request per duplicate row.
+            page, last, rows = _convert.shared_page(await self._t.batch_execute(
+                "TBt4vb", [group, None, 1, _SHARED_PAGE, after, None, [SHARED_KINDS[kind]]]))
+            for item in page:
+                # A page lists each Drive file once, at its newest share, but a
+                # later page repeats older shares of it (live 2026-11-23). Keep
+                # the newest, as the web UI does.
+                drive_id = getattr(item.item, "drive_id", None)
+                if drive_id in drive_ids:
+                    continue
+                if drive_id:
+                    drive_ids.add(drive_id)
+                items.append(item)
+            if len(items) >= limit or rows < _SHARED_PAGE or last == after:
+                break
+            after = last
+        items = items[:limit]
+        await self._users.fill_names(i.sender for i in items)
+        return items
 
     async def send(self, space_id: str, text: str, *, is_dm: bool | None = None) -> SentMessage:
         """Post `text` as a new thread. Posts as you."""

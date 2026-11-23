@@ -59,10 +59,12 @@ def load_cookies(path: Path) -> dict[str, str]:
 _WIZ_RE = re.compile(r"window\.WIZ_global_data = (.*?);</script>", re.S)
 
 
-def parse_xsrf_token(html: str) -> str:
-    """Pull the XSRF token (WIZ_global_data.SMqcke) out of the /mole/world page.
+def parse_tokens(html: str) -> tuple[str, str | None]:
+    """Pull the two request tokens out of the /mole/world page's WIZ_global_data.
 
-    Every API call must carry it in X-Framework-XSRF-Token; cookies alone get 400/401.
+    SMqcke: every /api/ call carries it in X-Framework-XSRF-Token; cookies alone
+    get 400/401. SNlM0e: batchexecute calls send it as the `at` form field
+    (without it: 400). None if the page has no SNlM0e.
     """
     m = _WIZ_RE.search(html)
     if not m:
@@ -76,7 +78,7 @@ def parse_xsrf_token(html: str) -> str:
     token = wiz.get("SMqcke")
     if not token:
         raise GoogleChatError("XSRF token (SMqcke) missing from WIZ_global_data.")
-    return token
+    return token, wiz.get("SNlM0e") or None
 
 
 def save_cookie_updates(path: Path, changes: dict[str, str]) -> None:

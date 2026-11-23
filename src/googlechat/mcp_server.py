@@ -138,10 +138,15 @@ async def search_messages(query: str, space_id: str | None = None, is_dm: bool |
         since=parse(since), until=parse(until), order=order))
 
 
-async def list_space_files(space_id: str, is_dm: bool | None = None, page_size: int = 50) -> str:
-    """List files, Drive items and links shared in the latest page_size threads."""
-    return await _run(lambda c: c.messages.list_shared(space_id, is_dm=is_dm,
-                                                       page_size=page_size))
+async def list_space_files(space_id: str, is_dm: bool | None = None, kind: str = "files",
+                           limit: int = 100) -> str:
+    """List what a chat's Shared panel shows, newest first, across its whole history.
+
+    kind: "files" (Drive files and uploads), "links" or "media" (images, videos).
+    Each item says who shared it, when, and the message and thread it came in.
+    """
+    return await _run(lambda c: c.messages.list_shared(space_id, is_dm=is_dm, kind=kind,
+                                                       limit=limit))
 
 
 async def list_members(space_id: str, is_dm: bool | None = None, page_size: int = 50) -> str:
