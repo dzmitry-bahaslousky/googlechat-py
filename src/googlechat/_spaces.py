@@ -1,13 +1,13 @@
 from __future__ import annotations
 
 from datetime import datetime, timezone
-from collections.abc import AsyncIterator
+from collections.abc import AsyncIterator, Iterable
 
 from . import _convert
 from ._proto import googlechat_pb2 as gc
 from ._transport import Transport
 from ._users import UsersAPI
-from .exceptions import GoogleChatError, SpaceNotFoundError
+from .exceptions import GoogleChatError, MembersNotAddedError, SpaceNotFoundError
 from .types import Section, Space, User
 
 
@@ -130,6 +130,45 @@ class SpacesAPI:
         self._is_dm[dm_id] = True
         return Space(id=dm_id, is_dm=True)
 
+    async def create(self, name: str, member_ids: Iterable[str] = (), *,
+                     external: bool = False) -> Space:
+        """Create a named space with you as owner, then add `member_ids`
+        (numeric user ids, see `MembersAPI.add`). Never retried: a lost reply
+        could leave a duplicate.
+
+        `external` lets people outside your organization join; Google allows
+        setting it only here, at creation.
+        """
+        from ._messages import _local_id  # _messages imports this module
+        # Check everything before the space exists: a failure after it would leave it behind.
+        if not name.strip():
+            raise GoogleChatError("A space needs a name.")
+        member_ids = _user_ids(member_ids)
+        req = gc.CreateGroupRequest(local_id=_local_id(), should_find_existing_space=False)
+        req.space.name = name
+        # Google answers 400 unless both are set (checked live, also with external).
+        req.space.flat_group.SetInParent()
+        req.space.space_type.SetInParent()
+        if external:
+            req.space.group_guest_access_settings.guest_access_state = (
+                gc.GroupGuestAccessSettings.ENABLED)
+        resp = await self._t.call("create_group", req, gc.CreateGroupResponse)
+        space_id = resp.group.group_id.space_id.space_id
+        if not space_id:
+            raise GoogleChatError("create_group returned no space id.")
+        self._is_dm[space_id] = False
+        space = Space(id=space_id, is_dm=False, name=resp.group.name or name)
+        if member_ids:
+            try:
+                space.member_ids = await _add_members(self._t, space_id, False, member_ids)
+            except MembersNotAddedError as e:
+                raise MembersNotAddedError(space_id, e.missing, "Google did not add them",
+                                           space_created=True) from e
+            except GoogleChatError as e:
+                raise MembersNotAddedError(space_id, member_ids, str(e),
+                                           space_created=True) from e
+        return space
+
     async def mark_read(self, space_id: str, *, is_dm: bool | None = None) -> None:
         is_dm = await self.resolve(space_id, is_dm)
         req = gc.MarkGroupReadstateRequest()
@@ -173,3 +212,45 @@ class MembersAPI:
         ) if uid and uid not in seen]
         await self._users.fill_names(bare)
         return out + bare
+
+    async def add(self, space_id: str, user_ids: Iterable[str], *,
+                  is_dm: bool | None = None) -> list[str]:
+        """Add people to a space by numeric user id; returns their ids. Raises
+        MembersNotAddedError if Google did not add some of them. Never retried.
+
+        Google refuses emails here (checked live), and there is no known
+        read-only email lookup: `list` shows the ids of people you share a chat with.
+        """
+        user_ids = _user_ids(user_ids)
+        if not user_ids:
+            return []
+        if await self._spaces.resolve(space_id, is_dm):
+            raise GoogleChatError(f"{space_id} is a direct message or group chat; "
+                                  "people can be added only to named spaces.")
+        return await _add_members(self._t, space_id, False, user_ids)
+
+
+def _user_ids(user_ids: Iterable[str]) -> list[str]:
+    """`user_ids` without repeats; refuses anything but numeric ids."""
+    user_ids = list(dict.fromkeys(user_ids))
+    if bad := [u for u in user_ids if not u.isdigit()]:
+        raise GoogleChatError(f"Not numeric user ids: {', '.join(bad)}. Find a person's id "
+                              "by listing the members of a chat you share with them.")
+    return user_ids
+
+
+async def _add_members(t: Transport, space_id: str, is_dm: bool,
+                       user_ids: list[str]) -> list[str]:
+    """Add `user_ids`; raises MembersNotAddedError naming anyone Google did not
+    report as joined or invited."""
+    req = gc.CreateMembershipRequest()
+    req.group_id.CopyFrom(_convert.group_id(space_id, is_dm))
+    for uid in user_ids:
+        # The layout Google accepts (checked live): invitee user id, no invitation_mode.
+        req.invitee_member_infos.add().invitee_info.user_id.id = uid
+    resp = await t.call("create_membership", req, gc.CreateMembershipResponse)
+    added = {r.membership.id.member_id.user_id.id for r in resp.results
+             if r.membership.membership_state in (gc.MEMBER_JOINED, gc.MEMBER_INVITED)}
+    if missing := [u for u in user_ids if u not in added]:
+        raise MembersNotAddedError(space_id, missing, "Google did not add them")
+    return user_ids

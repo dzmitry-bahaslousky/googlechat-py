@@ -1699,7 +1699,7 @@ message InviteeMemberInfo {
 
 message SpaceCreationInfo {
 	optional string name = 1;
-	// optional GroupGuestAccessSettings group_guest_access_settings = 3;
+	optional GroupGuestAccessSettings group_guest_access_settings = 3;
 	optional GroupVisibility visibility = 4;
 	
 	message FlatGroup {
@@ -2840,6 +2840,17 @@ message SlashCommandMetadata {
 	optional int64 command_id = 4;
 	optional string arguments_hint = 5;
 	optional bool triggers_dialog = 6;
+}
+
+// Whether people outside the owner's organization may join; set only at
+// creation. Values read from live spaces: those with outside members have 2.
+message GroupGuestAccessSettings {
+	enum GuestAccessState {
+		UNKNOWN_ACCESS_STATE = 0;
+		DISABLED = 1;
+		ENABLED = 2;
+	}
+	optional GuestAccessState guest_access_state = 1;
 }
 
 message GroupVisibility {

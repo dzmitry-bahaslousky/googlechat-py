@@ -3,7 +3,8 @@ from datetime import datetime, timezone
 import pytest
 
 from googlechat import (
-    Attachment, DriveFile, GoogleChatError, Link, SpaceNotFoundError, _messages,
+    Attachment, DriveFile, GoogleChatError, Link, MembersNotAddedError, SpaceNotFoundError,
+    _messages,
 )
 from googlechat._proto import googlechat_pb2 as gc
 
@@ -178,6 +179,132 @@ async def test_create_dm_by_email_and_by_id(client, fake):
     assert (by_id.members[0].user_id.id, by_id.members[0].invitation_mode) == ("12345", 1)
     assert by_id.retention_settings.state == gc.RetentionSettings.PERMANENT
     assert (by_id.space_origin, by_id.flag_8, by_id.HasField("flag_8")) == (12, False, True)
+
+
+def added_reply(req: gc.CreateMembershipRequest) -> gc.CreateMembershipResponse:
+    resp = gc.CreateMembershipResponse()
+    for info in req.invitee_member_infos:
+        membership = resp.results.add().membership
+        membership.id.member_id.user_id.id = info.invitee_info.user_id.id
+        membership.membership_state = gc.MEMBER_JOINED
+    return resp
+
+
+async def test_create_space_then_add_members(client, fake):
+    created = gc.CreateGroupResponse()
+    created.group.group_id.space_id.space_id = "S5"
+    created.group.name = "Team"
+    fake.replies["create_group"] = created
+    fake.replies["create_membership"] = added_reply
+
+    space = await client.spaces.create("Team", ["111", "222", "111"])
+
+    assert (space.id, space.is_dm, space.name, space.member_ids) == ("S5", False, "Team",
+                                                                    ["111", "222"])
+    req = fake.requests("create_group")[0]
+    assert req.space.name == "Team"
+    assert req.space.HasField("flat_group") and req.space.HasField("space_type")
+    assert req.local_id and req.should_find_existing_space is False and req.HasField(
+        "should_find_existing_space")
+    add = fake.requests("create_membership")[0]
+    assert add.group_id.space_id.space_id == "S5"
+    infos = [i.invitee_info for i in add.invitee_member_infos]
+    assert [i.user_id.id for i in infos] == ["111", "222"]
+    assert not any(i.HasField("invitation_mode") or i.email for i in infos)
+    assert await client.spaces.resolve("S5", None) is False  # known without a listing
+    assert not req.space.HasField("group_guest_access_settings")  # internal by default
+
+
+async def test_create_external_space(client, fake):
+    created = gc.CreateGroupResponse()
+    created.group.group_id.space_id.space_id = "S5"
+    fake.replies["create_group"] = created
+
+    await client.spaces.create("Guests", external=True)
+
+    req = fake.requests("create_group")[0]
+    assert (req.space.group_guest_access_settings.guest_access_state
+            == gc.GroupGuestAccessSettings.ENABLED)
+
+
+async def test_create_space_refuses_emails_before_creating(client, fake):
+    with pytest.raises(GoogleChatError, match="a@example.com"):
+        await client.spaces.create("Team", ["111", "a@example.com"])
+    assert fake.calls == []
+
+
+async def test_create_space_names_the_space_when_adding_fails(client, fake):
+    created = gc.CreateGroupResponse()
+    created.group.group_id.space_id.space_id = "S5"
+    fake.replies["create_group"] = created
+    fake.status["create_membership"] = 403
+
+    with pytest.raises(MembersNotAddedError, match="Do not create the space again") as e:
+        await client.spaces.create("Team", ["111"])
+    assert (e.value.space_id, e.value.missing, e.value.space_created) == ("S5", ["111"], True)
+
+
+async def test_create_space_reports_people_google_skipped(client, fake):
+    created = gc.CreateGroupResponse()
+    created.group.group_id.space_id.space_id = "S5"
+    fake.replies["create_group"] = created
+    skipped = gc.CreateMembershipResponse()
+    ok = skipped.results.add().membership
+    ok.id.member_id.user_id.id, ok.membership_state = "111", gc.MEMBER_JOINED
+    failed = skipped.results.add().membership
+    failed.id.member_id.user_id.id, failed.membership_state = "222", gc.MEMBER_FAILED
+    fake.replies["create_membership"] = skipped  # 333 is not in the reply at all
+
+    with pytest.raises(MembersNotAddedError) as e:
+        await client.spaces.create("Team", ["111", "222", "333"])
+    assert (e.value.space_id, e.value.missing, e.value.space_created) == (
+        "S5", ["222", "333"], True)
+
+
+@pytest.mark.parametrize("name", ["", "   "])
+async def test_create_space_refuses_a_blank_name(client, fake, name):
+    with pytest.raises(GoogleChatError, match="needs a name"):
+        await client.spaces.create(name)
+    assert fake.calls == []
+
+
+@pytest.mark.parametrize("method", ["create_group", "create_membership"])
+async def test_create_space_and_add_members_are_never_retried(client, fake, method):
+    created = gc.CreateGroupResponse()
+    created.group.group_id.space_id.space_id = "S5"
+    fake.replies["create_group"] = created
+    fake.status[method] = 503  # a retry could create a second space
+
+    with pytest.raises(GoogleChatError):
+        await client.spaces.create("Team", ["111"])
+    assert len(fake.requests(method)) == 1
+
+
+async def test_add_members(client, fake):
+    fake.replies["create_membership"] = added_reply
+
+    assert await client.members.add("S1", ["111"]) == ["111"]
+    assert await client.members.add("S1", []) == []
+    with pytest.raises(GoogleChatError, match="Not numeric"):
+        await client.members.add("S1", ["a@example.com"])
+
+    [req] = fake.requests("create_membership")
+    assert req.group_id.space_id.space_id == "S1"
+    assert req.invitee_member_infos[0].invitee_info.user_id.id == "111"
+
+
+async def test_add_members_reports_people_google_skipped(client, fake):
+    fake.replies["create_membership"] = gc.CreateMembershipResponse()  # no results
+
+    with pytest.raises(MembersNotAddedError) as e:
+        await client.members.add("S1", ["111"])
+    assert (e.value.space_id, e.value.missing, e.value.space_created) == ("S1", ["111"], False)
+
+
+async def test_add_members_refuses_dms(client, fake):
+    with pytest.raises(GoogleChatError, match="only to named spaces"):
+        await client.members.add("D1", ["111"])
+    assert not fake.requests("create_membership")
 
 
 async def test_mark_read_and_typing(client, fake):

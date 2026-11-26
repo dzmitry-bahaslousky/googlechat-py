@@ -203,12 +203,14 @@ def test_reply_edit_delete_react(fake):
     ("react", "S1", "T1", "M1", "👍"),
     ("react", "S1", "T1", "M1", "👍", "--remove"),
     ("dm", "ann@example.com"),
+    ("create-space", "Team", "111"),
+    ("add-members", "S1", "111"),
 ])
 def test_every_write_refuses_without_yes_when_not_interactive(fake, args):
     r = gchat(*args)
     assert r.exit_code == 1 and "--yes" in r.output
     written = {"create_message", "edit_message", "delete_message", "update_reaction",
-               "create_dm_extended"}
+               "create_dm_extended", "create_group", "create_membership"}
     assert not [m for m, _ in fake.calls if m in written]
 
 

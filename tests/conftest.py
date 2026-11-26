@@ -24,6 +24,8 @@ REQUEST_TYPES = {
     "edit_message": gc.EditMessageRequest,
     "delete_message": gc.DeleteMessageRequest,
     "create_dm_extended": gc.CreateDmExtendedRequest,
+    "create_group": gc.CreateGroupRequest,
+    "create_membership": gc.CreateMembershipRequest,
     "update_reaction": gc.UpdateReactionRequest,
     "set_typing_state": gc.SetTypingStateRequest,
     "mark_group_readstate": gc.MarkGroupReadstateRequest,

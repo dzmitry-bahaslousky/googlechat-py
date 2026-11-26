@@ -364,6 +364,38 @@ def dm(ctx: click.Context, user: str, yes: bool) -> None:
     emit(ctx, run(go), lambda s: click.echo(s.id))
 
 
+@main.command("create-space")
+@click.argument("name")
+@click.argument("member_ids", nargs=-1)
+@click.option("--external", is_flag=True,
+              help="Let people outside your organization join (cannot be changed later).")
+@yes_option
+@click.pass_context
+def create_space(ctx: click.Context, name: str, member_ids: tuple[str, ...], external: bool,
+                 yes: bool) -> None:
+    """Create a space called NAME and add MEMBER_IDS (numeric ids, see `members`)."""
+    async def go(c: GoogleChatClient):
+        who = f" with {', '.join(member_ids)}" if member_ids else ""
+        kind = "external space" if external else "space"
+        await confirm(yes, lambda c, s: f"Create {kind} {name!r}{who}?", c, None)
+        return await c.spaces.create(name, member_ids, external=external)
+    emit(ctx, run(go), lambda s: click.echo(s.id))
+
+
+@main.command("add-members")
+@click.argument("space")
+@click.argument("member_ids", nargs=-1, required=True)
+@space_kind
+@yes_option
+@click.pass_context
+def add_members(ctx: click.Context, space: str, member_ids: tuple[str, ...],
+                is_dm: bool | None, yes: bool) -> None:
+    """Add MEMBER_IDS (numeric ids, see `members`) to SPACE."""
+    result = run_in(space, is_dm, lambda c, s: c.members.add(s.id, member_ids, is_dm=s.is_dm),
+                    ask=lambda c, s: f"Add {', '.join(member_ids)} to {_label(s)}?", yes=yes)
+    emit(ctx, result, lambda ids: click.echo(f"Added: {' '.join(ids)}"))
+
+
 @main.command("mark-read")
 @click.argument("space")
 @space_kind

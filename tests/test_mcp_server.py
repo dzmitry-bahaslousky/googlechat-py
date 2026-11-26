@@ -17,6 +17,7 @@ READ_TOOLS = {
 }
 WRITE_TOOLS = {
     "send_message", "reply_message", "edit_message", "delete_message", "create_dm",
+    "create_space", "add_members",
     "add_reaction", "remove_reaction", "set_typing", "mark_as_read",
 }
 writable = mcp_server.build_server(allow_writes=True)

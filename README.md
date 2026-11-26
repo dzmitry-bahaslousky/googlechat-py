@@ -42,13 +42,13 @@ claude mcp add --scope user googlechat -- googlechat-mcp
 
 Claude can then list chats (including which have unread messages), and read and search messages. That's all by default.
 
-To also let Claude send, reply, react, and edit or delete your own messages, turn on write tools:
+To also let Claude send, reply, react, edit or delete your own messages, and create spaces and add people to them, turn on write tools:
 
 ```bash
 claude mcp add --scope user -e GCHAT_MCP_WRITE=1 googlechat -- googlechat-mcp
 ```
 
-> ⚠️ Messages Claude reads are written by other people. A message can try to trick Claude into posting or deleting something as you. With write tools on, keep Claude Code's approval prompts on for them.
+> ⚠️ Messages Claude reads are written by other people. A message can try to trick Claude into posting or deleting something as you, adding someone to a space, or creating a space open to outsiders (which can't be undone). With write tools on, keep Claude Code's approval prompts on for them.
 
 ## Use from the command line
 
@@ -61,8 +61,14 @@ gchat thread SPACE_ID THREAD_ID       # one whole thread
 gchat search "release"                # search all chats
 gchat send SPACE_ID "Hello"           # asks before posting
 gchat reply SPACE_ID THREAD_ID "On it"
+gchat members SPACE_ID                # people in a chat, with their numeric user ids
+gchat create-space "Project X" 1178…  # new space; add people by user id
+gchat create-space "Client" --external # space that people outside your organization may join
+gchat add-members SPACE_ID 1178…      # add people to a space by user id
 gchat --json spaces                   # JSON output for scripts
 ```
+
+People are added by numeric user id, not email: Google refuses emails here, and there is no known way to look an email up. `gchat members` shows the id of anyone you share a chat with.
 
 Run `gchat --help` for all commands. Commands that post or change something as you ask for confirmation first; in scripts, add `--yes`.
 
